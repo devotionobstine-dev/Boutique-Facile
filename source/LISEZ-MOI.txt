@@ -1,0 +1,15 @@
+BOUTIQUE FACILE - SOURCES (version 6)
+
+Fabriquer l'application :
+  python3 build.py
+Le résultat arrive dans le dossier dist/ :
+  index.html, sw.js, manifest.webmanifest et les icônes = les fichiers à mettre sur GitHub.
+  artifact.html = la version d'essai en ligne (cadre isolé).
+
+Dossiers :
+  src/     le code de l'application (src/js = les écrans, src/app.css = le design)
+  assets/  les icônes et le dessin du logo (mklogo.py)
+  logo/    les scripts qui fabriquent le kit du logo et la charte
+  tests/   les tests automatiques (Playwright) : runall.sh les lance tous
+
+Important : le logo est dessiné par du code (mklogo.py). Ne le redessinez pas à la main.
