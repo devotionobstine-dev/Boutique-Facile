@@ -1,101 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Boutique Facile</title><meta name="theme-color" content="#f3f6fb"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Boutique Facile"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>
-:root{--bg:#f3f6fb;--card:#fff;--ink:#14213d;--mut:#5d6b8a;--ln:#cfd9ee;--red:#c8323f;--grn:#16794f;--gi:#fff;--yel:#f4c430;--yi:#3a2c00;--bl:#e9f0ff;--rl:#fdecee;--gl:#e6f5ee;--yl:#fff6d6;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+<title>Boutique Facile</title><meta name="theme-color" content="#F4F6F3"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Boutique Facile"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>
+:root{--bg:#F4F6F3;--card:#fff;--ink:#14261C;--mut:#5C6A61;--ln:#E0E6E0;--ln2:#C9D2CA;--ac:#0E6B47;--ac2:#0A5236;--acl:#E4F1EA;--aci:#fff;--red:#B3261E;--rl:#FBEBE9;--grn:#1B7A4B;--gl:#E7F3EC;--gi:#fff;--yel:#F2B705;--yi:#4A3800;--yl:#FCF5DD;--bl:#EDF1EE;--blu:#1F5FBF;--blt:#E8EFFA;--r2:12px;--r3:16px;--sh1:0 1px 2px rgba(20,38,28,.07);--sh2:0 -6px 22px rgba(20,38,28,.10);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
 html.big{font-size:18px}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.4 "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;padding-bottom:96px;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;padding-bottom:96px;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased}
 body.v{padding-bottom:340px}
 body.noscroll{overflow:hidden}
 button{font-family:inherit;cursor:pointer;color:inherit}
-button:focus-visible,.in:focus-visible{outline:3px solid var(--yel);outline-offset:2px}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:2px solid var(--red)}
-h1{margin:0;font-size:1.2rem;font-weight:800}
-h2{font-size:1.2rem;margin:0 0 8px}
-h3{font-size:1rem;margin:14px 16px 4px}
-header small,.row small,.t small,.sum small,.sm2{display:block;color:var(--mut);font-size:.8rem}
-.pill{font-size:.75rem;font-weight:700;border:1.5px solid var(--ln);border-radius:20px;padding:4px 10px;background:var(--card);white-space:nowrap}
-.pill::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--grn);margin-right:6px}
+button:focus-visible,.in:focus-visible,summary:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.ic{width:1.15em;height:1.15em;vertical-align:-.22em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic.f{fill:currentColor;stroke:none}
+.ic.is{color:var(--yel)}
+.ic.ig{color:var(--grn)}
+.ic.ir{color:var(--red)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:12px 16px 10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid var(--ln)}
+h1{margin:0;font-size:1.15rem;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+h2{font-size:1.15rem;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
+h3{font-size:1.05rem;font-weight:700;margin:18px 16px 4px;letter-spacing:-.005em}
+header small,.row small,.t small,.sum small,.sm2{display:block;color:var(--mut);font-size:.8rem;line-height:1.35}
+.pill{font-size:.72rem;font-weight:600;border-radius:999px;padding:5px 11px;background:var(--gl);color:var(--grn);white-space:nowrap}
+.pill::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--grn);margin-right:6px;vertical-align:1px}
+.pill.off{background:#ECEFEC;color:var(--mut)}
 .pill.off::before{background:var(--mut)}
-.ib{border:1.5px solid var(--ln);background:var(--card);border-radius:20px;width:36px;height:32px;font-size:1rem}
+.ib{border:1px solid var(--ln2);background:var(--card);border-radius:50%;width:38px;height:38px;font-size:1rem;display:grid;place-items:center;padding:0;color:var(--ink)}
+.ib .ic{width:18px;height:18px;vertical-align:0}
 .hint{margin:14px 16px;color:var(--mut)}
-.bn{margin:10px 16px 0;padding:10px 12px;border-radius:8px;font-size:.88rem;border-left:4px solid var(--ln);background:var(--card)}
-.bn.r{background:var(--rl);border-color:var(--red)}
-.bn.y{background:var(--yl);border-color:var(--yel)}
-.bn.g{background:var(--gl);border-color:var(--grn)}
-.bn.b{background:var(--bl);border-color:#2b5fb4}
+.bn{margin:10px 16px 0;padding:11px 13px;border-radius:var(--r2);font-size:.88rem;border:1px solid var(--ln);border-left:4px solid var(--ln2);background:var(--card)}
+.bn.r{background:var(--rl);border-color:#EFC7C3;border-left-color:var(--red)}
+.bn.y{background:var(--yl);border-color:#EEDDA2;border-left-color:var(--yel)}
+.bn.g{background:var(--gl);border-color:#BDDCC9;border-left-color:var(--grn)}
+.bn.b{background:var(--blt);border-color:#C5D6EE;border-left-color:var(--blu)}
 .bn button{margin-top:6px}
-.srch{display:flex;gap:8px;padding:10px 16px 0}
+.srch{display:flex;gap:8px;padding:12px 16px 0}
 .srch .in{margin:0;flex:1}
-.srch .b{min-height:46px;padding:0 14px}
-.chips{display:flex;gap:6px;overflow-x:auto;padding:8px 16px 2px;-webkit-overflow-scrolling:touch}
-.cart .chips{padding:0 0 6px}
-.chip{flex:none;border:1.5px solid var(--ln);background:var(--card);border-radius:16px;padding:5px 11px;font-size:.82rem}
-.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.srch .b{min-height:48px;padding:0 14px}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:10px 16px 2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.cart .chips{padding:0 0 8px}
+.chip{flex:none;border:1px solid var(--ln2);background:var(--card);border-radius:999px;padding:6px 13px;font-size:.84rem;font-weight:500;color:var(--ink)}
+.chip.on{background:var(--ac);color:var(--aci);border-color:var(--ac);font-weight:600}
 .chip.r{border-color:var(--red);color:var(--red)}
-.seg{display:flex;margin:8px 16px 0;border:1.5px solid var(--ink);border-radius:10px;overflow:hidden}
-.seg button{flex:1;border:0;background:var(--card);padding:8px;font-weight:700;font-size:.85rem}
-.seg button.on{background:var(--ink);color:#fff}
-.g{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 16px}
-.t{background:var(--card);border:1.5px solid var(--ln);border-radius:10px;padding:11px;text-align:left;min-height:96px;position:relative}
-.t b{display:block;font-size:1rem}
-.t span{display:block;font-weight:700;margin:2px 0;font-variant-numeric:tabular-nums}
-.t.o{opacity:.5}
-.t .n{color:var(--grn);font-weight:700}
-.t .st{position:absolute;right:8px;top:6px;font-size:.9rem;color:#c99a00}
-.t .bd{display:inline-block;font-size:.68rem;font-weight:800;border-radius:4px;padding:1px 5px;margin:2px 3px 0 0;background:var(--rl);color:var(--red)}
+.seg{display:flex;margin:10px 16px 0;border:1px solid var(--ln2);border-radius:var(--r2);overflow:hidden;background:var(--card);padding:3px;gap:3px}
+.seg button{flex:1;border:0;background:none;padding:8px;font-weight:600;font-size:.88rem;border-radius:9px;color:var(--mut)}
+.seg button.on{background:var(--ac);color:var(--aci)}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 16px}
+.t{background:var(--card);border:1px solid var(--ln);border-radius:var(--r2);padding:12px;text-align:left;min-height:100px;position:relative;box-shadow:var(--sh1);display:flex;flex-direction:column;align-items:flex-start}
+.t:active{background:var(--acl);border-color:var(--ac)}
+.t b{display:block;font-size:.98rem;font-weight:600;line-height:1.25}
+.t span{display:block;font-weight:700;margin:5px 0 2px;font-size:1.02rem;font-variant-numeric:tabular-nums}
+.t.o{opacity:.55;background:#EEF1EE}
+.t.inc{border-color:var(--ac);box-shadow:inset 0 0 0 1px var(--ac);background:var(--acl)}
+.t .n{color:var(--ac2);font-weight:700}
+.t .st{position:absolute;right:9px;top:9px;font-size:.85rem;line-height:1}
+.t .bd{display:inline-block;font-size:.66rem;font-weight:700;border-radius:5px;padding:1px 6px;margin:3px 3px 0 0;background:var(--rl);color:var(--red)}
 .t .bd.y{background:var(--yl);color:var(--yi)}
-.t .bd.b{background:var(--bl);color:#2b5fb4}
-.card{background:var(--card);border-left:3px solid var(--red);border-radius:6px;padding:2px 14px;margin:12px 16px}
-.card.pl{padding:12px 14px}
-.row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--ln)}
+.t .bd.b{background:var(--blt);color:var(--blu)}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:var(--r3);padding:2px 16px;margin:12px 16px;box-shadow:var(--sh1)}
+.card.pl{padding:14px 16px}
+.row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--ln)}
 .row:last-child{border-bottom:0}
 .row.tap{cursor:pointer}
 .gr1{flex:1;min-width:0}
-.gr1 b{overflow-wrap:anywhere}
-.qty{font-weight:800;font-size:1.2rem;text-align:right}
-.qty.low,.owe,.neg{color:var(--red);font-weight:800}
-.pos{color:var(--grn);font-weight:800}
-.qty small{font-size:.7rem;font-weight:600}
-.b{border:0;border-radius:10px;padding:12px 14px;font-weight:700;min-height:48px;font-size:1rem}
-.b.sm{min-height:40px;padding:8px 12px;font-size:.88rem}
-.b.xs{min-height:34px;padding:5px 10px;font-size:.8rem;border-radius:8px}
+.gr1 b{overflow-wrap:anywhere;font-weight:600}
+.qty{font-weight:700;font-size:1.15rem;text-align:right;font-variant-numeric:tabular-nums}
+.qty.low,.owe,.neg{color:var(--red);font-weight:700}
+.pos{color:var(--grn);font-weight:700}
+.qty small{font-size:.7rem;font-weight:500}
+.b{border:1px solid transparent;border-radius:var(--r2);padding:12px 16px;font-weight:600;min-height:50px;font-size:1rem}
+.b:active{filter:brightness(.92)}
+.b.sm{min-height:42px;padding:8px 13px;font-size:.9rem}
+.b.xs{min-height:34px;padding:5px 11px;font-size:.8rem;border-radius:9px}
 .b[disabled]{opacity:.45}
-.gr{background:var(--grn);color:var(--gi)}
+.gr{background:var(--ac);color:var(--aci)}
 .yl{background:var(--yel);color:var(--yi)}
 .rd{background:var(--red);color:#fff}
-.ol{background:none;border:2px solid var(--ink)}
-.lnk{background:none;border:0;color:#2b5fb4;text-decoration:underline;font-size:.9rem;padding:8px}
-.top{padding:12px 16px 0}
+.ol{background:var(--card);border:1px solid var(--ln2);color:var(--ink)}
+.lnk{background:none;border:0;color:var(--ac2);text-decoration:underline;text-underline-offset:3px;font-size:.9rem;font-weight:500;padding:8px}
+.top{padding:14px 16px 0}
 .top .b{width:100%}
 .btns{display:flex;gap:8px;padding:10px 16px 0;flex-wrap:wrap}
 .btns .b{flex:1;min-width:120px}
-.sum{margin:12px 16px 0}
-.tot{font-size:1.9rem;font-weight:800;font-variant-numeric:tabular-nums}
+.sum{margin:14px 16px 0}
+.tot{font-size:1.9rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .tot.s{font-size:1.35rem}
-.cart{position:fixed;left:0;right:0;bottom:calc(62px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:2px solid var(--ink);padding:10px 16px;z-index:4}
-.pay{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:8px;margin-top:6px}
-.pay .b{padding:10px 6px;font-size:.9rem}
+.cart{position:fixed;left:0;right:0;bottom:calc(64px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--ln);box-shadow:var(--sh2);border-radius:18px 18px 0 0;padding:12px 16px 14px;z-index:4}
+.pay{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:8px;margin-top:8px}
+.pay .b{padding:10px 6px;font-size:.92rem;min-height:52px}
 nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--ln);padding-bottom:env(safe-area-inset-bottom,0px);z-index:6}
-nav button{flex:1;height:62px;border:0;background:none;color:var(--mut);font-size:.72rem;font-weight:700;position:relative}
-nav button i{display:block;font-style:normal;font-size:1.35rem}
-nav button.on{color:var(--ink);box-shadow:inset 0 3px 0 var(--red)}
-nav button em{position:absolute;top:6px;right:calc(50% - 22px);background:var(--red);color:#fff;font-style:normal;font-size:.62rem;border-radius:9px;min-width:16px;padding:0 4px;line-height:16px}
-#t{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 76px);background:var(--ink);color:#fff;padding:10px 16px;border-radius:20px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:90;max-width:92vw;text-align:center}
+nav button{flex:1;height:64px;border:0;background:none;color:var(--mut);font-size:.7rem;font-weight:600;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:0}
+nav button i{display:grid;place-items:center;width:54px;height:30px;border-radius:15px;font-style:normal}
+nav button .ic{width:23px;height:23px;vertical-align:0}
+nav button.on{color:var(--ac2)}
+nav button.on i{background:var(--acl);color:var(--ac)}
+nav button em{position:absolute;top:5px;right:calc(50% - 27px);background:var(--red);color:#fff;font-style:normal;font-size:.62rem;font-weight:700;border-radius:9px;min-width:17px;padding:0 5px;line-height:17px;border:2px solid var(--card);box-sizing:content-box}
+#t{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 76px);background:var(--ink);color:#fff;padding:11px 18px;border-radius:14px;font-weight:600;font-size:.92rem;opacity:0;transition:opacity .2s;pointer-events:none;z-index:90;max-width:92vw;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.22)}
 .rs{margin:20px 16px}
 .lk{display:none;position:fixed;inset:0;z-index:80;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center}
+.lk h1{font-size:1.55rem;font-weight:800;letter-spacing:-.02em}
+.lk p{color:var(--mut);margin:0}
+.mk{width:84px;height:84px;margin-bottom:8px;filter:drop-shadow(0 8px 14px rgba(14,107,71,.22))}
+.mk svg{display:block;width:100%;height:100%}
+.lkb{position:absolute;left:0;right:0;bottom:calc(22px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;color:#9AA79F}
+.lkb svg{height:16px;width:auto}
+.sws{display:flex;gap:14px;flex-wrap:wrap;padding:8px 2px 4px}
+.abl{padding:4px 0 2px}.abl svg{display:block;width:min(250px,72%);height:auto}
 .br .b{flex:1}
-.ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:40;display:flex;align-items:flex-end}
-.sh{background:var(--card);width:100%;max-height:92vh;max-height:92dvh;display:flex;flex-direction:column;overflow:hidden;border-radius:16px 16px 0 0}
-.sb{overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:16px;flex:1 1 auto;min-height:0}
+.ov{position:fixed;inset:0;background:rgba(20,38,28,.48);z-index:40;display:flex;align-items:flex-end}
+.sh{background:var(--card);width:100%;max-height:92vh;max-height:92dvh;display:flex;flex-direction:column;overflow:hidden;border-radius:20px 20px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.18)}
+.sh::before{content:"";display:block;flex:none;width:38px;height:4px;border-radius:2px;background:var(--ln2);margin:8px auto 0}
+.sb{overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:12px 18px 16px;flex:1 1 auto;min-height:0}
 .sb:last-child{padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
 .sf{flex:0 0 auto;padding:10px 16px calc(14px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--ln);background:var(--card)}
 .sf .pay2{margin:0}
 .sh h2{margin:0 0 8px}
-label,.lb{display:block;font-size:.8rem;color:var(--mut);margin-top:8px}
-.in{width:100%;padding:12px;border:1.5px solid var(--ln);border-radius:8px;font:inherit;background:var(--bg);color:var(--ink);margin:4px 0}
+label,.lb{display:block;font-size:.8rem;font-weight:500;color:var(--mut);margin-top:10px}
+.in{width:100%;padding:12px 14px;border:1px solid var(--ln2);border-radius:var(--r2);font:inherit;background:var(--card);color:var(--ink);margin:4px 0;min-height:48px}
+.in:focus{border-color:var(--ac);box-shadow:0 0 0 3px var(--acl);outline:0}
+.in::placeholder{color:#8C978F}
 select.in{appearance:auto}
 .two{display:grid;grid-template-columns:2fr 1fr;gap:8px}
 .tri{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
@@ -103,46 +127,73 @@ select.in{appearance:auto}
 .pay2{display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-top:12px}
 .pay2.e{grid-template-columns:1fr 1fr}
 .pay2.o{grid-template-columns:1fr}
+button,.chip,.in,select,summary,.gv{touch-action:manipulation}
+.t{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.gv{border:1.5px solid var(--ac);border-radius:var(--r2);padding:8px 14px;font-size:1.9rem;font-weight:700;text-align:right;font-variant-numeric:tabular-nums;letter-spacing:-.01em;background:var(--card);min-height:58px;line-height:1.5;cursor:pointer;-webkit-user-select:none;user-select:none}
+.gv .ph{color:#9AA59D;font-weight:600}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+.kp button{min-height:50px;border:1px solid var(--ln);background:var(--card);border-radius:var(--r2);font-size:1.3rem;font-weight:600;-webkit-user-select:none;user-select:none}
+.kp button:active{background:var(--acl);border-color:var(--ac)}
+.sf .kp{margin:0 0 8px}
+.sf .kp button{min-height:44px}
+.bn.chg{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:8px 0 0}
+.bn.chg b{font-size:1.2rem}
+.bn.chg>b:last-child{white-space:nowrap;font-size:1.05rem}
+.lnk.sm{display:block;padding:2px 0;font-size:.85rem;text-align:left}
+#pdst{flex-wrap:wrap}
+#pdst .chip{font-size:.8rem;padding:6px 10px}
+.lsm{color:var(--mut);font-size:.85rem}
+details.dt{margin:0 0 2px}
+details.dt summary,#pcd summary{color:var(--mut);font-size:.88rem;padding:5px 0;cursor:pointer}
+.cart.ls{display:flex;align-items:center;gap:8px}
+.cart.ls .gr1{font-size:.95rem}
+.chg2{color:var(--grn);font-size:1.2rem;font-weight:800}
+#hold:empty{display:none}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;pointer-events:none;background:var(--bg)}
 .fo{display:none}
 .inframe .fo{display:block}
 .inframe .nf{display:none!important}
-.menu{margin:12px 16px;background:var(--card);border-radius:10px;overflow:hidden;border:1px solid var(--ln)}
-.menu button{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--ln);padding:13px 14px;font-size:1rem}
+.menu{margin:12px 16px;background:var(--card);border-radius:var(--r3);overflow:hidden;border:1px solid var(--ln);box-shadow:var(--sh1)}
+.menu button{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--ln);padding:11px 14px;font-size:1rem;font-weight:500}
+.menu button:active{background:var(--bl)}
 .menu button:last-child{border-bottom:0}
-.menu button i{font-style:normal;font-size:1.3rem;width:30px;text-align:center}
+.menu button i{font-style:normal;width:38px;height:38px;border-radius:11px;background:var(--acl);color:var(--ac);display:grid;place-items:center;flex:none}
+.menu button i .ic{width:21px;height:21px;vertical-align:0}
 .menu button small{display:block;color:var(--mut);font-size:.78rem;font-weight:400}
 .menu button span{flex:1}
-.menu button::after{content:"›";color:var(--mut);font-size:1.4rem}
+.menu button::after{content:"›";color:var(--ln2);font-size:1.5rem;line-height:1}
 .back{padding:10px 16px 0}
-.back button{background:none;border:0;color:#2b5fb4;font-size:1rem;font-weight:700;padding:6px 0}
-.kv{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--ln)}
+.back button{background:none;border:0;color:var(--ac2);font-size:1rem;font-weight:600;padding:6px 0}
+.kv{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--ln)}
 .kv:last-child{border-bottom:0}
-.kv b{font-variant-numeric:tabular-nums;text-align:right}
-.bar{height:10px;background:var(--bl);border-radius:5px;overflow:hidden;margin-top:4px}
-.bar i{display:block;height:100%;background:var(--grn)}
+.kv b{font-variant-numeric:tabular-nums;text-align:right;font-weight:600}
+.bar{height:8px;background:var(--bl);border-radius:4px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--ac);border-radius:4px}
 .bar.w i{background:var(--yel)}
 .bar.d i{background:var(--red)}
 .ch{padding:8px 4px}
 .ch svg{width:100%;height:auto;display:block}
-.tg{display:flex;align-items:center;gap:8px;margin:10px 0 4px;font-size:.95rem;color:var(--ink)}
-.tg input{width:22px;height:22px;flex:none}
+.tg{display:flex;align-items:center;gap:10px;margin:12px 0 4px;font-size:.95rem;color:var(--ink)}
+.tg input{width:22px;height:22px;flex:none;accent-color:var(--ac)}
 .tg span{flex:1}
+.sws{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 2px}
+.sw{width:42px;height:42px;border-radius:50%;border:3px solid var(--card);box-shadow:0 0 0 1.5px var(--ln2);padding:0}
+.sw.on{box-shadow:0 0 0 2.5px var(--ink)}
 .sc{overflow-x:auto}
-table.tb{border-collapse:collapse;width:100%;font-size:.82rem}
-table.tb th,table.tb td{padding:6px 5px;border-bottom:1px solid var(--ln);text-align:right;white-space:nowrap}
+table.tb{border-collapse:collapse;width:100%;font-size:.82rem;font-variant-numeric:tabular-nums}
+table.tb th,table.tb td{padding:7px 5px;border-bottom:1px solid var(--ln);text-align:right;white-space:nowrap}
 table.tb th:first-child,table.tb td:first-child{text-align:left;white-space:normal}
-table.tb th{color:var(--mut);font-weight:700;font-size:.72rem}
+table.tb th{color:var(--mut);font-weight:600;font-size:.72rem}
 .cam{display:none;position:fixed;inset:0;z-index:70;background:#000;flex-direction:column}
 .cam video{flex:1;width:100%;object-fit:cover;min-height:0}
 .cam .cb{padding:12px 16px calc(14px + env(safe-area-inset-bottom,0px));background:#111;color:#fff;text-align:center}
-.cam .fr{position:absolute;left:12%;right:12%;top:30%;height:26%;border:3px solid var(--yel);border-radius:10px;pointer-events:none}
+.cam .fr{position:absolute;left:12%;right:12%;top:30%;height:26%;border:3px solid var(--yel);border-radius:12px;pointer-events:none}
 .simple .adv{display:none!important}
-.simple .t{min-height:110px}
+.simple .t{min-height:112px}
 .simple .t b{font-size:1.1rem}
-.simple .b{min-height:54px}
+.simple .b{min-height:56px}
 .simple nav button{height:68px;font-size:.8rem}
-.simple nav button i{font-size:1.6rem}
+.simple nav button .ic{width:26px;height:26px}
 .big-ic{font-size:2rem;display:block}
 #pr{display:none}
 @media print{
@@ -165,12 +216,13 @@ table.tb th{color:var(--mut);font-weight:700;font-size:.72rem}
 <header id="hd"></header>
 <main id="app"></main>
 <nav id="nv"></nav>
-<div id="lk" class="lk"><h1 id="lh">Boutique Facile</h1><p id="lm"></p><input class="in" id="pn" type="password" inputmode="numeric" maxlength="4" autocomplete="off" onkeydown="if(event.key=='Enter')unlock()" style="max-width:220px;text-align:center;font-size:28px;letter-spacing:8px"><button class="b gr" id="lo" onclick="unlock()">Ouvrir</button><button class="lnk" id="lf" onclick="forgot()">Code oublié ?</button></div>
+<div id="lk" class="lk"><div class="mk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="lgi" aria-hidden="true" focusable="false"><rect width="256" height="256" rx="56.01" fill="#0E6B47"/><g transform="translate(78.74 43.01) scale(0.52)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23,213V23H108.1A43.7,43.7 0 0 1 108.1,110.4H23M23,110.4H114.5A51.3,51.3 0 0 1 114.5,213H23" stroke="#FFFFFF" stroke-width="46"/><path d="M9.5,268.5H179.3M9.5,304.5H179.3" stroke="#F5B800" stroke-width="19"/></g></svg></div><h1 id="lh">Boutique Facile</h1><p id="lm"></p><input class="in" id="pn" type="password" inputmode="numeric" maxlength="4" autocomplete="off" onkeydown="if(event.key=='Enter')unlock()" style="max-width:220px;text-align:center;font-size:28px;letter-spacing:8px"><button class="b gr" id="lo" onclick="unlock()">Ouvrir</button><button class="lnk" id="lf" onclick="forgot()">Code oublié ?</button><div class="lkb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1431.71 191" class="lgw" aria-hidden="true" focusable="false"><g transform="translate(0 0) scale(1) translate(9.5 137.5)" fill="none" stroke="currentColor" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"><path transform="translate(0 0)" d="M0,-128V0"/><path transform="translate(0 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(116 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(240 0)" d="M0,-80V-40A40,40 0 0 0 80,-40"/><path transform="translate(240 0)" d="M80,-80V0"/><path transform="translate(382 0)" d="M0,-106V-17A17,17 0 0 0 17,0H24"/><path transform="translate(382 0)" d="M-21,-80H31"/><path transform="translate(454 0)" d="M0,-80V0"/><circle cx="454" cy="-110.28" r="11.78" fill="currentColor" stroke="none"/><path transform="translate(498 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(498 0)" d="M80,-80V44"/><path transform="translate(630 0)" d="M0,-80V-40A40,40 0 0 0 80,-40"/><path transform="translate(630 0)" d="M80,-80V0"/><path transform="translate(754 0)" d="M0,-40H80A40,40 0 1 0 63.51,-7.64"/><path transform="translate(934 0)" d="M0,0V-97A31,31 0 0 1 31,-128H40"/><path transform="translate(934 0)" d="M-21,-80H35"/><path transform="translate(1009 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(1009 0)" d="M80,-80V0"/><path transform="translate(1133 0)" d="M65.71,-70.64A40,40 0 1 0 65.71,-9.36"/><path transform="translate(1236.71 0)" d="M0,-80V0"/><circle cx="1236.71" cy="-110.28" r="11.78" fill="currentColor" stroke="none"/><path transform="translate(1288.71 0)" d="M0,-128V0"/><path transform="translate(1332.71 0)" d="M0,-40H80A40,40 0 1 0 63.51,-7.64"/></g></svg></div></div>
 <div id="t"></div><div id="m"></div><div class="cam" id="cam"></div><div id="pr"></div>
 <script>
 'use strict';
-const CAT=["Pas possible dans la version d'essai", "Cette action est bloquée dans la version d'essai en ligne. Elle fonctionne dans la version installée sur le téléphone.", "Copiez ce texte", "Touchez le texte pour le sélectionner, copiez-le, puis collez-le dans WhatsApp ou un message.", "Fermer", "Texte copié : collez-le dans WhatsApp ou un message", "Retour", "Annuler", "Valider", "Oui", "Non", "Version d'essai en ligne", "Tout est enregistré sur ce téléphone", "En ligne", "Hors ligne", "Verrouiller", "Vendre", "Stock", "Clients", "Caisse", "Plus", "Les données ne sont pas enregistrées.", "La mémoire est pleine ou bloquée. Faites une sauvegarde tout de suite.", "Sauvegarder", "Une nouvelle version est prête. Fermez puis rouvrez l'application pour l'utiliser.", "Voir", "Version d'essai en ligne : vos données ne sont pas garanties ici, et la caméra, l'impression et l'enregistrement de fichiers sont bloqués. Pour garder vos données et travailler sans internet, utilisez la version installée sur le téléphone.", "Aucune sauvegarde pour le moment.", "Dernière sauvegarde il y a {n} jours.", "Sauvegardez chaque semaine pour ne rien perdre.", "Sauvegarder maintenant", "La mémoire du téléphone est presque pleine. Faites une sauvegarde et libérez de la place.", "La mémoire de l'application est presque pleine. Faites une sauvegarde.", "Code du patron", "Le patron doit saisir son code pour autoriser cette action.", "Code incorrect", "Créez le code PIN du propriétaire (4 chiffres)", "Entrez votre code PIN", "Ouvrir", "Code oublié ?", "Le code a 4 chiffres", "Votre code de secours", "Si vous oubliez votre code PIN, ce code de secours permet d'en créer un nouveau sans perdre vos données.", "Notez-le sur papier et gardez-le en lieu sûr. Il ne sera plus affiché.", "J'ai noté le code", "Code de secours absent", "Aucun code de secours n'a été créé sur ce téléphone. Réinstallez l'application puis restaurez une sauvegarde.", "Code de secours", "Entrez le code de secours à 8 chiffres", "Code de secours incorrect", "Bienvenue", "Nom de votre commerce", "Ma boutique", "Type de commerce", "Boutique, alimentation", "Pharmacie", "Quincaillerie, matériaux", "Autre commerce", "Votre téléphone (facultatif)", "Pour commencer", "Commencer avec un stock vide", "Essayer avec des produits d'exemple", "Commencer", "Rechercher ou scanner un code…", "Tout", "Favoris", "Détail", "Gros", "Même substance :", "Aucun produit trouvé.", "Aucun produit. Ajoutez-en dans l'onglet Stock.", "Périmé", "Bientôt périmé", "en stock", "au panier", "Modifier", "Vider", "Espèces", "À crédit", "Aucun produit pour « {q} »", "Stock insuffisant pour {n} : il reste {q}. Ajouter quand même ?", "Ajouter", "Prix du tarif", "prix négocié", "Sous le prix d'achat", "Quantité", "Format", "unité", "Prix unitaire", "Total", "Modifier le panier", "Total du panier", "OK", "La caisse est fermée. L'ouvrir maintenant ?", "Ouvrir la caisse", "Confirmer la vente", "Prix négocié", "Remise", "Total à payer", "Montant donné par le client", "Monnaie à rendre", "Autre", "Numéro de transaction du SMS (facultatif)", "À crédit (dette du client)", "Nom du client", "Téléphone", "Échéance", "Dans {n} jours", "Dans 7 jours", "Dans 30 jours", "Pas de date", "Autre date…", "N° de carte d'identité ou de passeport", "Photo de la pièce (facultatif)", "Le client accepte l'enregistrement de sa pièce d'identité.", "Ordonnance (n° ou nom du médecin, facultatif)", "Acompte reçu : {a}. Reste dû par le client : {b}.", "Reste à répartir : {n}", "Trop payé de {n}", "Crédit", "Dette actuelle : {n}", "Client connu, aucune dette", "Plafond : {n}", "pièce déjà enregistrée", "Photo prête ✓", "Le total payé doit être égal à {n}", "Le nom du client est nécessaire", "Le client doit accepter l'enregistrement de sa pièce", "Choisissez la date d'échéance", "Remise de {n} % : le patron doit autoriser.", "Plafond de crédit dépassé : {a} + {b} dépasse {l}. Autoriser quand même ?", "Le patron doit autoriser un dépassement du plafond.", "Autoriser", "Tél.", "Reçu n° {n}", "Vendeur : {n}", "TOTAL", "Donné", "Rendu", "Reste dû par {n} : {a}", "Vente enregistrée", "Envoyer le reçu", "Imprimer", "Nouvelle vente", "Autre application", "Numéro du client (facultatif)", "Impression impossible ici", "Rechercher un produit…", "Tous", "À recommander", "Péremption", "Archivés", "Ajouter un produit", "Inventaire", "Prix en bloc", "Achats", "Valeur du stock (prix d'achat)", "Aucun produit dans cette liste.", "Aucun produit. Touchez « Ajouter un produit ».", "Expire dans {n} j", "lot(s)", "Vente", "achat", "Code", "Réactiver", "Couleur (facultatif)", "Unité de base", "pièce, kg, boîte…", "Code-barres (à taper, avec une douchette ou la caméra)", "Prix de gros (facultatif)", "Alerte quand il reste moins de", "Autres formats de vente (carton, boîte, plaquette…)", "Nom du format", "Contient (en unités de base)", "Prix de vente", "Prix de gros", "Retirer ce format", "Ajouter un format", "Format vendu par défaut", "Vendu au poids ou à la mesure (quantités avec virgule)", "Favori (affiché en premier à la caisse)", "TVA applicable à ce produit", "Fournisseur habituel", "Vendu sur ordonnance", "Substance active (DCI) — pour trouver les équivalents", "Suivre les lots et les dates de péremption", "N° de lot", "Plus d'options", "Nouveau produit", "Modifier le produit", "Nom du produit", "Format (ex. 500 g, 1 L)", "Catégorie (ex. boissons, médicaments)", "Prix d'achat (GNF)", "Prix de vente (GNF)", "Quantité en stock au départ", "Stock actuel", "Ajouter du stock", "Corriger le stock", "Archiver", "Enregistrer", "Le nom et les prix sont nécessaires", "Chaque format a un nom, un contenu et un prix", "Ce code-barres est déjà utilisé par « {n} ». Touchez Enregistrer pour confirmer.", "Produit enregistré ✓", "Écart de comptage", "Casse", "Vol ou perte", "Don ou échantillon", "Stock de départ", "Retour abîmé", "stock actuel", "Lot", "Quantité réellement comptée", "Motif", "Note (facultatif)", "Quantité invalide", "Stock corrigé ✓", "Comptez ce qu'il y a sur les étagères et notez la quantité. Laissez vide les produits que vous ne comptez pas.", "Rechercher…", "Voir les écarts", "Dans l'appli", "Compté", "Aucun produit.", "Aucune quantité comptée", "Écarts trouvés", "compté", "Valeur des écarts", "Aucun écart : le stock est exact. Bravo !", "Motif des écarts", "Appliquer", "Inventaire enregistré ✓", "Changer les prix en bloc", "Quels produits ?", "Tous les produits", "Une catégorie", "Je choisis les produits", "Changement", "Arrondir à", "Pas d'arrondi", "Prix de vente (détail)", "prix vont changer", "gros", "sous le prix d'achat", "Appliquer ces prix", "Aucun prix ne change avec ces réglages.", "Annuler le dernier changement de prix", "Changer {n} prix ?", "Prix modifiés ✓", "Remettre les anciens prix ?", "Anciens prix remis ✓", "Remettre", "En retard de {n} j", "À payer aujourd'hui", "Échéance dans {n} j", "Personne dans cette liste.", "Aucun client. Une vente « À crédit » ou le bouton « Ajouter un client » en crée un.", "pièce n° {n}", "photo de la pièce", "aucune pièce enregistrée", "Encaisser", "Relancer", "Aucune dette", "Total que les clients vous doivent", "{n} client(s) en retard : {a}", "Rechercher un client…", "Dettes", "En retard", "Ajouter un client", "Fiche client", "Nouveau client", "Nom", "Plafond de crédit (GNF)", "sans limite", "Photo de la pièce", "déjà enregistrée", "Date promise de paiement", "Le nom est nécessaire", "Ce nom existe déjà", "Client enregistré ✓", "Vente n° {n}", "Annulation / retour", "Paiement", "Dette actuelle", "Plafond de crédit", "Date promise", "Achats enregistrés", "Voir la pièce", "Historique", "Rien pour le moment.", "Pièce d'identité", "Photo introuvable.", "Montant reçu", "Montant invalide", "Montant trop élevé", "Paiement enregistré ✓", "Envoyer un reçu de paiement à {n} ?", "Paiement reçu de", "Reste dû", "Dette soldée. Merci !", "Envoyer", "Bonjour {n}, c'est {s}. Vous nous devez {a}", "(échéance dépassée depuis le {d})", "(à régler avant le {d})", "Merci de passer régler.", "Merci !", "Message", "Pas de numéro enregistré : choisissez le contact dans l'application.", "Ventes", "N° de reçu, client, produit…", "Aucune vente.", "remise", "retour", "annulée", "tarif", "Client", "Ordonnance", "Retour du {d}", "Retour / échange", "Annuler la vente", "Cette vente a déjà un retour : annulation impossible.", "Annulation impossible", "Le client a déjà payé une partie de cette dette. Utilisez « Retour / échange » pour rembourser le client.", "Annuler cette vente ? Le stock sera remis.", "Vente annulée", "Annuler une vente demande le code du patron.", "Tout a déjà été retourné.", "Indiquez ce que le client rapporte. Pour un échange, faites le retour puis une nouvelle vente.", "vendu", "Montant à rembourser", "Rembourser en", "Déduire de la dette", "Remettre les articles en stock", "Motif (facultatif)", "Valider le retour", "Indiquez au moins un article", "Retour enregistré ✓", "Un retour demande le code du patron.", "Autre mobile", "Annulation de la vente n° {n}", "Retour sur la vente n° {n}", "Paiement de {n}", "Retrait du patron", "Apport d'argent", "Annulation", "Achat", "Annulation d'un achat", "Paiement à {n}", "Commission", "Loyer", "Transport", "Carburant, électricité", "Salaires", "Fournitures", "Impôts et taxes", "Frais Mobile Money", "Réparations", "Nouvelle dépense", "Retrait personnel du patron", "Montant (GNF)", "Catégorie", "Reçu en", "Payé avec", "Date", "Enregistré ✓", "Dépenses", "Dépenses du mois", "Dépense", "Apport", "Aucune dépense ce mois-ci.", "Supprimer cette ligne ?", "Supprimer", "Notez l'argent qui est déjà dans le tiroir et sur vos comptes Mobile Money.", "Caisse ouverte ✓", "Clôturer la caisse", "Comptez l'argent et notez le solde réel de chaque compte. L'appli calcule l'écart.", "Attendu", "Compté / solde réel", "Écart", "Clôturer", "Entrez le montant compté pour chaque ligne", "Caisse clôturée", "Les espèces sont justes. Bravo !", "Il manque {n} en espèces.", "Il y a {n} en trop en espèces.", "Envoyer le résumé", "Clôture de caisse", "attendu", "écart", "Ventes du jour", "vente(s)", "retours", "Caisse ouverte à {h}", "Espèces attendues", "Caisse fermée", "Ouvrez la caisse pour que l'appli vérifie l'argent en fin de journée.", "Voir les dépenses", "Agent Mobile Money", "{n} paiement(s) à vérifier avec l'opérateur", "Remises accordées", "Dettes remboursées", "Retours remboursés", "Commissions Mobile Money", "Bénéfice estimé", "après dépenses et pertes", "Produits à recommander", "Dernières ventes", "Aucune vente aujourd'hui.", "Toutes les ventes", "Dernières clôtures", "Dépôt client", "Retrait client", "Achat de float", "Retour de float en espèces", "Votre commission (GNF)", "Reçue en espèces", "Créditée sur le compte", "Téléphone du client (facultatif)", "Référence (facultatif)", "Opération enregistrée ✓", "Acheter du float", "Rendre du float", "Dépôts du jour", "Retraits du jour", "Commissions du jour", "Solde {w} attendu", "Ouvrez la caisse pour suivre le solde attendu de vos comptes.", "commission", "Aucune opération aujourd'hui.", "Achats et fournisseurs", "Nouvel achat", "Fournisseurs", "Achat comptant", "produit(s)", "annulé", "dû", "Aucun achat enregistré. Touchez « Nouvel achat » quand vous recevez de la marchandise.", "Payé", "Reste à payer", "Annuler cet achat", "Annuler cet achat ? Le stock ajouté sera retiré et la dette au fournisseur corrigée.", "Achat annulé", "Annuler l'achat", "Le montant payé dépasse le total", "Reste à payer au fournisseur : {n}", "En stock", "Aucun produit. Ajoutez-le d'abord dans le Stock.", "Aucun achat en cours.", "Fournisseur", "Achat comptant (sans fournisseur)", "Nouveau fournisseur", "N° de facture ou bon de livraison (facultatif)", "Ajouter un produit reçu…", "Total de l'achat", "Payé maintenant (GNF)", "Enregistrer l'achat", "prix d'achat actuel", "Prix d'achat unitaire", "Abandonner cet achat ?", "Abandonner", "Ajoutez au moins un produit", "Indiquez la quantité de chaque produit", "« {n} » se compte en entier", "Choisissez le fournisseur pour acheter à crédit", "Achat enregistré ✓", "Attention : le prix d'achat a augmenté", "vendu {p}, moins cher que l'achat", "vendu {p}", "Pensez à ajuster vos prix de vente (Stock → Prix en bloc).", "Compris", "Ce que vous devez aux fournisseurs", "Ajouter un fournisseur", "Rien à payer", "Aucun fournisseur. Ajoutez celui qui vous livre.", "Modifier le fournisseur", "Téléphone (WhatsApp)", "Fournisseur enregistré ✓", "Achat à crédit", "Produits liés", "Payer", "Historique de la dette", "Montant payé", "Les quantités proposées couvrent environ 2 semaines de ventes. Vous pouvez les changer.", "Sans fournisseur", "Reste", "alerte à", "Acheter", "Rien à recommander pour le moment. Tout est en stock.", "Bonjour{n}, c'est {s}. Je voudrais commander :", "Aucun produit choisi", "Aujourd'hui", "7 derniers jours", "7 jours", "Ce mois", "Mois dernier", "Cette année", "Autre…", "établi le {d}", "Document établi à partir des données saisies dans Boutique Facile. Il n'est pas certifié par un tiers.", "Rapports", "panier moyen", "Coût d'achat des produits vendus", "Marge brute", "Pertes de stock", "casse, vol, périmés, écarts", "Dettes remboursées par les clients", "Ventes par jour", "Moyens de paiement", "Produits les plus vendus", "Produit", "Qté", "Marge", "Par catégorie", "Sans catégorie", "Heures de vente", "Par vendeur", "Imprimer / PDF", "Fichier Excel (CSV)", "Rapport des ventes", "Résumé", "Ligne", "Retours", "Ventes nettes", "Moyen", "Heure", "N° reçu", "Vendeur", "Total ligne", "Remise de la vente", "Annulée", "oui", "{n} produit(s) vont bientôt manquer", "{n} client(s) en retard de paiement", "Vendu moins cher que l'achat", "perte", "Manque en caisse à la dernière clôture", "Manque en caisse à {n} clôtures récentes", "À surveiller", "Tous les conseils", "Ventes de la semaine", "Vous avez vendu {p} % de plus que la semaine d'avant ({a} contre {b}).", "Vous avez vendu {p} % de moins que la semaine d'avant ({a} contre {b}).", "En hausse", "En baisse", "Produits qui vont manquer", "Calculé avec vos ventes des 30 derniers jours.", "Rupture", "{n} jour(s)", "vendu environ {q} par jour", "Préparer la commande", "Aucun produit ne risque de manquer dans les 10 prochains jours.", "Les prévisions apparaissent après quelques jours de ventes.", "Vendu moins cher que l'achat (30 jours)", "vendu(s)", "Vérifiez le prix de vente ou la remise accordée.", "Prix de vente plus bas que le prix d'achat", "Changer les prix", "Produits qui rapportent le plus (30 jours)", "Stock qui ne bouge pas", "Aucune vente depuis 60 jours. Argent immobilisé : {n}", "Idée : une petite promotion, ou ne plus le racheter.", "Ce conseil apparaît après 45 jours d'utilisation.", "Clients en retard", "Voir et relancer", "Écarts de caisse", "Il manquait de l'argent à la dernière clôture : {a}.", "Il manquait de l'argent à {n} des {m} dernières clôtures, pour {a} en tout.", "{n} produit(s) périmés ou bientôt périmés.", "Conseiller", "Ces conseils sont de simples calculs faits sur votre téléphone avec vos ventes. Aucune donnée ne quitte l'appareil.", "Pas encore assez de ventes pour donner des conseils.", "Ventes (toutes taxes comprises)", "Coût d'achat des marchandises vendues", "Pertes de stock (casse, vol, périmés, écarts)", "Commissions Mobile Money gagnées", "Résultat de la période", "À côté du résultat", "Marchandises achetées", "Dettes clients encaissées", "Retraits du patron", "Apports d'argent", "TVA (estimation)", "TVA sur les ventes", "TVA sur les achats", "TVA à reverser", "Calculée avec un taux de {t} % compris dans les prix. À vérifier avec votre comptable.", "Entrées", "Sorties", "Solde de la période", "Entrée", "Sortie", "Cumul", "Seuls les {n} derniers mouvements sont affichés ici. Le fichier CSV contient tout.", "Aucun mouvement sur cette période.", "Les ventes à crédit n'apparaissent pas ici : l'argent n'est pas encore rentré.", "Situation à aujourd'hui. La trésorerie est une estimation basée sur vos dernières clôtures de caisse.", "Ce que vous avez", "Valeur du stock (prix d'achat moyen)", "Clients qui vous doivent", "Faites une clôture de caisse pour connaître votre argent disponible.", "Ce que vous devez", "Dettes envers les fournisseurs", "Valeur nette estimée", "Comptabilité", "Documents indicatifs, faits avec vos saisies. À faire valider par un comptable avant toute déclaration.", "Résultat", "Livre de caisse", "Situation", "Pour le comptable", "Livre de caisse (CSV)", "Ventes (CSV)", "Dépenses et achats (CSV)", "Stock valorisé (CSV)", "Créances et dettes (CSV)", "Compte", "Type", "Libellé", "Saisi par", "Catégorie ou fournisseur", "Montant", "Note", "Achat de marchandises", "Payé {a}, reste {b}", "Unité", "Prix d'achat moyen", "Valeur", "Dossier comptable", "Résultat simplifié", "Situation à aujourd'hui", "Clients qui doivent", "estimation", "Seuls les {n} derniers mouvements sont imprimés. Le fichier CSV contient tout.", "Les ventes à crédit ne figurent pas dans le livre de caisse. À valider par un comptable.", "Dossier pour une banque", "Un document d'une page avec vos chiffres réels des derniers mois, à imprimer ou envoyer en PDF. Il est établi par vous, à partir de vos ventes enregistrées : il n'est pas certifié.", "Période", "mois", "Montant demandé (GNF, facultatif)", "Objet du financement (facultatif)", "Nom du gérant", "Données disponibles", "jours", "Ventes sur la période", "Ventes moyennes par mois", "Nombre de ventes", "Résultat estimé sur la période", "Valeur du stock", "Vous n'utilisez l'application que depuis {n} jours : le dossier sera plus convaincant avec plus de mois de ventes.", "Résumé d'activité", "Période : {n} derniers mois", "Résultat estimé", "Montant demandé", "Données issues de l'application Boutique Facile, non certifiées.", "Dossier d'activité commerciale", "{n} derniers mois", "Le commerce", "Information", "Gérant", "Adresse", "NIF", "Début des enregistrements", "Demande", "Objet", "Activité mois par mois", "Mois", "Nb ventes", "Indicateurs", "Indicateur", "Panier moyen", "Je certifie que ces chiffres sont tirés de mes enregistrements.", "Fait le {d}", "Signature", "Patron", "Historique, reçus, retours, annulations", "Loyer, transport, retraits du patron…", "Marchandise reçue, dettes, commandes", "Dépôts, retraits, commissions", "Ventes, bénéfice, produits, graphiques", "Ruptures à venir, pertes, stock qui dort", "Livre de caisse, résultat, pour le comptable", "Document d'activité à imprimer", "Vendeurs et codes", "Un code par personne", "Plusieurs boutiques", "Voir toutes vos boutiques ensemble", "Sauvegarde et mémoire", "Dernière : {d}", "Pas encore de sauvegarde", "Langue", "Réglages", "Commerce, reçus, modules, remises", "Aide et à propos", "Version {v}", "Votre commerce", "Reçus", "Largeur du papier", "Message en bas du reçu", "Arrondir les totaux vers le bas à", "Remise maximale d'un vendeur sans le code du patron (%)", "Délai de paiement par défaut des clients (jours)", "Les vendeurs voient les prix d'achat et les bénéfices", "Obliger à ouvrir la caisse avant de vendre", "Modules", "Pharmacie : lots, péremption, ordonnances, équivalents", "Alerte de péremption (jours avant)", "Agent Mobile Money : dépôts, retraits, commissions", "Commission habituelle (% du montant)", "TVA : calculer une estimation (désactivée par défaut)", "Taux de TVA (%)", "Affichage", "Mode simple : gros boutons, moins de choses à l'écran", "Écriture plus grande", "Le nom du commerce est nécessaire", "Réglages enregistrés ✓", "Module pharmacie", "L'application aide à suivre les lots, les dates de péremption et les ordonnances. Elle ne remplace ni la réglementation pharmaceutique, ni le pharmacien responsable, ni les contrôles de l'autorité sanitaire.", "Vérifiez toujours les dates et les ordonnances avant de délivrer un médicament.", "J'ai compris", "Version d'essai en ligne : l'enregistrement de fichiers est bloqué ici. La sauvegarde fonctionne dans la version installée sur le téléphone.", "Calcul de la mémoire…", "Vous n'avez encore jamais fait de sauvegarde.", "Dernière sauvegarde : {a} (il y a {n} jours)", "Le fichier contient tous vos produits, ventes, clients et photos. Gardez-le dans WhatsApp, Google Drive, votre e-mail ou sur un ordinateur.", "Mot de passe pour protéger le fichier (facultatif)", "Avec un mot de passe, il faudra le saisir pour restaurer. Notez-le bien : il ne peut pas être retrouvé.", "Restaurer une sauvegarde", "Remplace les données de ce téléphone par celles du fichier. Utile après un changement de téléphone.", "Protéger la mémoire", "Demande au téléphone de ne pas effacer les données de l'application quand il manque de place.", "Protéger", "{a} utilisés sur {b} disponibles", "{a} utilisés sur environ 4,5 Mo disponibles", "Mémoire de l'application", "produits", "produit", "ventes", "vente", "clients", "client", "photos", "photo", "Presque plein : faites une sauvegarde puis libérez de la place.", "Votre navigateur limite la mémoire à environ 5 Mo. Faites des sauvegardes régulières.", "Protégée", "Pas encore protégée", "Mémoire protégée ✓", "Le téléphone n'a pas accepté. Faites des sauvegardes.", "Impossible ici", "Sauvegarde créée ✓", "Sauvegarde impossible", "Fichier illisible", "Remplacer les données de ce téléphone par cette sauvegarde ({a} produits, {b} ventes) ?", "Sauvegarde restaurée ✓", "Restaurer", "Mot de passe", "Mot de passe incorrect, essayez encore", "Ce fichier est protégé. Entrez le mot de passe.", "Fichier non reconnu", "Chaque personne a son code à 4 chiffres. Les ventes sont notées au nom du vendeur. Une remise trop forte, un retour, une annulation ou un dépassement de crédit demandent le code du patron.", "désactivé", "sans code", "Désactiver", "Activer", "Ajouter un vendeur", "Ce que peut faire un vendeur", "Vendre, encaisser une dette, voir ses propres ventes et ouvrir ou fermer sa caisse. Il ne voit pas les prix d'achat ni les bénéfices (sauf si vous l'autorisez dans les Réglages) et ne peut pas modifier le stock, les prix ou les rapports.", "Nouveau vendeur", "Nouveau code à 4 chiffres (laisser vide pour garder l'ancien)", "Code à 4 chiffres", "Ce code est déjà utilisé par quelqu'un d'autre", "Comment ça marche", "touchez les produits, puis choisissez Espèces, Mobile Money ou À crédit. Un client peut aussi payer une partie maintenant (acompte) et le reste plus tard.", "ajoutez vos produits et vos achats. L'appli prévient quand il faut recommander.", "suivez les dettes, relancez par WhatsApp ou SMS, encaissez.", "ouvrez la caisse le matin, fermez-la le soir : l'appli montre s'il manque de l'argent.", "Où sont vos données ?", "Dans la version d'essai en ligne, vos données ne sont pas garanties : elles peuvent disparaître. Installez l'application sur le téléphone pour les garder.", "Tout est enregistré sur ce téléphone, sans internet. Personne d'autre ne peut les voir. Si le téléphone est perdu ou cassé, vos données sont perdues : faites une sauvegarde chaque semaine.", "Le code PIN empêche les curieux d'ouvrir l'application, mais il ne chiffre pas les données. Ne laissez pas votre téléphone déverrouillé.", "Limites à connaître", "Plusieurs boutiques : les chiffres se regroupent par fichiers échangés, pas en direct.", "Les paiements Mobile Money sont notés à la main : vérifiez-les avec le SMS de l'opérateur.", "Les rapports et la comptabilité sont indicatifs : faites-les valider par un comptable.", "L'impression passe par le système du téléphone (imprimante ou PDF).", "À propos", "version {v}", "Chaque boutique garde ses données sur son propre téléphone. Pour voir toutes vos boutiques ensemble, chaque gérant envoie un « rapport de boutique » (un petit fichier) et vous l'importez ici. Le fichier ne contient ni photos, ni pièces d'identité.", "Envoyer le rapport de cette boutique", "Période à envoyer", "30 derniers jours", "3 derniers mois", "12 derniers mois", "Créer et envoyer le rapport", "Importer le rapport d'une autre boutique", "Boutiques importées", "Rapport du {d}", "depuis le {d}", "Aucune boutique importée.", "Voir toutes les boutiques ensemble", "Rapport créé ✓", "{n} rapport(s) importé(s) ✓", "Ce rapport vient de cette boutique.", "{n} fichier(s) non reconnu(s)", "Retirer cette boutique de la liste ?", "Retirer", "Toutes les boutiques", "résultat estimé", "Boutique", "Clients doivent", "données incomplètes", "rapport du {d}", "Les rapports importés sont des photos prises à leur date. Demandez de nouveaux rapports pour mettre à jour.", "Rapport de toutes les boutiques", "traduit", "Traduire", "Ajouter une langue", "Les traductions en soussou, pular ou malinké ne sont pas fournies : elles doivent être saisies par une personne qui parle la langue. Tant qu'un texte n'est pas traduit, le français s'affiche.", "Astuce : exportez le fichier de traduction, faites-le compléter par un proche, puis importez-le sur chaque téléphone.", "Nom de la langue", "Cette langue existe déjà", "Tout est traduit. Bravo !", "Rien trouvé.", "Avant", "Après", "textes traduits", "Choisissez une langue.", "Chercher un texte…", "Pas encore traduits", "Gardez les mots entre accolades, comme {n}, tels quels.", "Fichiers de traduction", "Exporter (fichier)", "Exporter pour Excel (CSV)", "Importer un fichier de traduction (.json ou .csv)", "Supprimer cette langue", "Il manque {x} dans la traduction", "Français", "Traduction", "{n} texte(s) importé(s) ✓", "Aucun texte reconnu", "Supprimer cette langue et ses traductions ?", "La caméra n'est pas disponible ici", "Placez le code-barres à plat dans le cadre", "Terminer", "Autorisez la caméra dans les réglages du téléphone", "La caméra ne démarre pas", "Code lu : {c}", "Code {c} inconnu", "{n} au panier", "stock insuffisant"];
-const BUILD='48f6063468';
+const CAT=["Pas possible dans la version d'essai", "Cette action est bloquée dans la version d'essai en ligne. Elle fonctionne dans la version installée sur le téléphone.", "Copiez ce texte", "Touchez le texte pour le sélectionner, copiez-le, puis collez-le dans WhatsApp ou un message.", "Fermer", "Texte copié : collez-le dans WhatsApp ou un message", "Retour", "Annuler", "Valider", "Oui", "Non", "Version d'essai en ligne", "Tout est enregistré sur ce téléphone", "En ligne", "Hors ligne", "Verrouiller", "Vendre", "Stock", "Clients", "Caisse", "Plus", "Les données ne sont pas enregistrées.", "La mémoire est pleine ou bloquée. Faites une sauvegarde tout de suite.", "Sauvegarder", "Une nouvelle version est prête. Fermez puis rouvrez l'application pour l'utiliser.", "Voir", "Version d'essai en ligne : vos données ne sont pas garanties ici, et la caméra, l'impression et l'enregistrement de fichiers sont bloqués. Pour garder vos données et travailler sans internet, utilisez la version installée sur le téléphone.", "Aucune sauvegarde pour le moment.", "Dernière sauvegarde il y a {n} jours.", "Sauvegardez chaque semaine pour ne rien perdre.", "Sauvegarder maintenant", "La mémoire du téléphone est presque pleine. Faites une sauvegarde et libérez de la place.", "La mémoire de l'application est presque pleine. Faites une sauvegarde.", "Code du patron", "Le patron doit saisir son code pour autoriser cette action.", "Code incorrect", "Créez le code PIN du propriétaire (4 chiffres)", "Entrez votre code PIN", "Ouvrir", "Code oublié ?", "Le code a 4 chiffres", "Votre code de secours", "Si vous oubliez votre code PIN, ce code de secours permet d'en créer un nouveau sans perdre vos données.", "Notez-le sur papier et gardez-le en lieu sûr. Il ne sera plus affiché.", "J'ai noté le code", "Code de secours absent", "Aucun code de secours n'a été créé sur ce téléphone. Réinstallez l'application puis restaurez une sauvegarde.", "Code de secours", "Entrez le code de secours à 8 chiffres", "Code de secours incorrect", "Bienvenue", "Nom de votre commerce", "Ma boutique", "Type de commerce", "Boutique, alimentation", "Pharmacie", "Quincaillerie, matériaux", "Autre commerce", "Votre téléphone (facultatif)", "Pour commencer", "Commencer avec un stock vide", "Essayer avec des produits d'exemple", "Commencer", "Vert", "Bleu", "Violet", "Orange", "Rouge", "Ardoise", "Rechercher ou scanner un code…", "Tout", "Favoris", "Détail", "Gros", "Périmé", "Bientôt périmé", "en stock", "au panier", "Même substance :", "Aucun produit trouvé.", "Aucun produit. Ajoutez-en dans l'onglet Stock.", "Modifier", "Mettre en attente", "Vider", "Espèces", "À crédit", "Aucun produit pour « {q} »", "Stock insuffisant pour {n} : il reste {q}. Ajouter quand même ?", "Ajouter", "Effacer", "Quantité", "unité", "Ajouter au panier", "Quantité invalide", "En attente", "art.", "Vente mise en attente. Touchez-la en haut pour la reprendre.", "Prix du tarif", "prix négocié", "Sous le prix d'achat", "Format", "Prix unitaire", "Total", "Modifier le panier", "Total du panier", "OK", "Autre", "La caisse est fermée. L'ouvrir maintenant ?", "Ouvrir la caisse", "Prix négocié", "Encaisser", "{n} article(s)", "Total à payer", "Remise", "Le client donne aussi des espèces", "À crédit (dette du client)", "Montant donné par le client", "Monnaie à rendre", "Revenir au calcul automatique", "Numéro de transaction du SMS (facultatif)", "Coller le SMS reçu pour le contrôler (facultatif)", "Nom du client", "Détails du crédit (téléphone, échéance, pièce d'identité)", "Téléphone", "Échéance", "Dans {n} jours", "Dans 7 jours", "Dans 30 jours", "Pas de date", "Autre date…", "N° de carte d'identité ou de passeport", "Photo de la pièce (facultatif)", "Le client accepte l'enregistrement de sa pièce d'identité.", "Ordonnance (n° ou nom du médecin, facultatif)", "Répartir autrement", "Valider la vente", "Le client donne (espèces)", "Exact", "Reste à payer", "Si le client donne moins, le reste va sur :", "À payer avec :", "Acompte reçu : {a}. Reste dû par le client : {b}.", "Reste à répartir : {n}", "Trop payé de {n}", "Crédit", "Dette actuelle : {n}", "Client connu, aucune dette", "Plafond : {n}", "pièce déjà enregistrée", "Photo prête ✓", "Aucun montant trouvé dans ce SMS. Vérifiez le texte collé.", "Le SMS indique {n}, comme le montant à payer.", "Le SMS indique {a} mais cette vente demande {b} en Mobile Money.", "Ce numéro de transaction a déjà servi pour la vente n° {n}.", "Ce contrôle lit seulement le texte collé. Vérifiez aussi votre solde Orange Money / MTN.", "Le total payé doit être égal à {n}", "Le nom du client est nécessaire", "Le client doit accepter l'enregistrement de sa pièce", "Choisissez la date d'échéance", "Remise de {n} % : le patron doit autoriser.", "Plafond de crédit dépassé : {a} + {b} dépasse {l}. Autoriser quand même ?", "Le patron doit autoriser un dépassement du plafond.", "Autoriser", "Ce numéro de transaction a déjà servi pour la vente n° {n}. Continuer quand même ?", "Continuer", "Vente enregistrée", "Reçu", "Trop tard pour annuler ici", "Pour annuler une ancienne vente, allez dans Plus > Ventes.", "Annuler cette vente ? Le stock sera remis.", "Vente annulée", "Annuler la vente", "Tél.", "Reçu n° {n}", "Vendeur : {n}", "TOTAL", "Donné", "Rendu", "Reste dû par {n} : {a}", "Envoyer le reçu", "Imprimer", "Nouvelle vente", "Autre application", "Numéro du client (facultatif)", "Impression impossible ici", "Rechercher un produit…", "Tous", "À recommander", "Péremption", "Archivés", "Ajouter un produit", "Inventaire", "Prix en bloc", "Achats", "Valeur du stock (prix d'achat)", "Aucun produit dans cette liste.", "Aucun produit. Touchez « Ajouter un produit ».", "Expire dans {n} j", "lot(s)", "Vente", "achat", "Code", "Réactiver", "Couleur (facultatif)", "Unité de base", "pièce, kg, boîte…", "Code-barres (à taper, avec une douchette ou la caméra)", "Prix de gros (facultatif)", "Alerte quand il reste moins de", "Autres formats de vente (carton, boîte, plaquette…)", "Nom du format", "Contient (en unités de base)", "Prix de vente", "Prix de gros", "Retirer ce format", "Ajouter un format", "Format vendu par défaut", "Vendu au poids ou à la mesure (quantités avec virgule)", "Favori (affiché en premier à la caisse)", "TVA applicable à ce produit", "Fournisseur habituel", "Vendu sur ordonnance", "Substance active (DCI) — pour trouver les équivalents", "Suivre les lots et les dates de péremption", "N° de lot", "Plus d'options", "Nouveau produit", "Modifier le produit", "Nom du produit", "Format (ex. 500 g, 1 L)", "Catégorie (ex. boissons, médicaments)", "Prix d'achat (GNF)", "Prix de vente (GNF)", "Quantité en stock au départ", "Stock actuel", "Ajouter du stock", "Corriger le stock", "Archiver", "Enregistrer", "Le nom et les prix sont nécessaires", "Chaque format a un nom, un contenu et un prix", "Ce code-barres est déjà utilisé par « {n} ». Touchez Enregistrer pour confirmer.", "Produit enregistré ✓", "Écart de comptage", "Casse", "Vol ou perte", "Don ou échantillon", "Stock de départ", "Retour abîmé", "stock actuel", "Lot", "Quantité réellement comptée", "Motif", "Note (facultatif)", "Stock corrigé ✓", "Comptez ce qu'il y a sur les étagères et notez la quantité. Laissez vide les produits que vous ne comptez pas.", "Rechercher…", "Voir les écarts", "Dans l'appli", "Compté", "Aucun produit.", "Aucune quantité comptée", "Écarts trouvés", "compté", "Valeur des écarts", "Aucun écart : le stock est exact. Bravo !", "Motif des écarts", "Appliquer", "Inventaire enregistré ✓", "Changer les prix en bloc", "Quels produits ?", "Tous les produits", "Une catégorie", "Je choisis les produits", "Changement", "Arrondir à", "Pas d'arrondi", "Prix de vente (détail)", "prix vont changer", "gros", "sous le prix d'achat", "Appliquer ces prix", "Aucun prix ne change avec ces réglages.", "Annuler le dernier changement de prix", "Changer {n} prix ?", "Prix modifiés ✓", "Remettre les anciens prix ?", "Anciens prix remis ✓", "Remettre", "En retard de {n} j", "À payer aujourd'hui", "Échéance dans {n} j", "Personne dans cette liste.", "Aucun client. Une vente « À crédit » ou le bouton « Ajouter un client » en crée un.", "pièce n° {n}", "photo de la pièce", "aucune pièce enregistrée", "Relancer", "Aucune dette", "Total que les clients vous doivent", "{n} client(s) en retard : {a}", "Rechercher un client…", "Dettes", "En retard", "Ajouter un client", "Fiche client", "Nouveau client", "Nom", "Plafond de crédit (GNF)", "sans limite", "Photo de la pièce", "déjà enregistrée", "Date promise de paiement", "Le nom est nécessaire", "Ce nom existe déjà", "Client enregistré ✓", "Vente n° {n}", "Annulation / retour", "Paiement", "Dette actuelle", "Plafond de crédit", "Date promise", "Achats enregistrés", "Voir la pièce", "Historique", "Rien pour le moment.", "Pièce d'identité", "Photo introuvable.", "Montant reçu", "Montant invalide", "Montant trop élevé", "Paiement enregistré ✓", "Envoyer un reçu de paiement à {n} ?", "Paiement reçu de", "Reste dû", "Dette soldée. Merci !", "Envoyer", "Bonjour {n}, c'est {s}. Vous nous devez {a}", "(échéance dépassée depuis le {d})", "(à régler avant le {d})", "Merci de passer régler.", "Merci !", "Message", "Pas de numéro enregistré : choisissez le contact dans l'application.", "Ventes", "N° de reçu, client, produit…", "Aucune vente.", "remise", "retour", "annulée", "tarif", "Client", "Ordonnance", "Retour du {d}", "Retour / échange", "Cette vente a déjà un retour : annulation impossible.", "Annulation impossible", "Le client a déjà payé une partie de cette dette. Utilisez « Retour / échange » pour rembourser le client.", "Annuler une vente demande le code du patron.", "Tout a déjà été retourné.", "Indiquez ce que le client rapporte. Pour un échange, faites le retour puis une nouvelle vente.", "vendu", "Montant à rembourser", "Rembourser en", "Déduire de la dette", "Remettre les articles en stock", "Motif (facultatif)", "Valider le retour", "Indiquez au moins un article", "Retour enregistré ✓", "Un retour demande le code du patron.", "Autre mobile", "Annulation de la vente n° {n}", "Retour sur la vente n° {n}", "Paiement de {n}", "Retrait du patron", "Apport d'argent", "Annulation", "Achat", "Annulation d'un achat", "Paiement à {n}", "Commission", "Loyer", "Transport", "Carburant, électricité", "Salaires", "Fournitures", "Impôts et taxes", "Frais Mobile Money", "Réparations", "Nouvelle dépense", "Retrait personnel du patron", "Montant (GNF)", "Catégorie", "Reçu en", "Payé avec", "Date", "Enregistré ✓", "Dépenses", "Dépenses du mois", "Dépense", "Apport", "Aucune dépense ce mois-ci.", "Supprimer cette ligne ?", "Supprimer", "Notez l'argent qui est déjà dans le tiroir et sur vos comptes Mobile Money.", "Caisse ouverte ✓", "Clôturer la caisse", "Comptez l'argent et notez le solde réel de chaque compte. L'appli calcule l'écart.", "Attendu", "Compté / solde réel", "Écart", "Clôturer", "Entrez le montant compté pour chaque ligne", "Caisse clôturée", "Les espèces sont justes. Bravo !", "Il manque {n} en espèces.", "Il y a {n} en trop en espèces.", "Envoyer le résumé", "Clôture de caisse", "attendu", "écart", "Résumé du {d}", "ventes", "vente", "Dettes remboursées", "Retours remboursés", "Bénéfice estimé", "Les plus vendus", "Les clients vous doivent", "{n} en retard", "Produits à recommander", "Ventes du jour", "vente(s)", "retours", "Envoyer le résumé du jour", "Caisse ouverte à {h}", "Espèces attendues", "Caisse fermée", "Ouvrez la caisse pour que l'appli vérifie l'argent en fin de journée.", "Voir les dépenses", "Agent Mobile Money", "{n} paiement(s) à vérifier avec l'opérateur", "Remises accordées", "Commissions Mobile Money", "après dépenses et pertes", "Dernières ventes", "Aucune vente aujourd'hui.", "Toutes les ventes", "Dernières clôtures", "Dépôt client", "Retrait client", "Achat de float", "Retour de float en espèces", "Votre commission (GNF)", "Reçue en espèces", "Créditée sur le compte", "Téléphone du client (facultatif)", "Référence (facultatif)", "Opération enregistrée ✓", "Acheter du float", "Rendre du float", "Dépôts du jour", "Retraits du jour", "Commissions du jour", "Solde {w} attendu", "Ouvrez la caisse pour suivre le solde attendu de vos comptes.", "commission", "Aucune opération aujourd'hui.", "Achats et fournisseurs", "Nouvel achat", "Fournisseurs", "Achat comptant", "produit(s)", "annulé", "dû", "Aucun achat enregistré. Touchez « Nouvel achat » quand vous recevez de la marchandise.", "Payé", "Annuler cet achat", "Annuler cet achat ? Le stock ajouté sera retiré et la dette au fournisseur corrigée.", "Achat annulé", "Annuler l'achat", "Le montant payé dépasse le total", "Reste à payer au fournisseur : {n}", "En stock", "Aucun produit. Ajoutez-le d'abord dans le Stock.", "Aucun achat en cours.", "Fournisseur", "Achat comptant (sans fournisseur)", "Nouveau fournisseur", "N° de facture ou bon de livraison (facultatif)", "Ajouter un produit reçu…", "Total de l'achat", "Payé maintenant (GNF)", "Enregistrer l'achat", "prix d'achat actuel", "Prix d'achat unitaire", "Abandonner cet achat ?", "Abandonner", "Ajoutez au moins un produit", "Indiquez la quantité de chaque produit", "« {n} » se compte en entier", "Choisissez le fournisseur pour acheter à crédit", "Achat enregistré ✓", "Attention : le prix d'achat a augmenté", "vendu {p}, moins cher que l'achat", "vendu {p}", "Pensez à ajuster vos prix de vente (Stock → Prix en bloc).", "Compris", "Ce que vous devez aux fournisseurs", "Ajouter un fournisseur", "Rien à payer", "Aucun fournisseur. Ajoutez celui qui vous livre.", "Modifier le fournisseur", "Téléphone (WhatsApp)", "Fournisseur enregistré ✓", "Achat à crédit", "Produits liés", "Payer", "Historique de la dette", "Montant payé", "Les quantités proposées couvrent environ 2 semaines de ventes. Vous pouvez les changer.", "Sans fournisseur", "Reste", "alerte à", "Acheter", "Rien à recommander pour le moment. Tout est en stock.", "Bonjour{n}, c'est {s}. Je voudrais commander :", "Aucun produit choisi", "Aujourd'hui", "7 derniers jours", "7 jours", "Ce mois", "Mois dernier", "Cette année", "Autre…", "établi le {d}", "Document établi à partir des données saisies dans Boutique Facile. Il n'est pas certifié par un tiers.", "Rapports", "panier moyen", "Coût d'achat des produits vendus", "Marge brute", "Pertes de stock", "casse, vol, périmés, écarts", "Dettes remboursées par les clients", "Ventes par jour", "Moyens de paiement", "Produits les plus vendus", "Produit", "Qté", "Marge", "Par catégorie", "Sans catégorie", "Heures de vente", "Par vendeur", "Imprimer / PDF", "Fichier Excel (CSV)", "Rapport des ventes", "Résumé", "Ligne", "Retours", "Ventes nettes", "Moyen", "Heure", "N° reçu", "Vendeur", "Total ligne", "Remise de la vente", "Annulée", "oui", "{n} produit(s) vont bientôt manquer", "{n} client(s) en retard de paiement", "Vendu moins cher que l'achat", "perte", "Manque en caisse à la dernière clôture", "Manque en caisse à {n} clôtures récentes", "À surveiller", "Tous les conseils", "Ventes de la semaine", "Vous avez vendu {p} % de plus que la semaine d'avant ({a} contre {b}).", "Vous avez vendu {p} % de moins que la semaine d'avant ({a} contre {b}).", "En hausse", "En baisse", "Produits qui vont manquer", "Calculé avec vos ventes des 30 derniers jours.", "Rupture", "{n} jour(s)", "vendu environ {q} par jour", "Préparer la commande", "Aucun produit ne risque de manquer dans les 10 prochains jours.", "Les prévisions apparaissent après quelques jours de ventes.", "Vendu moins cher que l'achat (30 jours)", "vendu(s)", "Vérifiez le prix de vente ou la remise accordée.", "Prix de vente plus bas que le prix d'achat", "Changer les prix", "Produits qui rapportent le plus (30 jours)", "Stock qui ne bouge pas", "Aucune vente depuis 60 jours. Argent immobilisé : {n}", "Idée : une petite promotion, ou ne plus le racheter.", "Ce conseil apparaît après 45 jours d'utilisation.", "Clients en retard", "Voir et relancer", "Écarts de caisse", "Il manquait de l'argent à la dernière clôture : {a}.", "Il manquait de l'argent à {n} des {m} dernières clôtures, pour {a} en tout.", "{n} produit(s) périmés ou bientôt périmés.", "Conseiller", "Ces conseils sont de simples calculs faits sur votre téléphone avec vos ventes. Aucune donnée ne quitte l'appareil.", "Pas encore assez de ventes pour donner des conseils.", "Ventes (toutes taxes comprises)", "Coût d'achat des marchandises vendues", "Pertes de stock (casse, vol, périmés, écarts)", "Commissions Mobile Money gagnées", "Résultat de la période", "À côté du résultat", "Marchandises achetées", "Dettes clients encaissées", "Retraits du patron", "Apports d'argent", "TVA (estimation)", "TVA sur les ventes", "TVA sur les achats", "TVA à reverser", "Calculée avec un taux de {t} % compris dans les prix. À vérifier avec votre comptable.", "Entrées", "Sorties", "Solde de la période", "Entrée", "Sortie", "Cumul", "Seuls les {n} derniers mouvements sont affichés ici. Le fichier CSV contient tout.", "Aucun mouvement sur cette période.", "Les ventes à crédit n'apparaissent pas ici : l'argent n'est pas encore rentré.", "Situation à aujourd'hui. La trésorerie est une estimation basée sur vos dernières clôtures de caisse.", "Ce que vous avez", "Valeur du stock (prix d'achat moyen)", "Clients qui vous doivent", "Faites une clôture de caisse pour connaître votre argent disponible.", "Ce que vous devez", "Dettes envers les fournisseurs", "Valeur nette estimée", "Comptabilité", "Documents indicatifs, faits avec vos saisies. À faire valider par un comptable avant toute déclaration.", "Résultat", "Livre de caisse", "Situation", "Pour le comptable", "Livre de caisse (CSV)", "Ventes (CSV)", "Dépenses et achats (CSV)", "Stock valorisé (CSV)", "Créances et dettes (CSV)", "Compte", "Type", "Libellé", "Saisi par", "Catégorie ou fournisseur", "Montant", "Note", "Achat de marchandises", "Payé {a}, reste {b}", "Unité", "Prix d'achat moyen", "Valeur", "Dossier comptable", "Résultat simplifié", "Situation à aujourd'hui", "Clients qui doivent", "estimation", "Seuls les {n} derniers mouvements sont imprimés. Le fichier CSV contient tout.", "Les ventes à crédit ne figurent pas dans le livre de caisse. À valider par un comptable.", "Dossier pour une banque", "Un document d'une page avec vos chiffres réels des derniers mois, à imprimer ou envoyer en PDF. Il est établi par vous, à partir de vos ventes enregistrées : il n'est pas certifié.", "Période", "mois", "Montant demandé (GNF, facultatif)", "Objet du financement (facultatif)", "Nom du gérant", "Données disponibles", "jours", "Ventes sur la période", "Ventes moyennes par mois", "Nombre de ventes", "Résultat estimé sur la période", "Valeur du stock", "Vous n'utilisez l'application que depuis {n} jours : le dossier sera plus convaincant avec plus de mois de ventes.", "Résumé d'activité", "Période : {n} derniers mois", "Résultat estimé", "Montant demandé", "Données issues de l'application Boutique Facile, non certifiées.", "Dossier d'activité commerciale", "{n} derniers mois", "Le commerce", "Information", "Gérant", "Adresse", "NIF", "Début des enregistrements", "Demande", "Objet", "Activité mois par mois", "Mois", "Nb ventes", "Indicateurs", "Indicateur", "Panier moyen", "Je certifie que ces chiffres sont tirés de mes enregistrements.", "Fait le {d}", "Signature", "Patron", "Historique, reçus, retours, annulations", "Loyer, transport, retraits du patron…", "Marchandise reçue, dettes, commandes", "Dépôts, retraits, commissions", "Ventes, bénéfice, produits, graphiques", "Ruptures à venir, pertes, stock qui dort", "Livre de caisse, résultat, pour le comptable", "Document d'activité à imprimer", "Vendeurs et codes", "Un code par personne", "Plusieurs boutiques", "Voir toutes vos boutiques ensemble", "Sauvegarde et mémoire", "Dernière : {d}", "Pas encore de sauvegarde", "Langue", "Réglages", "Commerce, reçus, modules, remises", "Aide et à propos", "Version {v}", "Votre commerce", "Reçus", "Largeur du papier", "Message en bas du reçu", "Arrondir les totaux vers le bas à", "Remise maximale d'un vendeur sans le code du patron (%)", "Délai de paiement par défaut des clients (jours)", "Après une vente", "Barre rapide (le plus rapide)", "Reçu complet à chaque vente", "Les vendeurs voient les prix d'achat et les bénéfices", "Obliger à ouvrir la caisse avant de vendre", "Modules", "Pharmacie : lots, péremption, ordonnances, équivalents", "Alerte de péremption (jours avant)", "Agent Mobile Money : dépôts, retraits, commissions", "Commission habituelle (% du montant)", "TVA : calculer une estimation (désactivée par défaut)", "Taux de TVA (%)", "Affichage", "Couleur principale", "Mode simple : gros boutons, moins de choses à l'écran", "Écriture plus grande", "Le nom du commerce est nécessaire", "Réglages enregistrés ✓", "Module pharmacie", "L'application aide à suivre les lots, les dates de péremption et les ordonnances. Elle ne remplace ni la réglementation pharmaceutique, ni le pharmacien responsable, ni les contrôles de l'autorité sanitaire.", "Vérifiez toujours les dates et les ordonnances avant de délivrer un médicament.", "J'ai compris", "Version d'essai en ligne : l'enregistrement de fichiers est bloqué ici. La sauvegarde fonctionne dans la version installée sur le téléphone.", "Calcul de la mémoire…", "Vous n'avez encore jamais fait de sauvegarde.", "Dernière sauvegarde : {a} (il y a {n} jours)", "Le fichier contient tous vos produits, ventes, clients et photos. Gardez-le dans WhatsApp, Google Drive, votre e-mail ou sur un ordinateur.", "Mot de passe pour protéger le fichier (facultatif)", "Avec un mot de passe, il faudra le saisir pour restaurer. Notez-le bien : il ne peut pas être retrouvé.", "Restaurer une sauvegarde", "Remplace les données de ce téléphone par celles du fichier. Utile après un changement de téléphone.", "Protéger la mémoire", "Demande au téléphone de ne pas effacer les données de l'application quand il manque de place.", "Protéger", "{a} utilisés sur {b} disponibles", "{a} utilisés sur environ 4,5 Mo disponibles", "Mémoire de l'application", "produits", "produit", "clients", "client", "photos", "photo", "Presque plein : faites une sauvegarde puis libérez de la place.", "Votre navigateur limite la mémoire à environ 5 Mo. Faites des sauvegardes régulières.", "Protégée", "Pas encore protégée", "Mémoire protégée ✓", "Le téléphone n'a pas accepté. Faites des sauvegardes.", "Impossible ici", "Sauvegarde créée ✓", "Sauvegarde impossible", "Fichier illisible", "Remplacer les données de ce téléphone par cette sauvegarde ({a} produits, {b} ventes) ?", "Sauvegarde restaurée ✓", "Restaurer", "Mot de passe", "Mot de passe incorrect, essayez encore", "Ce fichier est protégé. Entrez le mot de passe.", "Fichier non reconnu", "Chaque personne a son code à 4 chiffres. Les ventes sont notées au nom du vendeur. Une remise trop forte, un retour, une annulation ou un dépassement de crédit demandent le code du patron.", "désactivé", "sans code", "Désactiver", "Activer", "Ajouter un vendeur", "Ce que peut faire un vendeur", "Vendre, encaisser une dette, voir ses propres ventes et ouvrir ou fermer sa caisse. Il ne voit pas les prix d'achat ni les bénéfices (sauf si vous l'autorisez dans les Réglages) et ne peut pas modifier le stock, les prix ou les rapports.", "Nouveau vendeur", "Nouveau code à 4 chiffres (laisser vide pour garder l'ancien)", "Code à 4 chiffres", "Ce code est déjà utilisé par quelqu'un d'autre", "Comment ça marche", "touchez les produits, puis choisissez Espèces, Mobile Money ou À crédit. Un client peut aussi payer une partie maintenant (acompte) et le reste plus tard.", "ajoutez vos produits et vos achats. L'appli prévient quand il faut recommander.", "suivez les dettes, relancez par WhatsApp ou SMS, encaissez.", "ouvrez la caisse le matin, fermez-la le soir : l'appli montre s'il manque de l'argent.", "Où sont vos données ?", "Dans la version d'essai en ligne, vos données ne sont pas garanties : elles peuvent disparaître. Installez l'application sur le téléphone pour les garder.", "Tout est enregistré sur ce téléphone, sans internet. Personne d'autre ne peut les voir. Si le téléphone est perdu ou cassé, vos données sont perdues : faites une sauvegarde chaque semaine.", "Le code PIN empêche les curieux d'ouvrir l'application, mais il ne chiffre pas les données. Ne laissez pas votre téléphone déverrouillé.", "Limites à connaître", "Plusieurs boutiques : les chiffres se regroupent par fichiers échangés, pas en direct.", "Les paiements Mobile Money sont notés à la main : vérifiez-les avec le SMS de l'opérateur.", "Les rapports et la comptabilité sont indicatifs : faites-les valider par un comptable.", "L'impression passe par le système du téléphone (imprimante ou PDF).", "version {v}", "Chaque boutique garde ses données sur son propre téléphone. Pour voir toutes vos boutiques ensemble, chaque gérant envoie un « rapport de boutique » (un petit fichier) et vous l'importez ici. Le fichier ne contient ni photos, ni pièces d'identité.", "Envoyer le rapport de cette boutique", "Période à envoyer", "30 derniers jours", "3 derniers mois", "12 derniers mois", "Créer et envoyer le rapport", "Importer le rapport d'une autre boutique", "Boutiques importées", "Rapport du {d}", "depuis le {d}", "Aucune boutique importée.", "Voir toutes les boutiques ensemble", "Rapport créé ✓", "{n} rapport(s) importé(s) ✓", "Ce rapport vient de cette boutique.", "{n} fichier(s) non reconnu(s)", "Retirer cette boutique de la liste ?", "Retirer", "Toutes les boutiques", "résultat estimé", "Boutique", "Clients doivent", "données incomplètes", "rapport du {d}", "Les rapports importés sont des photos prises à leur date. Demandez de nouveaux rapports pour mettre à jour.", "Rapport de toutes les boutiques", "traduit", "Traduire", "Ajouter une langue", "Les traductions en soussou, pular ou malinké ne sont pas fournies : elles doivent être saisies par une personne qui parle la langue. Tant qu'un texte n'est pas traduit, le français s'affiche.", "Astuce : exportez le fichier de traduction, faites-le compléter par un proche, puis importez-le sur chaque téléphone.", "Nom de la langue", "Cette langue existe déjà", "Tout est traduit. Bravo !", "Rien trouvé.", "Avant", "Après", "textes traduits", "Choisissez une langue.", "Chercher un texte…", "Pas encore traduits", "Gardez les mots entre accolades, comme {n}, tels quels.", "Fichiers de traduction", "Exporter (fichier)", "Exporter pour Excel (CSV)", "Importer un fichier de traduction (.json ou .csv)", "Supprimer cette langue", "Il manque {x} dans la traduction", "Français", "Traduction", "{n} texte(s) importé(s) ✓", "Aucun texte reconnu", "Supprimer cette langue et ses traductions ?", "La caméra n'est pas disponible ici", "Placez le code-barres à plat dans le cadre", "Terminer", "Autorisez la caméra dans les réglages du téléphone", "La caméra ne démarre pas", "Code lu : {c}", "Code {c} inconnu", "{n} au panier", "stock insuffisant"];
+const LOGO_IC="<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" class=\"lgi\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"256\" height=\"256\" rx=\"56.01\" fill=\"#0E6B47\"/><g transform=\"translate(78.74 43.01) scale(0.52)\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M23,213V23H108.1A43.7,43.7 0 0 1 108.1,110.4H23M23,110.4H114.5A51.3,51.3 0 0 1 114.5,213H23\" stroke=\"#FFFFFF\" stroke-width=\"46\"/><path d=\"M9.5,268.5H179.3M9.5,304.5H179.3\" stroke=\"#F5B800\" stroke-width=\"19\"/></g></svg>",LOGO_WORD="<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1431.71 191\" class=\"lgw\" aria-hidden=\"true\" focusable=\"false\"><g transform=\"translate(0 0) scale(1) translate(9.5 137.5)\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path transform=\"translate(0 0)\" d=\"M0,-128V0\"/><path transform=\"translate(0 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(116 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(240 0)\" d=\"M0,-80V-40A40,40 0 0 0 80,-40\"/><path transform=\"translate(240 0)\" d=\"M80,-80V0\"/><path transform=\"translate(382 0)\" d=\"M0,-106V-17A17,17 0 0 0 17,0H24\"/><path transform=\"translate(382 0)\" d=\"M-21,-80H31\"/><path transform=\"translate(454 0)\" d=\"M0,-80V0\"/><circle cx=\"454\" cy=\"-110.28\" r=\"11.78\" fill=\"currentColor\" stroke=\"none\"/><path transform=\"translate(498 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(498 0)\" d=\"M80,-80V44\"/><path transform=\"translate(630 0)\" d=\"M0,-80V-40A40,40 0 0 0 80,-40\"/><path transform=\"translate(630 0)\" d=\"M80,-80V0\"/><path transform=\"translate(754 0)\" d=\"M0,-40H80A40,40 0 1 0 63.51,-7.64\"/><path transform=\"translate(934 0)\" d=\"M0,0V-97A31,31 0 0 1 31,-128H40\"/><path transform=\"translate(934 0)\" d=\"M-21,-80H35\"/><path transform=\"translate(1009 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(1009 0)\" d=\"M80,-80V0\"/><path transform=\"translate(1133 0)\" d=\"M65.71,-70.64A40,40 0 1 0 65.71,-9.36\"/><path transform=\"translate(1236.71 0)\" d=\"M0,-80V0\"/><circle cx=\"1236.71\" cy=\"-110.28\" r=\"11.78\" fill=\"currentColor\" stroke=\"none\"/><path transform=\"translate(1288.71 0)\" d=\"M0,-128V0\"/><path transform=\"translate(1332.71 0)\" d=\"M0,-40H80A40,40 0 1 0 63.51,-7.64\"/></g></svg>",LOGO_H="<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 643.8 120\" class=\"lgh\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"120\" height=\"120\" rx=\"26.26\" fill=\"#0E6B47\"/><g transform=\"translate(36.91 20.16) scale(0.24)\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M23,213V23H108.1A43.7,43.7 0 0 1 108.1,110.4H23M23,110.4H114.5A51.3,51.3 0 0 1 114.5,213H23\" stroke=\"#FFFFFF\" stroke-width=\"46\"/><path d=\"M9.5,268.5H179.3M9.5,304.5H179.3\" stroke=\"#F5B800\" stroke-width=\"19\"/></g><g transform=\"translate(144 25.96) scale(0.35) translate(9.5 137.5)\" fill=\"none\" stroke=\"#0E6B47\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path transform=\"translate(0 0)\" d=\"M0,-128V0\"/><path transform=\"translate(0 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(116 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(240 0)\" d=\"M0,-80V-40A40,40 0 0 0 80,-40\"/><path transform=\"translate(240 0)\" d=\"M80,-80V0\"/><path transform=\"translate(382 0)\" d=\"M0,-106V-17A17,17 0 0 0 17,0H24\"/><path transform=\"translate(382 0)\" d=\"M-21,-80H31\"/><path transform=\"translate(454 0)\" d=\"M0,-80V0\"/><circle cx=\"454\" cy=\"-110.28\" r=\"11.78\" fill=\"#0E6B47\" stroke=\"none\"/><path transform=\"translate(498 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(498 0)\" d=\"M80,-80V44\"/><path transform=\"translate(630 0)\" d=\"M0,-80V-40A40,40 0 0 0 80,-40\"/><path transform=\"translate(630 0)\" d=\"M80,-80V0\"/><path transform=\"translate(754 0)\" d=\"M0,-40H80A40,40 0 1 0 63.51,-7.64\"/><path transform=\"translate(934 0)\" d=\"M0,0V-97A31,31 0 0 1 31,-128H40\"/><path transform=\"translate(934 0)\" d=\"M-21,-80H35\"/><path transform=\"translate(1009 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(1009 0)\" d=\"M80,-80V0\"/><path transform=\"translate(1133 0)\" d=\"M65.71,-70.64A40,40 0 1 0 65.71,-9.36\"/><path transform=\"translate(1236.71 0)\" d=\"M0,-80V0\"/><circle cx=\"1236.71\" cy=\"-110.28\" r=\"11.78\" fill=\"#0E6B47\" stroke=\"none\"/><path transform=\"translate(1288.71 0)\" d=\"M0,-128V0\"/><path transform=\"translate(1332.71 0)\" d=\"M0,-40H80A40,40 0 1 0 63.51,-7.64\"/></g></svg>";
+const BUILD='9d0b1e5f32';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
@@ -182,6 +234,7 @@ const num=s=>{const v=parseInt(String(s==null?'':s).replace(/[^\d]/g,''),10);ret
 const dec=s=>{const v=parseFloat(String(s==null?'':s).replace(/\s| | /g,'').replace(',','.'));return isNaN(v)?NaN:v};
 const nz=s=>String(s==null?'':s).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
 const DAY=864e5;
+const COL=new Intl.Collator('fr',{sensitivity:'base',numeric:true});
 const D0=t=>{const d=new Date(t);d.setHours(0,0,0,0);return d.getTime()};
 const M0=t=>{const d=new Date(t);d.setHours(0,0,0,0);d.setDate(1);return d.getTime()};
 const ymd=t=>{const d=new Date(t);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
@@ -229,9 +282,9 @@ const SKEY='bf5',LKEY='bf1',MEMPH={};
 function newState(demo){
  const o={v:5,n:10,rn:0,bk:0,lx:0,
   shop:{id:uid(),name:'Ma boutique',addr:'',tel:'',nif:'',own:''},
-  set:{lang:'fr',simple:0,big:0,mods:{ph:0,ag:0,tv:0},tva:18,round:0,sellMaxDisc:10,sellCost:0,reqOpen:0,rcw:80,dueDays:15,op:'om',type:'',setup:0,agRate:0,msg:'Merci de votre confiance !',expd:90},
+  set:{lang:'fr',simple:0,big:0,mods:{ph:0,ag:0,tv:0},tva:18,round:0,sellMaxDisc:10,sellCost:0,reqOpen:0,rcw:80,dueDays:15,op:'om',type:'',setup:0,agRate:0,msg:'Merci de votre confiance !',expd:90,rdest:'c',rcm:'',ac:''},
   users:[{id:1,n:'Patron',r:'o',pin:null,on:1}],rc:null,
-  p:[],s:[],rt:[],cl:[],ex:[],pu:[],sup:[],adj:[],ag:[],cx:[],cs:{},pl:[],tr:{},langs:[],br:{}};
+  p:[],s:[],rt:[],cl:[],ex:[],pu:[],sup:[],adj:[],ag:[],cx:[],cs:{},pl:[],tr:{},langs:[],br:{},hold:[]};
  if(demo)o.p=[
   {id:1,n:'Riz 25 kg',cat:'Alimentation',pr:280000,c:250000,q:12,m:3},
   {id:2,n:'Huile 5 L',cat:'Alimentation',pr:110000,c:95000,q:8,m:3},
@@ -246,6 +299,8 @@ function ensure(o){const N=newState(false);
  for(const k in N.set.mods)if(o.set.mods[k]===undefined)o.set.mods[k]=N.set.mods[k];
  for(const k in N.shop)if(o.shop[k]===undefined)o.shop[k]=N.shop[k];
  o.p=o.p.map(pdef);
+ // ventes mises en attente : on garde les 2 derniers jours, sans lignes cassées
+ o.hold=(Array.isArray(o.hold)?o.hold:[]).filter(h=>h&&Array.isArray(h.lines)&&h.lines.length&&Date.now()-h.t<2*DAY);
  o.s.forEach(x=>{if(!x.pay)x.pay=[{m:x.m||'e',a:x.total,ref:x.ref||''}]});
  if(!o.users.length)o.users=N.users;
  // données reçues d'un fichier : on ne garde que des codes de langue simples et des textes sans balises
@@ -343,7 +398,7 @@ function M(h){
  mBusy=1;try{
   const m=$('#m');m.innerHTML=h?`<div class="ov"><div class="sh"><div class="sb">${h}</div></div></div>`:'';
   // la barre de boutons du bas reste visible : elle sort de la zone qui défile
-  if(h){const sh=m.querySelector('.sh'),bars=[...m.querySelector('.sb').children].filter(x=>x.classList.contains('pay2'));
+  if(h){const sh=m.querySelector('.sh'),bars=[...m.querySelector('.sb').children].filter(x=>x.classList.contains('pay2')||x.classList.contains('kpf'));
    if(bars.length){const f=document.createElement('div');f.className='sf';bars.forEach(b=>f.appendChild(b));sh.appendChild(f)}}
  }finally{mBusy=0}
  document.body.classList.toggle('noscroll',!!h);
@@ -382,6 +437,7 @@ function R(){
  rBusy=1;try{R0()}finally{rBusy=0}
  if(rAgain){rAgain=0;R()}}
 function R0(){
+ applyAccent();
  document.documentElement.classList.toggle('big',!!S.set.big);
  document.body.classList.toggle('v',tab=='v'&&!sub);
  document.body.classList.toggle('simple',!!S.set.simple);
@@ -460,6 +516,86 @@ function lockInit(){
  if(FR)return;
  document.addEventListener('visibilitychange',()=>{if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>120000)lock()})}
 
+// ---- icônes : les emoji du texte sont remplacés par des icônes au trait fin, identiques sur tous les téléphones
+const IC={
+'🛒':'<circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M2.5 3.5h2.6l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.7a1.6 1.6 0 0 0 1.6-1.2L21 8H6"/>',
+'📦':'<path d="M21 8v8a2 2 0 0 1-1 1.7l-7 4a2 2 0 0 1-2 0l-7-4A2 2 0 0 1 3 16V8a2 2 0 0 1 1-1.7l7-4a2 2 0 0 1 2 0l7 4A2 2 0 0 1 21 8z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/>',
+'👥':'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
+'💰':'<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>',
+'☰':'<rect x="3.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.8"/>',
+'📷':'<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3.2"/>',
+'🚚':'<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.5 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
+'📱':'<rect x="6.5" y="2" width="11" height="20" rx="2.6"/><path d="M11 18.5h2"/>',
+'💵':'<rect x="2" y="6" width="20" height="12" rx="2.2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 12h.01M18 12h.01"/>',
+'🧾':'<path d="M4.5 2v20l2-1.2 2 1.2 2-1.2 2 1.2 2-1.2 2 1.2 2-1.2V2l-2 1.2L15.5 2l-2 1.2L11.5 2l-2 1.2L7.5 2l-2 1.2z"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+'🔒':'<rect x="4.5" y="10.5" width="15" height="10.5" rx="2.2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/>',
+'📊':'<path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9M13 17V5M8 17v-3"/>',
+'📈':'<path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/>',
+'📉':'<path d="m22 17-8.5-8.5-5 5L2 7"/><path d="M16 17h6v-6"/>',
+'🏬':'<path d="M3 9.5 4.5 4h15L21 9.5"/><path d="M4.5 9.5V20h15V9.5"/><path d="M3 9.5a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M10 20v-5h4v5"/>',
+'🏭':'<path d="M22 8.35V20a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8.35a1 1 0 0 1 .65-.95l9-3.6a1 1 0 0 1 .7 0l9 3.6a1 1 0 0 1 .65.95z"/><path d="M6 18h12M6 14h12"/><rect x="6" y="10" width="12" height="12"/>',
+'💾':'<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/>',
+'🌍':'<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+'⚙':'<path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/>',
+'❓':'<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/>',
+'💡':'<path d="M9 18h6M10 21.5h4"/><path d="M12 2.5a6.5 6.5 0 0 0-3.9 11.7c.6.5.9 1.2.9 2v.3h6v-.3c0-.8.3-1.5.9-2A6.5 6.5 0 0 0 12 2.5z"/>',
+'📒':'<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>',
+'🏦':'<path d="M3 21.5h18M5.5 18v-7M9.8 18v-7M14.2 18v-7M18.5 18v-7"/><path d="M12 2.5 20.5 8h-17z"/>',
+'🖨':'<path d="M6.5 9V3h11v6"/><path d="M6.5 17.5h-2a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h15a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6.5" y="14" width="11" height="7.5"/>',
+'📋':'<rect x="8" y="2.5" width="8" height="4" rx="1"/><path d="M16 4.5h2a2 2 0 0 1 2 2V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2h2M8 12h8M8 16h5"/>',
+'📝':'<path d="M14 2.5H6a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.5z"/><path d="M14 2.5v6h6M8 13h8M8 17h5"/>',
+'💸':'<rect x="2" y="6" width="20" height="12" rx="2.2"/><path d="M8 12h8"/>',
+'📲':'<rect x="10" y="2" width="11" height="20" rx="2.6"/><path d="M14.5 18.5h2M2 12h5.5M5.2 9.5 7.7 12l-2.5 2.5"/>',
+'💊':'<path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7z"/><path d="m8.5 8.5 7 7"/>',
+'⚠':'<path d="M10.3 3.9 1.9 18.2a2 2 0 0 0 1.7 3h16.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4M12 17h.01"/>',
+'✅':'<circle cx="12" cy="12" r="10"/><path d="m8 12.3 2.8 2.8 5.4-5.6"/>',
+'⏳':'<circle cx="12" cy="12" r="10"/><path d="M12 6.5V12l3.5 2"/>',
+'★':'<path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5l-5.9 3.1 1.2-6.5L2.5 9.5l6.6-.9z"/>',
+'✎':'<path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+'⬇':'<path d="M12 4.5v15M5.5 13 12 19.5 18.5 13"/>',
+'⬆':'<path d="M12 19.5v-15M5.5 11 12 4.5 18.5 11"/>',
+'📤':'<path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="m16 6-4-4-4 4M12 2v13"/>',
+'🟢':'<circle cx="12" cy="12" r="6"/>',
+'🔴':'<circle cx="12" cy="12" r="6"/>',
+'👋':'','😴':''};
+const IC_X={'★':'f is','🟢':'f ig','🔴':'f ir'};
+const IC_RE=new RegExp('('+Object.keys(IC).join('|')+')\\uFE0F?','g'),IC_SKIP=/^(OPTION|TEXTAREA|SCRIPT|STYLE|TITLE|svg|INPUT)$/;
+const IC_NODES={};
+function icoEl(k){
+ if(!IC_NODES[k]){const s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('viewBox','0 0 24 24');s.setAttribute('class','ic'+(IC_X[k]?' '+IC_X[k]:''));s.setAttribute('aria-hidden','true');s.innerHTML=IC[k];IC_NODES[k]=s}
+ return IC_NODES[k].cloneNode(true)}
+function icoText(t){
+ const s=t.nodeValue;IC_RE.lastIndex=0;if(!IC_RE.test(s))return;IC_RE.lastIndex=0;
+ const fr=document.createDocumentFragment();let i=0,m;
+ while((m=IC_RE.exec(s))){if(m.index>i)fr.appendChild(document.createTextNode(s.slice(i,m.index)));if(IC[m[1]])fr.appendChild(icoEl(m[1]));i=m.index+m[0].length}
+ if(i<s.length)fr.appendChild(document.createTextNode(s.slice(i)));
+ if(t.parentNode)t.parentNode.replaceChild(fr,t)}
+function icoScan(root){
+ if(!root||!root.isConnected)return;
+ if(root.nodeType==3){const p=root.parentElement;if(p&&!IC_SKIP.test(p.tagName)&&!p.closest('svg'))icoText(root);return}
+ if(root.nodeType!=1||IC_SKIP.test(root.tagName)||root.closest('svg'))return;
+ const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),L=[];
+ while(w.nextNode()){const n=w.currentNode,p=n.parentElement;if(p&&!IC_SKIP.test(p.tagName)&&!p.closest('svg')&&/[\u2300-\uFFFF]/.test(n.nodeValue))L.push(n)}
+ L.forEach(icoText)}
+(function(){
+ if(typeof MutationObserver=='undefined'||typeof document=='undefined')return;
+ const mo=new MutationObserver(ms=>{
+  for(const m of ms){if(m.type=='characterData')icoScan(m.target);else m.addedNodes.forEach(icoScan)}
+  mo.takeRecords()});
+ mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+ icoScan(document.body)})();
+
+// ---- apparence : couleur principale au choix (les couleurs d'alerte ne changent pas)
+const ACC=[['#0E6B47',X('Vert')],['#1D5FBF',X('Bleu')],['#6B3FB5',X('Violet')],['#B4470B',X('Orange')],['#A3243B',X('Rouge')],['#334155',X('Ardoise')]];
+const hexRgb=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mixHex=(a,b,p)=>'#'+a.map((v,i)=>Math.round(v*(1-p)+b[i]*p).toString(16).padStart(2,'0')).join('');
+function accNow(){const h=S&&S.set&&S.set.ac;return /^#[0-9a-f]{6}$/i.test(h||'')?h:'#0E6B47'}
+function applyAccent(){
+ const h=accNow(),c=hexRgb(h),st=document.documentElement.style;
+ st.setProperty('--ac',h);st.setProperty('--ac2',mixHex(c,[0,0,0],.22));st.setProperty('--acl',mixHex(c,[255,255,255],.9))}
+const accSw=()=>ACC.map(([h,n])=>`<button class="sw${accNow().toLowerCase()==h.toLowerCase()?' on':''}" style="background:${h}" aria-label="${esc(_(n))}" title="${esc(_(n))}" onclick="accSet('${h}')"></button>`).join('');
+function accSet(h){S.set.ac=h;save();applyAccent();const e=$('#sws');if(e)e.innerHTML=accSw()}
+
 // ---- unités, stock par lots, vente, paiement, reçus
 const unit=(p,i)=>i<0||!p.us[i]?{i:-1,n:p.bu||'',f:1,pr:p.pr,pg:p.pg||0}:{i,n:p.us[i].n,f:p.us[i].f,pr:p.us[i].pr,pg:p.us[i].pg||0};
 const uprice=(p,i,tier)=>{const u=unit(p,i);return(tier=='g'&&u.pg>0)?u.pg:u.pr};
@@ -495,22 +631,39 @@ function V(){
  return `<div class="srch"><input class="in" id="sq" placeholder="${_('Rechercher ou scanner un code…')}" value="${esc(vq0)}" oninput="vq(this.value)" onkeydown="vkey(event)" autocomplete="off" enterkeyhint="search"><button class="b ol sm" id="scb" onclick="scanFor('sell')" style="display:${typeof camOK=='function'&&camOK()?'':'none'}">📷</button></div>
 ${(cats.length||fav)?`<div class="chips">${chip(_('Tout'),!vcat0,"vcat('')")}${fav?chip('★ '+_('Favoris'),vcat0=='*',"vcat('*')"):''}${cats.map(c=>`<button class="chip${vcat0==c?' on':''}" data-c="${esc(c)}" onclick="vcat(this.dataset.c)">${esc(c)}</button>`).join('')}</div>`:''}
 ${hasGros()?`<div class="seg"><button class="${tier=='r'?'on':''}" onclick="vtier('r')">${_('Détail')}</button><button class="${tier=='g'?'on':''}" onclick="vtier('g')">${_('Gros')}</button></div>`:''}
-<div class="g" id="grid">${vgrid()}</div><div id="cbar">${cartBar()}</div>`}
+<div class="chips" id="hold">${holdChips()}</div><div class="g" id="grid">${vgrid()}</div><div id="cbar">${cartBar()}</div>`}
+// les produits les plus vendus (30 derniers jours, sans aujourd'hui) passent en premier : l'ordre reste stable pendant la journée
+let POPK='',POPM={};
+function popMap(){
+ const k=ymd(Date.now())+'|'+S.s.length+'|'+S.p.length;
+ if(k==POPK)return POPM;
+ const t0=D0(Date.now()),cut=t0-30*DAY,m={};
+ for(let i=S.s.length-1;i>=0;i--){const s=S.s[i];if(s.t<cut-7*DAY)break;if(s.v||s.t>=t0||s.t<cut)continue;for(const it of s.items)m[it.id]=(m[it.id]||0)+1}
+ POPK=k;POPM=m;return m}
+function tileH(p){
+ const inCart=baseQ(p.id),av=rq(avail(p)-inCart),u=unit(p,p.du),pr=uprice(p,p.du,tier);
+ const bd=[];if(S.set.mods.ph){if(p.rx)bd.push('<span class="bd">Rx</span>');const e=expInfo(p);if(e.exp)bd.push('<span class="bd">'+_('Périmé')+'</span>');else if(e.soon)bd.push('<span class="bd y">'+_('Bientôt périmé')+'</span>')}
+ return `<button class="t${av<=0?' o':''}${inCart?' inc':''}" data-id="${p.id}" onpointerdown="vdown(${p.id})" onpointerup="vup()" onpointerleave="vup()" onpointercancel="vup()" oncontextmenu="return false" onclick="vtap(${p.id})">${p.fav?'<span class="st">★</span>':''}<b>${esc(p.n)}</b>${[p.g,p.col].filter(Boolean).length?`<small>${esc([p.g,p.col].filter(Boolean).join(', '))}</small>`:''}<span>${f(pr)}${u.f>1?' / '+esc(u.n):''}</span><small>${fq(av)}${p.bu?' '+esc(p.bu):''} ${_('en stock')}</small>${bd.join('')}${inCart?`<small class="n">${fq(cart.filter(l=>l.id==p.id).reduce((a,l)=>a+l.q,0))} ${_('au panier')}</small>`:''}</button>`}
 function vgrid(){
  const nq=nz(vq0);let L=S.p.filter(p=>!p.off);
  if(vcat0=='*')L=L.filter(p=>p.fav);else if(vcat0)L=L.filter(p=>p.cat==vcat0);
  if(nq)L=L.filter(p=>nz([p.n,p.g,p.bc,p.dci,p.cat,p.col].join(' ')).includes(nq));
- L=L.slice().sort((a,b)=>(b.fav?1:0)-(a.fav?1:0)||a.n.localeCompare(b.n,'fr'));
+ const pm=popMap();
+ L=L.slice().sort((a,b)=>(b.fav?1:0)-(a.fav?1:0)||(pm[b.id]||0)-(pm[a.id]||0)||COL.compare(a.n,b.n));
  if(!L.length){let eq='';
   if(nq&&S.set.mods.ph){const ds=[...new Set(S.p.filter(p=>!p.off&&p.dci&&nz(p.dci).includes(nq)).map(p=>p.id))];eq=ds.length?`<p class="hint">${_('Même substance :')} ${ds.map(id=>esc(P(id).n)).join(', ')}</p>`:''}
   return `<p class="hint" style="grid-column:1/3">${S.p.length?_('Aucun produit trouvé.'):_('Aucun produit. Ajoutez-en dans l\'onglet Stock.')}</p>${eq}`}
- return L.map(p=>{const inCart=baseQ(p.id),av=rq(avail(p)-inCart),u=unit(p,p.du),pr=uprice(p,p.du,tier);
-  const bd=[];if(S.set.mods.ph){if(p.rx)bd.push('<span class="bd">Rx</span>');const e=expInfo(p);if(e.exp)bd.push('<span class="bd">'+_('Périmé')+'</span>');else if(e.soon)bd.push('<span class="bd y">'+_('Bientôt périmé')+'</span>')}
-  return `<button class="t${av<=0?' o':''}" onclick="vadd(${p.id})">${p.fav?'<span class="st">★</span>':''}<b>${esc(p.n)}</b>${[p.g,p.col].filter(Boolean).length?`<small>${esc([p.g,p.col].filter(Boolean).join(', '))}</small>`:''}<span>${f(pr)}${u.f>1?' / '+esc(u.n):''}</span><small>${fq(av)}${p.bu?' '+esc(p.bu):''} ${_('en stock')}</small>${bd.join('')}${inCart?`<small class="n">${fq(cart.filter(l=>l.id==p.id).reduce((a,l)=>a+l.q,0))} ${_('au panier')}</small>`:''}</button>`}).join('')}
+ return L.map(tileH).join('')}
 function cartBar(){
- if(!cart.length)return'';
- return `<div class="cart"><div class="chips">${cart.map((l,i)=>{const p=P(l.id),u=unit(p,l.u);return `<button class="chip" onclick="cdec(${i})">${esc(p.n)} ×${fq(l.q)}${u.f!=1||l.u>=0?' '+esc(u.n):''} −</button>`}).join('')}<button class="chip" onclick="cedit()">✎ ${_('Modifier')}</button><button class="chip" onclick="cclear()">${_('Vider')}</button></div><div class="tot">${f(ctotal())}</div><div class="pay"><button class="b gr" onclick="pay('e')">${_('Espèces')}</button><button class="b yl" onclick="pay('m')">Mobile Money</button><button class="b ol" onclick="pay('c')">${_('À crédit')}</button></div></div>`}
-function vupd(){const g=$('#grid');if(g)g.innerHTML=vgrid();const c=$('#cbar');if(c)c.innerHTML=cartBar()}
+ if(!cart.length)return lsBar();
+ return `<div class="cart"><div class="chips">${cart.map((l,i)=>{const p=P(l.id),u=unit(p,l.u);return `<button class="chip" onclick="cdec(${i})">${esc(p.n)} ×${fq(l.q)}${u.f!=1||l.u>=0?' '+esc(u.n):''} −</button>`}).join('')}<button class="chip" onclick="cedit()">✎ ${_('Modifier')}</button><button class="chip" onclick="holdPut()">${_('Mettre en attente')}</button><button class="chip" onclick="cclear()">${_('Vider')}</button></div><div class="tot">${f(ctotal())}</div><div class="pay"><button class="b gr" onclick="pay('e')">${_('Espèces')}</button><button class="b yl" onclick="pay('m')">Mobile Money</button><button class="b ol" onclick="pay('c')">${_('À crédit')}</button></div></div>`}
+function vupd(){const g=$('#grid');if(g)g.innerHTML=vgrid();const c=$('#cbar');if(c)c.innerHTML=cartBar();const h=$('#hold');if(h)h.innerHTML=holdChips()}
+// un seul produit touché : on ne refait que sa case et la barre du panier
+function vupd1(id){
+ const p=P(id),e=document.querySelector('#grid .t[data-id="'+id+'"]');
+ if(!p||!e)return vupd();
+ const t=document.createElement('div');t.innerHTML=tileH(p);e.replaceWith(t.firstChild);
+ const c=$('#cbar');if(c)c.innerHTML=cartBar()}
 function vq(v){vq0=v;vupd()}
 function vcat(c){vcat0=c;R()}
 function vtier(t){tier=t;R()}
@@ -521,14 +674,55 @@ function vkey(e){
  if(!p){const nq=nz(v);const L=S.p.filter(x=>!x.off&&nz([x.n,x.g,x.bc,x.dci].join(' ')).includes(nq));if(L.length==1)p=L[0]}
  if(!p){toast(_('Aucun produit pour « {q} »',{q:v}));return}
  vq0='';$('#sq').value='';vadd(p.id);const s=$('#sq');if(s)s.focus()}
-function vadd(id,u,force){
- const p=P(id);if(!p)return;if(u==null)u=p.du;
- const un=unit(p,u),step=1;
- const go1=()=>{const l=cart.find(x=>x.id==id&&x.u==u);if(l)l.q=rq(l.q+step);else cart.push({id,u,q:step,pr:null});vupd();if(typeof beep=='function')beep()};
+// appui long sur un produit = choisir la quantité ; appui court = ajouter 1
+const LP={t:0,fired:false};
+function vdown(id){LP.fired=false;clearTimeout(LP.t);LP.t=setTimeout(()=>{LP.t=0;LP.fired=true;qtyUI(id)},520)}
+function vup(){clearTimeout(LP.t);LP.t=0}
+function vtap(id){if(LP.fired){LP.fired=false;return}vadd(id)}
+function vadd(id,u,force,step){
+ const p=P(id);if(!p)return;if(u==null)u=p.du;step=step||1;
+ const un=unit(p,u);
+ const go1=()=>{const l=cart.find(x=>x.id==id&&x.u==u);if(l)l.q=rq(l.q+step);else cart.push({id,u,q:step,pr:null});vupd1(id);if(typeof beep=='function')beep()};
  const need=rq(baseQ(id)+un.f*step);
  if(need>avail(p)&&!force&&!cart.some(x=>x.id==id&&x.ok)){
   return sure(_('Stock insuffisant pour {n} : il reste {q}. Ajouter quand même ?',{n:esc(p.n),q:fq(avail(p)-baseQ(id))}),()=>{go1();cart.forEach(x=>{if(x.id==id)x.ok=1});vupd()},_('Ajouter'))}
  go1()}
+// ---- clavier de quantité
+let QY=null;
+const KP=(fn,last)=>{const b=k=>`<button onclick="${fn}('${k}')">${k}</button>`;return `<div class="kp">${['7','8','9'].map(b).join('')}<button onclick="${fn}('b')" aria-label="${_('Effacer')}">⌫</button>${['4','5','6'].map(b).join('')}${last?b(last):'<span></span>'}${['1','2','3','0'].map(b).join('')}</div>`};
+function qtyUI(id){
+ const p=P(id);if(!p)return;
+ QY={id,u:p.du,g:''};
+ const us=[unit(p,-1)].concat((p.us||[]).map((x,k)=>unit(p,k)));
+ M(`<h2>${esc(p.n)}</h2><label>${_('Quantité')}</label><div class="gv" id="qgv"><span id="qgt"></span></div>${us.length>1?`<div class="chips" id="qun" style="padding:6px 0 0">${us.map(u=>`<button class="chip${u.i==QY.u?' on':''}" data-i="${u.i}" onclick="qtyU(${u.i})">${esc(u.n||_('unité'))}</button>`).join('')}</div>`:''}${KP('qtyK',p.dec?',':'')}
+<div class="pay2"><button class="b ol" onclick="M()">${_('Annuler')}</button><button class="b gr" onclick="qtyOk()">${_('Ajouter au panier')}</button></div>`);
+ qtyShow()}
+function qtyShow(){const e=$('#qgt');if(e)e.innerHTML=QY.g===''?'<span class="ph">1</span>':esc(QY.g)}
+function qtyK(k){
+ let g=QY.g;
+ if(k=='b')g=g.slice(0,-1);
+ else if(k==','){if(g.includes(','))return;g=(g===''?'0':g)+','}
+ else{g=(g+k).replace(/^0+(?=\d)/,'');if(g.replace(',','').length>6)return}
+ QY.g=g;qtyShow()}
+function qtyU(i){QY.u=i;$$('#qun .chip').forEach(b=>b.classList.toggle('on',+b.dataset.i==i))}
+function qtyOk(){
+ const q=QY.g===''?1:dec(QY.g),p=P(QY.id);
+ if(!(q>0)||!p)return toast(_('Quantité invalide'));
+ const id=QY.id,u=QY.u;M();vadd(id,u,false,p.dec?q:Math.max(1,Math.round(q)))}
+// ---- ventes en attente : on met le panier de côté pour servir un autre client
+const holdTot=h=>h.lines.reduce((a,l)=>{const p=P(l.id);return p?a+Math.round(l.q*(l.pr!=null?l.pr:uprice(p,l.u,h.tier||'r'))):a},0);
+const holdLines=()=>cart.map(l=>({id:l.id,u:l.u,q:l.q,pr:l.pr}));
+function holdChips(){return S.hold.map(h=>`<button class="chip" onclick="holdGet('${h.id}')">${_('En attente')} ${hm(h.t)} · ${h.lines.length} ${_('art.')} · ${fm(holdTot(h))}</button>`).join('')}
+function holdPut(){
+ if(!cart.length)return;
+ S.hold.push({id:uid(),t:Date.now(),tier,lines:holdLines()});
+ cart=[];save();vupd();toast(_('Vente mise en attente. Touchez-la en haut pour la reprendre.'),3200)}
+function holdGet(id){
+ const i=S.hold.findIndex(h=>h.id==id);if(i<0)return;
+ const h=S.hold.splice(i,1)[0];
+ if(cart.length)S.hold.push({id:uid(),t:Date.now(),tier,lines:holdLines()});
+ cart=h.lines.filter(l=>{const p=P(l.id);return p&&!p.off}).map(l=>({id:l.id,u:l.u,q:l.q,pr:l.pr}));tier=h.tier||'r';
+ save();R()}
 function cdec(i){const l=cart[i];l.q=rq(l.q-1);if(l.q<=0)cart.splice(i,1);vupd();if($('#m').innerHTML)cedit()}
 function cclear(){cart=[];vupd()}
 function cwarn(l){
@@ -554,68 +748,189 @@ function cq(i,v){const l=cart[i],p=P(l.id);let q=dec(v);if(!(q>0)){const e=$('#c
 function cu(i,v){const l=cart[i];l.u=+v;l.pr=null;const e=$('#cpi'+i);if(e)e.value=fm(lp(l));cupd(i)}
 function cp1(i,v){const l=cart[i],p=P(l.id),n=num(v);l.pr=(isNaN(n)||n==uprice(p,l.u,tier))?null:n;const e=$('#cpi'+i);if(e)e.value=fm(lp(l));cupd(i)}
 function crm(i){cart.splice(i,1);cedit();vupd()}
-// ---- paiement
-let PY=null;
+// ---- paiement : le vendeur dit combien le client donne ; la monnaie ou le reste se calcule tout de suite
+let PY=null,LS=null;
 const roundT=x=>S.set.round>0?Math.floor(x/S.set.round)*S.set.round:x;
-function discOf(sub){const v=dec($('#dv').value)||0;const d=$('#dm').value=='p'?Math.round(sub*v/100):Math.round(v);return Math.max(0,Math.min(d,sub))}
+function discOf(sub){const a=$('#dv'),b=$('#dm');if(!a||!b)return 0;const v=dec(a.value)||0;const d=b.value=='p'?Math.round(sub*v/100):Math.round(v);return Math.max(0,Math.min(d,sub))}
+const DEST=[['c',X('À crédit')],['om','Orange Money'],['mtn','MTN MoMo'],['ot',X('Autre')]];
+const destName=k=>{const d=DEST.find(x=>x[0]==k);return d?_(d[1]):''};
+// billets proposés au-dessus du total (le client donne souvent un billet plus gros)
+function paySug(T){
+ const c=[],up=s=>{const v=Math.ceil(T/s)*s;if(v>T)c.push(v)};
+ [5000,10000,20000,50000,100000].forEach(up);
+ [100000,500000].forEach(s=>c.push((Math.floor(T/s)+1)*s));
+ return[...new Set(c)].sort((a,b)=>a-b).slice(0,3)}
+const cLast=c=>(c.h&&c.h.length?c.h[c.h.length-1].t:0)||c.t0||0;
+const recentCl=()=>S.cl.slice().sort((a,b)=>cLast(b)-cLast(a)).slice(0,6);
 function pay(m0){
  if(!cart.length)return;
  if(S.set.reqOpen&&!S.cs[CU])return sure(_('La caisse est fermée. L\'ouvrir maintenant ?'),()=>{go('k')},_('Ouvrir la caisse'));
- PY={auto:1,m0,idp:'',op:S.set.op||'om'};payUI()}
+ const op=S.set.op||'om';
+ PY={m0,man:0,g:'',kp:m0=='e',cash:m0=='e',dest:m0=='c'?'c':m0=='m'?op:(S.set.rdest||'c'),op,idp:'',A:null};
+ payUI()}
 function payUI(){
- const rx=S.set.mods.ph&&cart.some(l=>P(l.id).rx);
- M(`<h2>${_('Confirmer la vente')}</h2>${cart.map(l=>{const p=P(l.id),u=unit(p,l.u);return rowh(`${fq(l.q)}${u.f!=1||l.u>=0?' '+esc(u.n):''} × ${esc(p.n)}`,f(lt(l)),l.pr!=null?_('Prix négocié')+' '+f(l.pr):'')}).join('')}
-<label>${_('Remise')}</label><div class="two"><input class="in nm" id="dv" inputmode="decimal" placeholder="0" oninput="payCalc()"><select class="in" id="dm" onchange="payCalc()"><option value="p">%</option><option value="g">GNF</option></select></div>
-<div class="row"><div class="gr1">${_('Total à payer')}</div><div class="tot" id="tt"></div></div>
-<div class="eq"><div><label>💵 ${_('Espèces')}</label><input class="in nm" id="pe" inputmode="numeric" oninput="payEdit()"></div><div><label>📱 Mobile Money</label><input class="in nm" id="pm" inputmode="numeric" oninput="payEdit()"></div></div>
-<div id="pcash" style="display:none"><label>${_('Montant donné par le client')}</label><input class="in nm" id="pt" inputmode="numeric" oninput="payCalc()"><div class="row"><div class="gr1">${_('Monnaie à rendre')}</div><b id="pch">0</b></div></div>
-<div id="pmob" style="display:none"><div class="chips" style="padding:4px 0">${[['om','Orange Money'],['mtn','MTN MoMo'],['ot',_('Autre')]].map(([k,l])=>`<button class="chip${PY.op==k?' on':''}" data-k="${k}" onclick="payOp(this.dataset.k)">${l}</button>`).join('')}</div><label>${_('Numéro de transaction du SMS (facultatif)')}</label><input class="in" id="rf" autocomplete="off"></div>
-<label>🧾 ${_('À crédit (dette du client)')}</label><input class="in nm" id="pc" inputmode="numeric" oninput="payEdit()">
-<div id="pcre" style="display:none"><label>${_('Nom du client')}</label><input class="in" id="cn" list="cll" autocomplete="off" oninput="payCl()"><datalist id="cll">${S.cl.map(c=>`<option value="${esc(c.n)}">`).join('')}</datalist><div id="cinf" class="sm2"></div>
+ const rx=S.set.mods.ph&&cart.some(l=>P(l.id).rx),n=cart.length;
+ const lines=cart.map(l=>{const p=P(l.id),u=unit(p,l.u);return rowh(`${fq(l.q)}${u.f!=1||l.u>=0?' '+esc(u.n):''} × ${esc(p.n)}`,f(lt(l)),l.pr!=null?_('Prix négocié')+' '+f(l.pr):'')}).join('');
+ M(`<h2>${_('Encaisser')}</h2>
+<details class="dt"><summary>${_('{n} article(s)',{n})}</summary>${lines}</details>
+<div class="row" style="border:0;padding:4px 0 0"><div class="gr1">${_('Total à payer')}<small id="pdn"></small><button class="lnk sm" id="pdl" onclick="payDisc()">＋ ${_('Remise')}</button></div><div class="tot" id="tt"></div></div>
+<div id="pdisc" style="display:none"><div class="two"><input class="in nm" id="dv" inputmode="decimal" placeholder="0" oninput="payCalc()"><select class="in" id="dm" onchange="payCalc()"><option value="p">%</option><option value="g">GNF</option></select></div></div>
+<div id="pauto"><div id="pcb"><label id="pgl"></label>
+<div class="gv" id="pgv" onclick="payKp(!PY.kp)"><span id="pgt"></span></div>
+<div class="chips" id="psug" style="padding:6px 0 0"></div>
+<div id="pchg"></div></div>
+<button class="lnk" id="pcl2" onclick="payCash()">＋ ${_('Le client donne aussi des espèces')}</button>
+<label id="pdl2"></label>
+<div class="chips" id="pdst" style="padding:2px 0 0">${DEST.map(([k,l])=>`<button class="chip" data-k="${k}" onclick="payD('${k}')">${_(l)}</button>`).join('')}</div></div>
+<div id="pman" style="display:none">
+<div class="eq"><div><label>💵 ${_('Espèces')}</label><input class="in nm" id="pe" inputmode="numeric" oninput="payCalc()"></div><div><label>📱 Mobile Money</label><input class="in nm" id="pm" inputmode="numeric" oninput="payCalc()"></div></div>
+<label>🧾 ${_('À crédit (dette du client)')}</label><input class="in nm" id="pc" inputmode="numeric" oninput="payCalc()">
+<div id="pmcash" style="display:none"><label>${_('Montant donné par le client')}</label><input class="in nm" id="pt" inputmode="numeric" oninput="payCalc()"><div class="row"><div class="gr1">${_('Monnaie à rendre')}</div><b id="pch">0</b></div></div>
+<div id="prest" class="sm2"></div>
+<button class="lnk" onclick="payMan(0)">↩ ${_('Revenir au calcul automatique')}</button></div>
+<div id="pmob" style="display:none">
+<div class="chips" id="pmop" style="padding:4px 0;display:none">${[['om','Orange Money'],['mtn','MTN MoMo'],['ot',_('Autre')]].map(([k,l])=>`<button class="chip" data-k="${k}" onclick="payOp(this.dataset.k)">${l}</button>`).join('')}</div>
+<label>${_('Numéro de transaction du SMS (facultatif)')}</label><input class="in" id="rf" autocomplete="off" oninput="paySms()">
+<label>${_('Coller le SMS reçu pour le contrôler (facultatif)')}</label><textarea class="in" id="psm" rows="2" oninput="paySms()"></textarea><div id="psr" class="sm2"></div></div>
+<div id="pcre" style="display:none"><label>${_('Nom du client')}</label>
+<div class="chips" id="pcl" style="padding:2px 0 4px">${recentCl().map(c=>`<button class="chip" data-id="${esc(c.id)}" onclick="payPick(this.dataset.id)">${esc(c.n)}${c.a>0?' · '+fm(c.a):''}</button>`).join('')}</div>
+<input class="in" id="cn" list="cll" autocomplete="off" enterkeyhint="done" oninput="payCl()" onkeydown="if(event.key=='Enter')this.blur()"><datalist id="cll">${S.cl.map(c=>`<option value="${esc(c.n)}">`).join('')}</datalist><div id="cinf" class="sm2"></div>
+<details id="pcd" open><summary>${_('Détails du crédit (téléphone, échéance, pièce d\'identité)')}</summary>
 <div class="eq"><div><label>${_('Téléphone')}</label><input class="in" id="cp" inputmode="tel"></div><div><label>${_('Échéance')}</label><select class="in" id="cd" onchange="$('#cdd').style.display=this.value=='x'?'':'none'"><option value="${S.set.dueDays}">${_('Dans {n} jours',{n:S.set.dueDays})}</option><option value="7">${_('Dans 7 jours')}</option><option value="30">${_('Dans 30 jours')}</option><option value="0">${_('Pas de date')}</option><option value="x">${_('Autre date…')}</option></select></div></div>
 <input class="in" id="cdd" type="date" style="display:none">
 <label>${_('N° de carte d\'identité ou de passeport')}</label><input class="in" id="ci"><label>${_('Photo de la pièce (facultatif)')}</label><input class="in" id="cf" type="file" accept="image/*" capture="environment" onchange="photo(this)">
-<label class="tg"><input type="checkbox" id="cc"><span>${_('Le client accepte l\'enregistrement de sa pièce d\'identité.')}</span></label></div>
-<div id="prest" class="sm2"></div>
+<label class="tg"><input type="checkbox" id="cc"><span>${_('Le client accepte l\'enregistrement de sa pièce d\'identité.')}</span></label></details></div>
 ${rx?`<label>${_('Ordonnance (n° ou nom du médecin, facultatif)')}</label><input class="in" id="rxn">`:''}
-<div class="pay2"><button class="b ol" onclick="M()">${_('Retour')}</button><button class="b gr" id="pok" onclick="payOk()">${_('Confirmer la vente')}</button></div>`);
+<button class="lnk" id="pml" onclick="payMan(1)">${_('Répartir autrement')}</button>
+<div class="kpf" id="pkw">${KP('payK','000')}</div>
+<div class="pay2"><button class="b ol" onclick="M()">${_('Retour')}</button><button class="b gr" id="pok" onclick="payOk()">${_('Valider la vente')}</button></div>`);
  payCalc()}
-function payEdit(){PY.auto=0;payCalc()}
-function payOp(k){PY.op=k;$$('#pmob .chip').forEach(b=>b.classList.toggle('on',b.dataset.k==k))}
-function payAmts(){const sub=ctotal(),d=discOf(sub),T=roundT(sub-d);return{sub,d:sub-T,T,e:num($('#pe').value)||0,mo:num($('#pm').value)||0,c:num($('#pc').value)||0}}
+function payDisc(){const d=$('#pdisc');d.style.display=d.style.display=='none'?'':'none'}
+// montants de la vente : total, ce que le client donne, monnaie, et où va le reste
+function payNums(){
+ const sub=ctotal(),T=roundT(sub-discOf(sub));
+ const A={sub,d:sub-T,T,e:0,mo:0,c:0,op:PY.op,tend:0,chg:0,r:0,un:0,g:0};
+ if(PY.man){
+  A.e=num($('#pe').value)||0;A.mo=num($('#pm').value)||0;A.c=num($('#pc').value)||0;
+  A.un=T-A.e-A.mo-A.c;
+  const td=num($('#pt').value)||0;if(A.e>0&&td>A.e){A.tend=td;A.chg=td-A.e}
+  return A}
+ const g=PY.g===''?(PY.m0=='e'?T:0):(num(PY.g)||0);
+ A.g=g;
+ if(g>=T){A.e=T;if(g>T){A.tend=g;A.chg=g-T}}
+ else{A.e=g;A.r=T-g;if(PY.dest=='c')A.c=A.r;else{A.mo=A.r;A.op=PY.dest}}
+ return A}
 function payCalc(){
- const sub=ctotal(),T=roundT(sub-discOf(sub));$('#tt').textContent=f(T);
- if(PY.auto){$('#pe').value=PY.m0=='e'?fm(T):'';$('#pm').value=PY.m0=='m'?fm(T):'';$('#pc').value=PY.m0=='c'?fm(T):''}
- const a=payAmts(),rest=T-a.e-a.mo-a.c;
- $('#pcash').style.display=a.e>0?'':'none';$('#pmob').style.display=a.mo>0?'':'none';$('#pcre').style.display=a.c>0?'':'none';
- const td=num($('#pt').value)||0;$('#pch').textContent=td>a.e?f(td-a.e):f(0);
- $('#prest').innerHTML=rest==0?(a.c>0&&a.e+a.mo>0?`<div class="bn g">${_('Acompte reçu : {a}. Reste dû par le client : {b}.',{a:f(a.e+a.mo),b:f(a.c)})}</div>`:''):`<div class="bn ${rest>0?'y':'r'}">${rest>0?_('Reste à répartir : {n}',{n:f(rest)}):_('Trop payé de {n}',{n:f(-rest)})}${rest>0?`<div class="chips" style="padding:6px 0 0"><button class="chip" onclick="payRest('pe')">→ ${_('Espèces')}</button><button class="chip" onclick="payRest('pm')">→ Mobile Money</button><button class="chip" onclick="payRest('pc')">→ ${_('Crédit')}</button></div>`:''}</div>`}
-function payRest(id){PY.auto=0;const a=payAmts(),rest=a.T-a.e-a.mo-a.c;if(rest<=0)return;const el=$('#'+id);el.value=fm((num(el.value)||0)+rest);payCalc()}
+ const A=payNums();PY.A=A;const man=PY.man;
+ $('#tt').textContent=f(A.T);
+ $('#pdn').textContent=A.d>0?_('Remise')+' −'+fm(A.d):'';
+ $('#pauto').style.display=man?'none':'';$('#pman').style.display=man?'':'none';$('#pml').style.display=man?'none':'';if(man)$('#pkw').style.display='none';
+ if(!man){
+  const blank=PY.g==='';
+  $('#pcb').style.display=PY.cash?'':'none';$('#pcl2').style.display=PY.cash?'none':'';
+  $('#pgl').textContent=_('Le client donne (espèces)');
+  $('#pgt').innerHTML=blank?`<span class="ph">${PY.m0=='e'?fm(A.T):'0'}</span>`:fm(A.g);
+  $('#pkw').style.display=PY.cash&&PY.kp?'':'none';
+  $('#psug').innerHTML=(PY.m0=='e'?chip(_('Exact'),blank,"payG('')"):chip(_('Exact'),!blank&&A.g==A.T,'payG('+A.T+')'))+paySug(A.T).map(v=>chip(fm(v),!blank&&A.g==v,'payG('+v+')')).join('');
+  $('#pchg').innerHTML=A.chg>0?`<div class="bn g chg"><span>${_('Monnaie à rendre')}</span><b>${f(A.chg)}</b></div>`:(A.r>0?`<div class="bn y chg"><span>${_('Reste à payer')} : <b>${f(A.r)}</b></span><b>→ ${esc(destName(PY.dest))}</b></div>`:'');
+  $('#pdl2').textContent=PY.m0=='e'?_('Si le client donne moins, le reste va sur :'):_('À payer avec :');
+  $$('#pdst .chip').forEach(b=>b.classList.toggle('on',b.dataset.k==PY.dest));
+ }else{
+  $('#pmcash').style.display=A.e>0?'':'none';
+  const td=num($('#pt').value)||0;$('#pch').textContent=td>A.e?f(td-A.e):f(0);
+  $('#prest').innerHTML=A.un==0?(A.c>0&&A.e+A.mo>0?`<div class="bn g">${_('Acompte reçu : {a}. Reste dû par le client : {b}.',{a:f(A.e+A.mo),b:f(A.c)})}</div>`:''):`<div class="bn ${A.un>0?'y':'r'}">${A.un>0?_('Reste à répartir : {n}',{n:f(A.un)}):_('Trop payé de {n}',{n:f(-A.un)})}${A.un>0?`<div class="chips" style="padding:6px 0 0"><button class="chip" onclick="payRest('pe')">→ ${_('Espèces')}</button><button class="chip" onclick="payRest('pm')">→ Mobile Money</button><button class="chip" onclick="payRest('pc')">→ ${_('Crédit')}</button></div>`:''}</div>`}
+ $('#pmob').style.display=A.mo>0?'':'none';$('#pmop').style.display=man?'flex':'none';
+ $$('#pmop .chip').forEach(b=>b.classList.toggle('on',b.dataset.k==PY.op));
+ $('#pcre').style.display=A.c>0?'':'none';
+ if(A.mo>0)paySms()}
+function payK(k){
+ let g=PY.g;
+ if(k=='b')g=g.slice(0,-1);
+ else{g=(g+k).replace(/^0+(?=\d)/,'');if(g.length>12)return}
+ PY.g=g;payCalc()}
+function payG(v){PY.g=String(v);payCalc()}
+function payKp(on){PY.kp=!!on;payCalc()}
+function payCash(){PY.cash=true;PY.kp=true;payCalc()}
+function payD(k){PY.dest=k;if(k!='c')PY.op=k;if(PY.m0=='e'){S.set.rdest=k;save()}payCalc()}
+function payOp(k){PY.op=k;payCalc()}
+function payMan(on){
+ if(on){const A=PY.A||payNums();PY.man=1;PY.op=A.op;
+  $('#pe').value=A.e?fm(A.e):'';$('#pm').value=A.mo?fm(A.mo):'';$('#pc').value=A.c?fm(A.c):'';$('#pt').value=A.tend?fm(A.tend):''}
+ else PY.man=0;
+ payCalc()}
+function payRest(id){const r=payNums().un;if(r<=0)return;const el=$('#'+id);el.value=fm((num(el.value)||0)+r);payCalc()}
 function payCl(){
  const n=$('#cn').value.trim().toLowerCase(),c=S.cl.find(x=>x.n.toLowerCase()==n);const i=$('#cinf');
  if(c){$('#cp').value=c.tel||'';$('#ci').value=c.pi||'';
   i.textContent=(c.a>0?_('Dette actuelle : {n}',{n:f(c.a)}):_('Client connu, aucune dette'))+(c.lim?' · '+_('Plafond : {n}',{n:f(c.lim)}):'')+(c.ph?' · '+_('pièce déjà enregistrée'):'')}
  else i.textContent=''}
+function payPick(id){const c=CLI(id);if(!c)return;$('#cn').value=c.n;payCl();$('#pcd').open=false}
 function photo(i){const fl=i.files[0];if(!fl)return;const im=new Image();im.onload=()=>{const k=Math.min(1,520/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);PY.idp=c.toDataURL('image/jpeg',.6);toast(_('Photo prête ✓'))};im.src=URL.createObjectURL(fl)}
+// clavier physique (ordinateur, clavier Bluetooth) : chiffres, effacer, entrée
+document.addEventListener('keydown',e=>{
+ if(!PY||PY.man)return;
+ const t=e.target;if(t&&/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))return;
+ if($('#pgv')){if(/^\d$/.test(e.key))payK(e.key);else if(e.key=='Backspace'){e.preventDefault();payK('b')}else if(e.key=='Enter'&&(!t||t===document.body))payOk()}
+ else if($('#qgv')&&QY){if(/^\d$/.test(e.key))qtyK(e.key);else if(e.key=='Backspace'){e.preventDefault();qtyK('b')}else if(e.key=='Enter'&&(!t||t===document.body))qtyOk()}});
+// ---- contrôle d'un SMS Mobile Money collé : montant, numéro de transaction, numéro déjà utilisé
+function smsParse(t){
+ t=String(t||'');
+ const out={amts:[],id:''};
+ const re=/(\d[\d.,\u00a0\u202f ]*\d|\d)/g;let m;
+ while((m=re.exec(t))){
+  const a=m.index,b=a+m[1].length;
+  const before=t.slice(Math.max(0,a-24),a).toLowerCase(),after=t.slice(b,b+8).toLowerCase();
+  let s=m[1].replace(/[\u00a0\u202f ]/g,'');
+  const dm=/^(.*\d)[.,]\d{2}$/.exec(s);if(dm)s=dm[1]; // 50 000,00 -> 50 000 (centimes enlevés)
+  const v=parseInt(s.replace(/[.,]/g,''),10);
+  if(isNaN(v)||v<100)continue;
+  const cur=/^\s*(gnf|fg|gf|f\b|francs?)/.test(after)||/(gnf|fg|gf)\s*[:\-]?\s*$/.test(before);
+  const nope=/(solde|balance|frais|fees?|commission|taxe|tax)\W*(gnf|fg)?\W*$/.test(before);
+  if(cur&&!nope)out.amts.push(v)}
+ const id=/(?:transaction|trans\.?|txn|r[ée]f(?:[ée]rence)?|\bid\b|n°)[\s:#=\-]*(?:(?:id|ref|n°|no|number|num[ée]ro)[\s:#=\-]*)?((?=[A-Za-z0-9._\-]*\d)[A-Za-z0-9][A-Za-z0-9._\-]{5,})/i.exec(t);
+ if(id)out.id=id[1].replace(/[.\-]+$/,'');
+ return out}
+function refUsed(ref){
+ if(!ref)return null;const r=String(ref).trim().toLowerCase();if(!r)return null;
+ for(let i=S.s.length-1;i>=0;i--){const s=S.s[i];if(!s.v&&s.pay.some(p=>p.m=='m'&&p.ref&&String(p.ref).trim().toLowerCase()==r))return s}
+ return null}
+function paySms(){
+ const box=$('#psr'),rf=$('#rf'),sm=$('#psm');if(!box||!rf||!sm||!PY||!PY.A)return;
+ const need=PY.A.mo,txt=sm.value.trim();let h='';
+ if(txt){
+  const o=smsParse(txt);
+  if(o.id&&!rf.value.trim())rf.value=o.id;
+  if(!o.amts.length)h+=`<div class="bn y chg"><span>${_('Aucun montant trouvé dans ce SMS. Vérifiez le texte collé.')}</span></div>`;
+  else if(o.amts.includes(need))h+=`<div class="bn g chg"><span>✓ ${_('Le SMS indique {n}, comme le montant à payer.',{n:f(need)})}</span></div>`;
+  else h+=`<div class="bn r chg"><span>⚠ ${_('Le SMS indique {a} mais cette vente demande {b} en Mobile Money.',{a:f(Math.max(...o.amts)),b:f(need)})}</span></div>`}
+ const d=refUsed(rf.value);
+ if(d)h+=`<div class="bn r chg"><span>⚠ ${_('Ce numéro de transaction a déjà servi pour la vente n° {n}.',{n:rcNo(d)})}</span></div>`;
+ if(txt||rf.value.trim())h+=`<div class="sm2">${_('Ce contrôle lit seulement le texte collé. Vérifiez aussi votre solde Orange Money / MTN.')}</div>`;
+ box.innerHTML=h}
 function payOk(){
- const a=payAmts();
- if(a.e+a.mo+a.c!=a.T)return toast(_('Le total payé doit être égal à {n}',{n:f(a.T)}));
+ const A=payNums();
+ if(PY.man&&A.un!=0)return toast(_('Le total payé doit être égal à {n}',{n:f(A.T)}));
  let cl=null;
- if(a.c>0){
+ if(A.c>0){
   const n=$('#cn').value.trim();if(!n)return toast(_('Le nom du client est nécessaire'));
   const ex=S.cl.find(x=>x.n.toLowerCase()==n.toLowerCase());
   const tel=$('#cp').value.trim(),pi=$('#ci').value.trim();
   if((pi||PY.idp)&&!$('#cc').checked)return toast(_('Le client doit accepter l\'enregistrement de sa pièce'));
   cl={n,tel,pi,ex,due:$('#cd').value=='x'?pd($('#cdd').value):(+$('#cd').value>0?D0(Date.now())+(+$('#cd').value)*DAY:0)};
   if($('#cd').value=='x'&&isNaN(cl.due))return toast(_('Choisissez la date d\'échéance'))}
- const args={a,cl,op:PY.op,ref:($('#rf')||{}).value||'',tend:num($('#pt').value)||0,rx:$('#rxn')?$('#rxn').value.trim():'',idp:PY.idp,ap:0};
+ const a={sub:A.sub,d:A.d,T:A.T,e:A.e,mo:A.mo,c:A.c};
+ const args={a,cl,op:A.op,ref:(($('#rf')||{}).value||'').trim(),tend:A.tend,rx:$('#rxn')?$('#rxn').value.trim():'',idp:PY.idp,ap:0};
  const step2=()=>{
   const eff=a.sub?(a.sub-a.T)*100/a.sub:0;
   if(!isO()&&!args.ap&&eff>S.set.sellMaxDisc+1e-9)return needOwner(ap=>{args.ap=ap;commitSale(args,ap)},_('Remise de {n} % : le patron doit autoriser.',{n:Math.round(eff*10)/10}));
   commitSale(args,args.ap)};
- const ex=cl&&cl.ex;
- if(ex&&ex.lim>0&&ex.a+a.c>ex.lim)return sure(_('Plafond de crédit dépassé : {a} + {b} dépasse {l}. Autoriser quand même ?',{a:f(ex.a),b:f(a.c),l:f(ex.lim)}),()=>needOwner(ap=>{args.ap=ap;step2()},_('Le patron doit autoriser un dépassement du plafond.')),_('Autoriser'));
- step2()}
+ const step1=()=>{
+  const ex=cl&&cl.ex;
+  if(ex&&ex.lim>0&&ex.a+a.c>ex.lim)return sure(_('Plafond de crédit dépassé : {a} + {b} dépasse {l}. Autoriser quand même ?',{a:f(ex.a),b:f(a.c),l:f(ex.lim)}),()=>needOwner(ap=>{args.ap=ap;step2()},_('Le patron doit autoriser un dépassement du plafond.')),_('Autoriser'));
+  step2()};
+ const dup=a.mo>0&&args.ref?refUsed(args.ref):null;
+ if(dup)return sure(_('Ce numéro de transaction a déjà servi pour la vente n° {n}. Continuer quand même ?',{n:rcNo(dup)}),step1,_('Continuer'));
+ step1()}
 function commitSale(g,ap){
  const t=Date.now(),a=g.a;
  const items=cart.map(l=>{const p=P(l.id),u=unit(p,l.u),bq=rq(l.q*u.f),list=uprice(p,l.u,tier);const al=takeStock(p,bq);
@@ -634,8 +949,27 @@ function commitSale(g,ap){
   if(g.idp){const old=c.ph;c.ph='ph'+uid();phPut(c.ph,g.idp);if(old)phDel(old)}
   c.a+=a.c;c.h.push({t,v:a.c,sid:sale.id,no:sale.no});if(g.cl.due)c.due=g.cl.due;
   sale.cl=c.n;sale.cid=c.id}
- S.s.push(sale);cart=[];vq0='';save(true);
- rcDone(sale)}
+ S.s.push(sale);cart=[];vq0='';
+ saleDone(sale)}
+// après la vente : un bandeau en bas (monnaie à rendre, reçu, annuler) et on peut servir le client suivant ; l'enregistrement se fait juste après l'affichage
+function saleDone(s){
+ LS={id:s.id,t:Date.now()};
+ const full=S.set.rcm=='full'||s.pay.some(p=>p.m=='c'&&p.a>0);
+ if(full)rcDone(s);else{M();vupd()}
+ const nv=$('#nv');if(nv)nv.innerHTML=nav();
+ clearTimeout(saleDone.h);saleDone.h=setTimeout(()=>{if(LS&&Date.now()-LS.t>=119000){LS=null;if(!cart.length)vupd()}},120000);
+ dirty=true;requestAnimationFrame(()=>setTimeout(()=>save(true),0))}
+function lsBar(){
+ if(!LS)return'';
+ const s=S.s.find(x=>x.id==LS.id);
+ if(!s||s.v||Date.now()-LS.t>120000){LS=null;return''}
+ const left=s.chg?`<div class="lsm">✓ ${_('Vente enregistrée')} · ${f(s.total)}</div><div class="chg2">${_('Monnaie à rendre')} : ${f(s.chg)}</div>`:`<b>✓ ${_('Vente enregistrée')}</b><div class="lsm">${f(s.total)}</div>`;
+ return `<div class="cart ls"><div class="gr1">${left}</div><button class="b sm ol" onclick="rcOpen('${s.id}')">${_('Reçu')}</button><button class="b sm ol" onclick="lsUndo('${s.id}')">${_('Annuler')}</button></div>`}
+function rcOpen(id){const s=S.s.find(x=>x.id==id);if(s)rcDone(s)}
+function lsUndo(id){
+ const s=S.s.find(x=>x.id==id);if(!s||s.v)return;
+ if(Date.now()-s.t>5*60000||!S.s.length||S.s[S.s.length-1].id!=id)return info(_('Trop tard pour annuler ici'),`<p>${_('Pour annuler une ancienne vente, allez dans Plus > Ventes.')}</p>`);
+ sure(_('Annuler cette vente ? Le stock sera remis.'),()=>{voidDo(s,CU);LS=null;toast(_('Vente annulée'));R()},_('Annuler la vente'))}
 // ---- reçus
 function shopLines(){const s=S.shop;return[s.name,[s.addr,s.tel?_('Tél.')+' '+s.tel:''].filter(Boolean).join(' · '),s.nif?'NIF '+s.nif:''].filter(Boolean)}
 function rcNo(s){return String(s.no||0).padStart(6,'0')}
@@ -925,11 +1259,13 @@ function undoSale(id){
  if(S.rt.some(r=>r.sid==id))return toast(_('Cette vente a déjà un retour : annulation impossible.'),3500);
  const cr0=s.pay.filter(p=>p.m=='c').reduce((a,p)=>a+p.a,0),c0=s.cid&&CLI(s.cid);
  if(cr0>0&&c0&&c0.a<cr0)return info(_('Annulation impossible'),`<p>${_('Le client a déjà payé une partie de cette dette. Utilisez « Retour / échange » pour rembourser le client.')}</p>`);
- needOwner(ap=>sure(_('Annuler cette vente ? Le stock sera remis.'),()=>{
-  s.items.forEach(x=>{const p=P(x.id);if(p)giveStock(p,rq(x.q*(x.f||1)),x.lots)});
-  const cr=s.pay.filter(p=>p.m=='c').reduce((a,p)=>a+p.a,0);
-  if(cr>0&&s.cid){const c=CLI(s.cid);if(c){c.a=Math.max(0,c.a-cr);c.h.push({t:Date.now(),v:-cr,x:1})}}
-  s.v=1;s.vt=Date.now();s.vb=ap;save(true);M();toast(_('Vente annulée'));R()},_('Annuler la vente')),_('Annuler une vente demande le code du patron.'))}
+ needOwner(ap=>sure(_('Annuler cette vente ? Le stock sera remis.'),()=>{voidDo(s,ap);M();toast(_('Vente annulée'));R()},_('Annuler la vente')),_('Annuler une vente demande le code du patron.'))}
+// annulation : le stock est remis, la dette du client est retirée, la vente reste dans les livres marquée « annulée »
+function voidDo(s,ap){
+ s.items.forEach(x=>{const p=P(x.id);if(p)giveStock(p,rq(x.q*(x.f||1)),x.lots)});
+ const cr=s.pay.filter(p=>p.m=='c').reduce((a,p)=>a+p.a,0);
+ if(cr>0&&s.cid){const c=CLI(s.cid);if(c){c.a=Math.max(0,c.a-cr);c.h.push({t:Date.now(),v:-cr,x:1})}}
+ s.v=1;s.vt=Date.now();s.vb=ap;save(true)}
 // ---- retours et échanges
 let RT=null;
 const retQ=(s,li)=>rq(S.rt.filter(r=>r.sid==s.id).reduce((a,r)=>a+((r.lines.find(l=>l.li==li)||{q:0}).q),0));
@@ -1037,6 +1373,24 @@ function closeOk(){
 function clShare(id){const r=S.cx.find(x=>x.id==id),a=agg(DS(),r.t0,r.t1+1,r.by);
  const L=['*'+S.shop.name+'* — '+_('Clôture de caisse'),fdt(r.t1)+' — '+UN(r.by),_('Ventes')+' : '+f(a.rev),...Object.keys(r.got).map(w=>wl(w)+' : '+_('attendu')+' '+f(r.exp[w]||0)+', '+_('compté')+' '+f(r.got[w])+', '+_('écart')+' '+(r.diff[w]>0?'+':'')+f(r.diff[w]))];
  share(L.join('\n'))}
+// ---- résumé du jour, à envoyer par WhatsApp (au patron, à un associé…)
+function dayText(){
+ const now=Date.now(),by=isO()?0:CU,a=agg(DS(),D0(now),D0(now)+DAY,by),mob=a.pay.om+a.pay.mtn+a.pay.ot;
+ const top=Object.values(a.prod).filter(p=>p.q>0).sort((x,y)=>y.rev-x.rev).slice(0,3);
+ const owed=S.cl.reduce((t,c)=>t+(c.a>0?c.a:0),0),late=S.cl.filter(c=>c.a>0&&c.due&&c.due<now).length,low=S.p.filter(p=>isLow(p)).length;
+ return['*'+S.shop.name+'* — '+_('Résumé du {d}',{d:fdate(now)}),
+  _('Ventes')+' : *'+f(a.rev-a.ret)+'* ('+a.n+' '+(a.n>1?_('ventes'):_('vente'))+')',
+  '💵 '+_('Espèces')+' : '+f(a.pay.e),
+  ...(mob?['📱 Mobile Money : '+f(mob)]:[]),
+  ...(a.pay.c?['🧾 '+_('À crédit')+' : '+f(a.pay.c)]:[]),
+  ...(a.rep?[_('Dettes remboursées')+' : '+f(a.rep)]:[]),
+  ...(a.ret?[_('Retours remboursés')+' : '+f(a.ret)]:[]),
+  ...(isO()&&a.exp?[_('Dépenses')+' : '+f(a.exp)]:[]),
+  ...(seeCost()?[_('Bénéfice estimé')+' : '+f(a.profit)]:[]),
+  ...(top.length?['',_('Les plus vendus')+' : '+top.map(p=>p.n+' ×'+fq(p.q)).join(', ')]:[]),
+  ...(isO()&&owed?[_('Les clients vous doivent')+' : '+f(owed)+(late?' ('+_('{n} en retard',{n:late})+')':'')]:[]),
+  ...(low?[_('Produits à recommander')+' : '+low]:[])].join('\n')}
+function daySend(){share(dayText())}
 // ---- écran Caisse
 function KA(){
  const now=Date.now(),by=isO()?0:CU,a=agg(DS(),D0(now),D0(now)+DAY,by),ss=S.s.filter(s=>isToday(s.t)&&(isO()||s.by==CU)).sort((x,y)=>y.t-x.t);
@@ -1044,6 +1398,7 @@ function KA(){
  const nm=ss.filter(s=>!s.v&&s.pay.some(p=>p.m=='m')).length,low=S.p.filter(p=>isLow(p)).length;
  const cl=S.cx.slice(-4).reverse().filter(c=>isO()||c.by==CU);
  return `<div class="sum"><small>${_('Ventes du jour')}</small><div class="tot">${f(a.rev-a.ret)}</div><small>${a.n} ${_('vente(s)')}${a.ret?' · '+_('retours')+' '+f(a.ret):''}</small></div>
+<div class="btns"><button class="b ol sm" onclick="daySend()">📤 ${_('Envoyer le résumé du jour')}</button></div>
 <div class="card pl">${sess?`<b>🟢 ${_('Caisse ouverte à {h}',{h:hm(sess.t0)})}</b>${kv('💵 '+_('Espèces attendues'),f(ex.c||0))}${Object.keys(ex).filter(w=>w!='c').map(w=>kv('📱 '+wl(w),f(ex[w]))).join('')}<div class="btns" style="padding:8px 0 0"><button class="b gr" onclick="closeCash()">${_('Clôturer la caisse')}</button></div>`:`<b>🔴 ${_('Caisse fermée')}</b><p class="sm2" style="margin:4px 0 8px">${_('Ouvrez la caisse pour que l\'appli vérifie l\'argent en fin de journée.')}</p><button class="b gr" onclick="openCash()">${_('Ouvrir la caisse')}</button>`}</div>
 ${isO()?`<div class="btns"><button class="b ol sm" onclick="exUI('x')">💸 ${_('Dépense')}</button><button class="b ol sm adv" onclick="go('k','exp')">${_('Voir les dépenses')}</button>${S.set.mods.ag?`<button class="b ol sm" onclick="go('k','ag')">📲 ${_('Agent Mobile Money')}</button>`:''}</div>`:(S.set.mods.ag?`<div class="btns"><button class="b ol sm" onclick="go('k','ag')">📲 ${_('Agent Mobile Money')}</button></div>`:'')}
 ${isO()&&typeof advCard=='function'?advCard():''}
@@ -1314,10 +1669,10 @@ function barSVG(vals,labs,o){
  o=o||{};const n=vals.length;if(!n)return'';
  const W=360,H=o.h||150,pb=22,pt=14,pl=3,mx=Math.max(1,...vals),bw=(W-pl*2)/n;
  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(o.t||'')}">`;
- vals.forEach((v,i)=>{const h=(H-pb-pt)*Math.max(v,0)/mx;s+=`<rect x="${(pl+i*bw+bw*.12).toFixed(1)}" y="${(H-pb-h).toFixed(1)}" width="${(bw*.76).toFixed(1)}" height="${(v>0?Math.max(h,1):0).toFixed(1)}" rx="2" fill="${o.c||'#16794f'}"><title>${esc(labs[i]+' : '+fm(v))}</title></rect>`});
+ vals.forEach((v,i)=>{const h=(H-pb-pt)*Math.max(v,0)/mx;s+=`<rect x="${(pl+i*bw+bw*.12).toFixed(1)}" y="${(H-pb-h).toFixed(1)}" width="${(bw*.76).toFixed(1)}" height="${(v>0?Math.max(h,1):0).toFixed(1)}" rx="2.5" style="fill:${o.c||'var(--ac)'}"><title>${esc(labs[i]+' : '+fm(v))}</title></rect>`});
  const st=Math.ceil(n/(o.nl||7));
- labs.forEach((l,i)=>{if(i%st==0)s+=`<text x="${(pl+i*bw+bw/2).toFixed(1)}" y="${H-7}" font-size="9" text-anchor="middle" fill="#5d6b8a">${esc(l)}</text>`});
- return s+`<text x="${W-2}" y="10" font-size="9" text-anchor="end" fill="#5d6b8a">max ${esc(fm(mx))}</text></svg>`}
+ labs.forEach((l,i)=>{if(i%st==0)s+=`<text x="${(pl+i*bw+bw/2).toFixed(1)}" y="${H-7}" font-size="9" text-anchor="middle" fill="#5C6A61">${esc(l)}</text>`});
+ return s+`<text x="${W-2}" y="10" font-size="9" text-anchor="end" fill="#5C6A61">max ${esc(fm(mx))}</text></svg>`}
 function hbar(label,v,mx,right,cls){return `<div class="kv"><span>${label}</span><b>${right}</b></div><div class="bar${cls?' '+cls:''}"><i style="width:${mx>0?Math.max(0,Math.min(100,v*100/mx)).toFixed(1):0}%"></i></div>`}
 // ventes par jour (ou par mois si la période est longue)
 function daySeries(r,a,b){
@@ -1347,7 +1702,7 @@ SUB.rep=()=>{
 <h3>${_('Moyens de paiement')}</h3><div class="card pl">${pm.length?pm.map(k=>hbar(_(PAYN[k]),r.pay[k],pmx,f(r.pay[k]),k=='c'?'w':'')).join(''):`<p class="hint" style="margin:0">${_('Aucune vente.')}</p>`}</div>
 <h3>${_('Produits les plus vendus')}</h3><div class="card pl sc">${top.length?`<table class="tb"><tr><th>${_('Produit')}</th><th>${_('Qté')}</th><th>${_('Ventes')}</th>${sc?`<th>${_('Marge')}</th>`:''}</tr>${top.map(x=>`<tr><td>${esc(x.n)}</td><td>${fq(x.q)}</td><td>${fm(x.rev)}</td>${sc?`<td class="${x.rev-x.cogs<0?'neg':''}">${fm(x.rev-x.cogs)}</td>`:''}</tr>`).join('')}</table>`:`<p class="hint" style="margin:0">${_('Aucune vente.')}</p>`}</div>
 ${cats.length>1||(cats.length==1&&cats[0].k)?`<h3>${_('Par catégorie')}</h3><div class="card pl">${cats.map(c=>hbar(esc(c.k||_('Sans catégorie')),c.v.rev,cmx,f(c.v.rev)+(sc?' · '+pcs(c.v.rev-c.v.cogs,c.v.rev)+' %':''))).join('')}</div>`:''}
-${hmx>0?`<h3>${_('Heures de vente')}</h3><div class="card pl ch">${barSVG(r.hour,r.hour.map((v,i)=>i+'h'),{t:_('Heures de vente'),c:'#2b5fb4',nl:8})}</div>`:''}
+${hmx>0?`<h3>${_('Heures de vente')}</h3><div class="card pl ch">${barSVG(r.hour,r.hour.map((v,i)=>i+'h'),{t:_('Heures de vente'),nl:8})}</div>`:''}
 ${isO()&&sellers.length>1?`<h3>${_('Par vendeur')}</h3><div class="card">${sellers.map(k=>rowh(esc(UN(+k)||'?'),f(r.sel[k].rev),r.sel[k].n+' '+_('vente(s)'))).join('')}</div>`:''}
 <div class="btns"><button class="b ol sm" onclick="repShare()">${_('Envoyer le résumé')}</button><button class="b ol sm nf" onclick="repPrint()">${_('Imprimer / PDF')}</button><button class="b ol sm" onclick="repCSV()">${_('Fichier Excel (CSV)')}</button></div>`};
 function repShare(){
@@ -1409,15 +1764,15 @@ SUB.adv=()=>{
  const sec=(ic,t,body,cls)=>`<div class="card pl"${cls?` style="border-color:${cls}"`:''}><b>${ic} ${t}</b>${body}</div>`;
  const parts=[];
  parts.push(a.tr===null?'':sec(a.tr>=0?'📈':'📉',_('Ventes de la semaine'),`<p style="margin:6px 0 0">${a.tr>=0?_('Vous avez vendu {p} % de plus que la semaine d\'avant ({a} contre {b}).',{p:a.tr,a:f(a.w1.net),b:f(a.w0.net)}):_('Vous avez vendu {p} % de moins que la semaine d\'avant ({a} contre {b}).',{p:-a.tr,a:f(a.w1.net),b:f(a.w0.net)})}</p>${a.up.length?`<small class="sm2">${_('En hausse')} : ${esc(a.up.map(x=>x.n).join(', '))}</small>`:''}${a.down.length?`<small class="sm2">${_('En baisse')} : ${esc(a.down.map(x=>x.n).join(', '))}</small>`:''}`));
- parts.push(a.out.length?sec('⏳',_('Produits qui vont manquer'),`<p class="sm2" style="margin:4px 0">${_('Calculé avec vos ventes des 30 derniers jours.')}</p>${a.out.slice(0,10).map(x=>rowh(esc(x.p.n+(x.p.g?' '+x.p.g:'')),x.d<=0?_('Rupture'):_('{n} jour(s)',{n:x.d}),_('Reste')+' '+fq(x.q)+(x.p.bu?' '+x.p.bu:'')+' · '+_('vendu environ {q} par jour',{q:fq(Math.round(x.v*10)/10)}),x.d<=2?'neg':'')).join('')}<div class="btns" style="padding:8px 0 0"><button class="b gr sm" onclick="go('s','reo')">📝 ${_('Préparer la commande')}</button></div>`,'#c8323f'):sec('✅',_('Stock'),`<p style="margin:6px 0 0">${S.s.length?_('Aucun produit ne risque de manquer dans les 10 prochains jours.'):_('Les prévisions apparaissent après quelques jours de ventes.')}</p>`));
+ parts.push(a.out.length?sec('⏳',_('Produits qui vont manquer'),`<p class="sm2" style="margin:4px 0">${_('Calculé avec vos ventes des 30 derniers jours.')}</p>${a.out.slice(0,10).map(x=>rowh(esc(x.p.n+(x.p.g?' '+x.p.g:'')),x.d<=0?_('Rupture'):_('{n} jour(s)',{n:x.d}),_('Reste')+' '+fq(x.q)+(x.p.bu?' '+x.p.bu:'')+' · '+_('vendu environ {q} par jour',{q:fq(Math.round(x.v*10)/10)}),x.d<=2?'neg':'')).join('')}<div class="btns" style="padding:8px 0 0"><button class="b gr sm" onclick="go('s','reo')">📝 ${_('Préparer la commande')}</button></div>`,'var(--red)'):sec('✅',_('Stock'),`<p style="margin:6px 0 0">${S.s.length?_('Aucun produit ne risque de manquer dans les 10 prochains jours.'):_('Les prévisions apparaissent après quelques jours de ventes.')}</p>`));
  if(sc){
-  parts.push(a.sold.length?sec('⚠',_('Vendu moins cher que l\'achat (30 jours)'),`${a.sold.slice(0,6).map(x=>rowh(esc(x.n),'-'+f(x.lost),fq(x.q)+' '+_('vendu(s)'),'neg')).join('')}<p class="sm2">${_('Vérifiez le prix de vente ou la remise accordée.')}</p>`,'#c8323f'):'');
-  parts.push(a.low.length?sec('⚠',_('Prix de vente plus bas que le prix d\'achat'),`${a.low.slice(0,8).map(x=>rowh(esc(x.p.n),f(x.p.pr),_('achat')+' '+f(x.p.c),'neg')).join('')}<div class="btns" style="padding:8px 0 0"><button class="b ol sm" onclick="go('s','bulk')">％ ${_('Changer les prix')}</button></div>`,'#c8323f'):'');
+  parts.push(a.sold.length?sec('⚠',_('Vendu moins cher que l\'achat (30 jours)'),`${a.sold.slice(0,6).map(x=>rowh(esc(x.n),'-'+f(x.lost),fq(x.q)+' '+_('vendu(s)'),'neg')).join('')}<p class="sm2">${_('Vérifiez le prix de vente ou la remise accordée.')}</p>`,'var(--red)'):'');
+  parts.push(a.low.length?sec('⚠',_('Prix de vente plus bas que le prix d\'achat'),`${a.low.slice(0,8).map(x=>rowh(esc(x.p.n),f(x.p.pr),_('achat')+' '+f(x.p.c),'neg')).join('')}<div class="btns" style="padding:8px 0 0"><button class="b ol sm" onclick="go('s','bulk')">％ ${_('Changer les prix')}</button></div>`,'var(--red)'):'');
   parts.push(a.best.length?sec('💰',_('Produits qui rapportent le plus (30 jours)'),a.best.map(x=>rowh(esc(x.n),f(x.m),pcs(x.m,x.rev)+' %','pos')).join('')):'')}
  parts.push(a.dor.length?sec('😴',_('Stock qui ne bouge pas'),`<p class="sm2" style="margin:4px 0">${_('Aucune vente depuis 60 jours. Argent immobilisé : {n}',{n:f(a.dorT)})}</p>${a.dor.slice(0,8).map(x=>rowh(esc(x.p.n),f(x.val),fq(x.p.q)+(x.p.bu?' '+x.p.bu:''))).join('')}<p class="sm2">${_('Idée : une petite promotion, ou ne plus le racheter.')}</p>`):(a.hist<45&&S.s.length?sec('😴',_('Stock qui ne bouge pas'),`<p class="sm2" style="margin:6px 0 0">${_('Ce conseil apparaît après 45 jours d\'utilisation.')}</p>`):''));
  parts.push(a.late.length?sec('🧾',_('Clients en retard'),`${a.late.slice(0,5).map(c=>rowh(esc(c.n),f(c.a),dueTxt(c))).join('')}<div class="btns" style="padding:8px 0 0"><button class="b ol sm" onclick="go('c');cf0='late';R()">${_('Voir et relancer')}</button></div>`):'');
  parts.push(a.gaps.length?sec('💵',_('Écarts de caisse'),`<p style="margin:6px 0 0">${a.ncl==1?_('Il manquait de l\'argent à la dernière clôture : {a}.',{a:f(a.gapT)}):_('Il manquait de l\'argent à {n} des {m} dernières clôtures, pour {a} en tout.',{n:a.gaps.length,m:a.ncl,a:f(a.gapT)})}</p>`):'');
- parts.push(a.ne?sec('💊',_('Péremption'),`<p style="margin:6px 0 0">${_('{n} produit(s) périmés ou bientôt périmés.',{n:a.ne})}</p><div class="btns" style="padding:8px 0 0"><button class="b ol sm" onclick="sf0='exp';go('s')">${_('Voir')}</button></div>`,'#c8323f'):'');
+ parts.push(a.ne?sec('💊',_('Péremption'),`<p style="margin:6px 0 0">${_('{n} produit(s) périmés ou bientôt périmés.',{n:a.ne})}</p><div class="btns" style="padding:8px 0 0"><button class="b ol sm" onclick="sf0='exp';go('s')">${_('Voir')}</button></div>`,'var(--red)'):'');
  return `${backBtn("go('p')")}<h3>💡 ${_('Conseiller')}</h3><p class="hint" style="margin-top:0">${_('Ces conseils sont de simples calculs faits sur votre téléphone avec vos ventes. Aucune donnée ne quitte l\'appareil.')}</p>${parts.join('')||`<p class="hint">${_('Pas encore assez de ventes pour donner des conseils.')}</p>`}`};
 
 // ---- comptabilité simplifiée pour le comptable
@@ -1568,6 +1923,7 @@ SUB.set=()=>{
 <label>${_('Arrondir les totaux vers le bas à')}</label><select class="in" id="rr">${[0,50,100,500,1000].map(k=>`<option value="${k}"${s.round==k?' selected':''}>${k?k+' GNF':_('Pas d\'arrondi')}</option>`).join('')}</select>
 <label>${_('Remise maximale d\'un vendeur sans le code du patron (%)')}</label><input class="in" id="rd" inputmode="decimal" value="${s.sellMaxDisc}">
 <label>${_('Délai de paiement par défaut des clients (jours)')}</label><input class="in" id="rdu" inputmode="numeric" value="${s.dueDays}">
+<label>${_('Après une vente')}</label><select class="in" id="rcm"><option value=""${s.rcm=='full'?'':' selected'}>${_('Barre rapide (le plus rapide)')}</option><option value="full"${s.rcm=='full'?' selected':''}>${_('Reçu complet à chaque vente')}</option></select>
 ${ck('rsc',s.sellCost,_('Les vendeurs voient les prix d\'achat et les bénéfices'))}${ck('rro',s.reqOpen,_('Obliger à ouvrir la caisse avant de vendre'))}</div>
 <div class="card pl"><b>${_('Modules')}</b>
 ${ck('rph',s.mods.ph,_('Pharmacie : lots, péremption, ordonnances, équivalents'))}
@@ -1577,6 +1933,7 @@ ${ck('rag',s.mods.ag,_('Agent Mobile Money : dépôts, retraits, commissions'))}
 ${ck('rtv',s.mods.tv,_('TVA : calculer une estimation (désactivée par défaut)'))}
 <label>${_('Taux de TVA (%)')}</label><input class="in" id="rtx" inputmode="decimal" value="${s.tva}"></div>
 <div class="card pl"><b>${_('Affichage')}</b>
+<label>${_('Couleur principale')}</label><div class="sws" id="sws">${accSw()}</div>
 ${ck('rsi',s.simple,_('Mode simple : gros boutons, moins de choses à l\'écran'))}${ck('rbg',s.big,_('Écriture plus grande'))}</div>
 <div class="top"><button class="b gr" onclick="setSave()">${_('Enregistrer')}</button></div>`};
 function setSave(){
@@ -1585,7 +1942,7 @@ function setSave(){
  const dsc=dec(v('rd')),dd=num(v('rdu')),ex=num(v('rex')),tx=dec(v('rtx'));
  Object.assign(S.shop,{name:nm,addr:v('ra').trim(),tel:v('rt').trim(),nif:v('rf').trim(),own:v('ro').trim()});
  s.rcw=+v('rw');s.msg=v('rm2').trim();s.round=+v('rr');s.sellMaxDisc=isNaN(dsc)?10:Math.max(0,Math.min(100,dsc));s.dueDays=isNaN(dd)?15:dd;
- s.sellCost=c('rsc');s.reqOpen=c('rro');
+ s.sellCost=c('rsc');s.reqOpen=c('rro');s.rcm=v('rcm')=='full'?'full':'';
  const wasPh=s.mods.ph;s.mods.ph=c('rph');s.expd=isNaN(ex)?90:ex;s.mods.ag=c('rag');s.agRate=dec(v('rar'))||0;s.mods.tv=c('rtv');s.tva=isNaN(tx)?18:tx;
  s.simple=c('rsi');s.big=c('rbg');
  save(true);back();toast(_('Réglages enregistrés ✓'));
@@ -1666,7 +2023,7 @@ SUB.help=()=>`${backBtn()}<h3>❓ ${_('Aide et à propos')}</h3>
 <p class="sm2">• ${_('Les paiements Mobile Money sont notés à la main : vérifiez-les avec le SMS de l\'opérateur.')}</p>
 <p class="sm2">• ${_('Les rapports et la comptabilité sont indicatifs : faites-les valider par un comptable.')}</p>
 <p class="sm2">• ${_('L\'impression passe par le système du téléphone (imprimante ou PDF).')}</p></div>
-<div class="card pl"><b>${_('À propos')}</b><p class="sm2">Boutique Facile — ${_('version {v}',{v:BUILD.slice(0,8)})}</p></div>`;
+<div class="card pl"><div class="abl">${LOGO_H}</div><p class="sm2">${_('version {v}',{v:BUILD.slice(0,8)})}</p></div>`;
 
 // ---- plusieurs boutiques : chaque boutique reste indépendante, les chiffres se regroupent par fichiers
 function brPack(days){
@@ -1947,7 +2304,7 @@ function registerSW(){
  navigator.serviceWorker.register('sw.js').catch(()=>{})}
 async function init(){
  try{await loadState()}catch(e){console.error(e);S=newState(true)}
- setLang(S.set.lang||'fr');
+ setLang(S.set.lang||'fr');applyAccent();
  lockInit();
  if(FR){CU=S.users[0].id;if(!S.set.setup)wizard();R()}
  else lock();
