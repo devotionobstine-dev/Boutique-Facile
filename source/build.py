@@ -123,4 +123,28 @@ manifest = {"id": "./", "name": "Boutique Facile", "short_name": "Boutique",
 open(os.path.join(DIST, 'manifest.webmanifest'), 'w').write(json.dumps(manifest, ensure_ascii=False, separators=(',', ':')))
 for ic in ('icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'apple-touch-icon.png'):
     shutil.copy(os.path.join(ASSETS, ic), os.path.join(DIST, ic))
+# ---- pages d'accompagnement (présentation, guide) : mêmes couleurs et même logo que l'application
+# Chaque page source a une partie « tête » (titre, styles) et un corps, séparés par <!--body-->.
+# On fabrique la page complète (GitHub Pages) et une variante artefact (l'hébergeur ajoute lui-même <html>, <head>, <body>).
+PAGES = os.path.join(ROOT, 'pages')
+FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900'
+         '&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">')
+site_css = open(os.path.join(PAGES, 'site.css'), encoding='utf-8').read()
+for name in ('decouvrir', 'guide'):
+    src = open(os.path.join(PAGES, name + '.html'), encoding='utf-8').read()
+    assert src.count('<!--body-->') == 1
+    ph, pb = src.split('<!--body-->', 1)
+    ph = ph.replace('__CSS__', site_css); pb = pb.replace('__LOGO_IC__', LOGO_IC)
+    open(os.path.join(DIST, name + '.html'), 'w', encoding='utf-8').write(
+        '<!DOCTYPE html>\n<html lang="fr"><head><meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
+        '<meta name="theme-color" content="%s"><link rel="icon" type="image/png" href="icon-192.png">%s\n%s</head>\n<body>%s</body></html>\n'
+        % (THEME, FONTS, ph.strip(), pb))
+    open(os.path.join(DIST, name + '.artifact.html'), 'w', encoding='utf-8').write(
+        ph.strip() + '\n<meta name="claude:viewport-fit-sides" content="cover">\n' + FONTS + '\n' + pb)
+os.makedirs(os.path.join(DIST, 'captures'), exist_ok=True)
+for f in glob.glob(os.path.join(PAGES, 'captures', '*.webp')):
+    shutil.copy(f, os.path.join(DIST, 'captures', os.path.basename(f)))
+
 print('build', h, 'CAT', len(cat), 'index.html', os.path.getsize(os.path.join(DIST, 'index.html')))

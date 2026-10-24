@@ -1,0 +1,152 @@
+<title>Boutique Facile</title>
+<meta name="description" content="Caisse, stock, dettes clients et comptabilité pour petites boutiques et pharmacies, même sans internet.">
+<style>
+__CSS__
+/* page de présentation : grand titre à gauche, téléphone + reçu à droite ; puis une ligne par fonction */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:56px 40px}
+.hero h1 em{font-style:normal;color:var(--green);background:linear-gradient(transparent 62%,var(--amber-l) 0);background:linear-gradient(transparent 62%,color-mix(in srgb,var(--amber) 55%,transparent) 0)}
+.hero .txt{display:grid;gap:22px;min-width:0}
+.hero .vis{position:relative;display:flex;justify-content:center;min-height:520px}
+.hero .vis .phone{transform:rotate(-2deg)}
+.hero .vis .receipt{position:absolute;right:max(0px,calc(50% - 250px));bottom:-8px;transform:rotate(4deg)}
+.for{display:flex;flex-wrap:wrap;gap:8px}
+.for span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.92rem}
+.feat{padding-block:40px}
+.feat>.wrap>header{display:grid;gap:10px;margin-bottom:28px;max-width:40em}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px 48px;align-items:center;padding-block:36px;border-top:1px solid var(--line)}
+.row:nth-of-type(even){grid-template-columns:auto minmax(0,1fr)}
+.row:nth-of-type(even) .phone{order:-1}
+.row .txt{display:grid;gap:14px;min-width:0;max-width:34em}
+.row ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.row li{padding-left:26px;position:relative}
+.row li::before{content:"";position:absolute;left:4px;top:.55em;width:10px;height:10px;border-radius:3px;background:var(--amber)}
+.facts{background:var(--green);color:var(--on-green);margin-top:24px}
+.facts .wrap{padding-block:48px;display:grid;gap:28px}
+.facts h2{color:inherit}
+.facts .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.facts .grid div{display:grid;gap:6px;align-content:start}
+.facts .grid b{font-family:var(--f-display);font-stretch:90%;font-size:1.2rem}
+.facts .grid p{opacity:.88}
+.inst .wrap{padding-block:56px 8px;display:grid;gap:24px}
+.inst .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.inst .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:12px;align-content:start}
+.inst ol{margin:0;padding-left:1.3em;display:grid;gap:6px}
+.copy{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.copy button{font:700 .95rem var(--f-body);border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 12px;cursor:pointer}
+.know .wrap{padding-block:48px 0;display:grid;gap:18px}
+.know ul{margin:0;padding-left:1.2em;display:grid;gap:8px;max-width:44em}
+@media (max-width:860px){
+ .hero .wrap{grid-template-columns:minmax(0,1fr);padding-block:32px 24px}
+ .hero .vis{min-height:0;padding-bottom:60px}
+ .hero .vis .receipt{right:0;bottom:0;width:210px;font-size:.72rem}
+ .row,.row:nth-of-type(even){grid-template-columns:minmax(0,1fr)}
+ .row .phone,.row:nth-of-type(even) .phone{order:2;justify-self:center}
+ .facts .grid,.inst .two{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+<!--body-->
+<div class="top"><div class="wrap"><a class="brand" href="#">__LOGO_IC__<span>Boutique Facile</span></a><nav><a href="#fonctions">Fonctions</a><a href="#installer">Installer</a><a href="guide.html">Guide</a></nav></div></div>
+
+<section class="hero"><div class="wrap">
+ <div class="txt">
+  <p class="eyebrow">Caisse · Stock · Dettes clients</p>
+  <h1>La caisse de votre boutique, <em>dans votre téléphone</em>.</h1>
+  <p class="lead">Boutique Facile enregistre vos ventes, calcule la monnaie à rendre, suit votre stock et les dettes de vos clients. Elle marche sans internet et vos données restent sur votre téléphone.</p>
+  <div class="btns"><a class="btn pri" href="https://devotionobstine-dev.github.io/Boutique-Facile/">Ouvrir l'application</a><a class="btn sec" href="guide.html">Lire le guide</a></div>
+  <div class="for" aria-label="Pour quels commerces"><span>Alimentation</span><span>Pharmacie</span><span>Quincaillerie</span><span>Agent Mobile Money</span><span>Tout petit commerce</span></div>
+ </div>
+ <div class="vis">
+  <div class="phone"><img src="captures/encaisser.webp" width="780" height="1520" alt="Écran Encaisser : total 700 000 GNF, le client donne 750 000, monnaie à rendre 50 000 GNF"></div>
+  <div class="receipt" aria-label="Exemple de reçu">
+   <div class="c"><b>Boutique du Marché</b><br>Tél. 622 00 00 00</div><hr>
+   Reçu n° 000075<br>Vendeur : Patron<hr>
+   <div class="r"><span>2 × Riz 25 kg</span><span>560 000</span></div>
+   <div class="r"><span>1 × Huile 5 L</span><span>110 000</span></div>
+   <div class="r"><span>2 × Sucre 1 kg</span><span>30 000</span></div><hr>
+   <div class="r tt"><span>TOTAL</span><span>700 000 GNF</span></div>
+   <div class="r"><span>Espèces</span><span>700 000</span></div>
+   <div class="r"><span>Donné</span><span>750 000</span></div>
+   <div class="r chg"><span>Rendu</span><span>50 000</span></div><hr>
+   <div class="c">Merci de votre confiance&nbsp;!</div>
+  </div>
+ </div>
+</div></section>
+
+<section class="feat" id="fonctions"><div class="wrap">
+ <header><p class="eyebrow">Ce qui change au comptoir</p><h2>Moins de calculs de tête, moins de cahiers, plus de clarté le soir.</h2></header>
+
+ <div class="row">
+  <div class="txt"><h3>Vendre en quelques touches</h3>
+   <p>Touchez les produits, puis Espèces, Mobile Money ou À crédit. Tapez ce que le client donne : la monnaie à rendre s'affiche tout de suite.</p>
+   <ul><li>Appui long sur un produit pour choisir la quantité ou le format (carton, boîte, plaquette).</li><li>Une vente peut être mise en attente pour servir le client suivant.</li><li>Codes-barres avec une douchette ou la caméra du téléphone.</li><li>Reçu envoyé par WhatsApp ou SMS, ou imprimé.</li></ul></div>
+  <div class="phone sm"><img loading="lazy" src="captures/panier.webp" width="780" height="1520" alt="Écran Vendre avec les produits et le panier à 700 000 GNF"></div>
+ </div>
+
+ <div class="row">
+  <div class="txt"><h3>Les dettes, sans cahier</h3>
+   <p>Chaque vente à crédit est notée au nom du client, avec la date promise. Vous voyez qui est en retard et vous le relancez par WhatsApp ou SMS, avec un message déjà écrit.</p>
+   <ul><li>Le client peut payer une partie maintenant et le reste plus tard.</li><li>Plafond de crédit par client : le patron doit autoriser un dépassement.</li><li>Pièce d'identité enregistrée seulement avec l'accord du client.</li></ul></div>
+  <div class="phone sm"><img loading="lazy" src="captures/clients.webp" width="780" height="1520" alt="Liste des clients avec leurs dettes et le bouton Relancer"></div>
+ </div>
+
+ <div class="row">
+  <div class="txt"><h3>Le stock qui prévient</h3>
+   <p>Chaque vente sort du stock. L'application vous dit quels produits vont manquer, propose les quantités à commander et prépare le message pour votre fournisseur.</p>
+   <ul><li>Inventaire, corrections de stock avec le motif (casse, vol, périmé).</li><li>Achats et dettes envers les fournisseurs.</li><li>Pharmacie : lots, dates de péremption, ordonnances, médicaments équivalents.</li></ul></div>
+  <div class="phone sm"><img loading="lazy" src="captures/recommander.webp" width="780" height="1520" alt="Produits à recommander groupés par fournisseur, avec envoi par WhatsApp"></div>
+ </div>
+
+ <div class="row">
+  <div class="txt"><h3>Une caisse juste, chaque soir</h3>
+   <p>Ouvrez la caisse le matin avec l'argent du tiroir. Le soir, comptez : l'application montre l'écart, en espèces comme sur Orange Money et MTN MoMo.</p>
+   <ul><li>Dépenses, retraits du patron et apports notés au même endroit.</li><li>Résumé du jour envoyé au patron par WhatsApp.</li><li>Un code par vendeur : chaque vente est notée à son nom.</li></ul></div>
+  <div class="phone sm"><img loading="lazy" src="captures/cloture.webp" width="780" height="1520" alt="Clôture de caisse : attendu 200 000 GNF, compté 195 000, écart moins 5 000"></div>
+ </div>
+
+ <div class="row">
+  <div class="txt"><h3>Vos chiffres, clairement</h3>
+   <p>Ventes par jour, produits les plus vendus, bénéfice estimé. Le conseiller signale les produits qui vont manquer, le stock qui ne bouge pas et les ventes faites sous le prix d'achat.</p>
+   <ul><li>Livre de caisse et fichiers pour le comptable (Excel).</li><li>Dossier d'activité à imprimer pour une banque ou une microfinance.</li><li>Plusieurs boutiques : chaque gérant envoie un rapport, vous voyez tout ensemble.</li></ul></div>
+  <div class="phone sm"><img loading="lazy" src="captures/rapports.webp" width="780" height="1520" alt="Rapport des 7 derniers jours : ventes, marge brute, bénéfice estimé"></div>
+ </div>
+</div></section>
+
+<section class="facts"><div class="wrap">
+ <h2>Pensée pour le terrain</h2>
+ <div class="grid">
+  <div><b>Sans internet</b><p>Une fois installée, l'application marche hors ligne. Internet sert seulement à envoyer un reçu ou un message, et à recevoir les nouvelles versions.</p></div>
+  <div><b>Vos données chez vous</b><p>Tout est enregistré sur le téléphone. Aucun compte à créer, rien n'est envoyé ailleurs.</p></div>
+  <div><b>Un code par personne</b><p>Les vendeurs vendent. Une forte remise, un retour ou une annulation demandent le code du patron.</p></div>
+  <div><b>Sauvegarde en un fichier</b><p>Gardez-la dans WhatsApp, votre e-mail ou Google Drive. Un mot de passe peut la protéger.</p></div>
+  <div><b>Grandes touches</b><p>Mode simple avec de gros boutons et écriture plus grande, au choix.</p></div>
+  <div><b>Votre langue</b><p>En français. Vous pouvez ajouter le soussou, le pular ou le malinké en saisissant les traductions.</p></div>
+ </div>
+</div></section>
+
+<section class="inst" id="installer"><div class="wrap">
+ <header style="display:grid;gap:10px"><p class="eyebrow">Installer</p><h2>Sur l'écran d'accueil, comme une application.</h2></header>
+ <div class="copy"><span class="url" id="url">https://devotionobstine-dev.github.io/Boutique-Facile/</span><button type="button" id="cp">Copier le lien</button></div>
+ <div class="two">
+  <div class="card"><h3>Android</h3><ol><li>Ouvrez le lien dans <b>Chrome</b>.</li><li>Touchez <b>Installer l'application</b> (ou le menu ⋮, puis <b>Ajouter à l'écran d'accueil</b>).</li><li>Ouvrez Boutique Facile depuis l'écran d'accueil.</li></ol></div>
+  <div class="card"><h3>iPhone</h3><ol><li>Ouvrez le lien dans <b>Safari</b>.</li><li>Touchez le bouton <b>Partager</b>, puis <b>Sur l'écran d'accueil</b>.</li><li>Ouvrez Boutique Facile depuis l'écran d'accueil.</li></ol></div>
+ </div>
+ <p class="mut">Le <a href="guide.html">guide d'utilisation</a> explique chaque écran pas à pas.</p>
+</div></section>
+
+<section class="know"><div class="wrap">
+ <h2>Bon à savoir</h2>
+ <ul>
+  <li>Si le téléphone est perdu ou cassé, les données partent avec lui : faites une sauvegarde chaque semaine.</li>
+  <li>Les paiements Orange Money et MTN MoMo sont notés à la main. Vérifiez-les avec le SMS de l'opérateur.</li>
+  <li>Les rapports et la comptabilité sont indicatifs : faites-les valider par un comptable.</li>
+  <li>Le module pharmacie aide au suivi, il ne remplace ni le pharmacien ni la réglementation.</li>
+ </ul>
+</div></section>
+
+<footer class="foot"><div class="wrap"><a class="brand" href="#">__LOGO_IC__<span>Boutique Facile</span></a><span class="mut small"><a href="guide.html">Guide d'utilisation</a> · <a href="https://devotionobstine-dev.github.io/Boutique-Facile/">Ouvrir l'application</a></span></div></footer>
+<script>
+document.getElementById('cp').addEventListener('click',function(){
+ var b=this,t=document.getElementById('url').textContent;
+ var sel=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('url'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Lien sélectionné'};
+ try{navigator.clipboard.writeText(t).then(function(){b.textContent='Lien copié ✓'},sel)}catch(e){sel()}});
+</script>
