@@ -13,7 +13,11 @@ function needOwner(fn,why){
   const o=S.users.find(u=>u.r=='o'&&u.on&&u.pin&&u.pin==hs(v));
   if(!o)return toast(_('Code incorrect'));
   ovr++;try{fn(o.id)}finally{ovr--}},{pw:1})}
+function readErrUI(){
+ $('#lk').style.display='none';
+ M(`<h2>⚠ ${_('Vos données n\'ont pas pu être lues')}</h2><p>${_('Le téléphone n\'a pas réussi à lire la mémoire de l\'application. Rien n\'a été effacé et rien ne sera enregistré tant que la lecture échoue.')}</p><p>${_('Fermez complètement l\'application puis rouvrez-la. Si le problème continue, redémarrez le téléphone, ou restaurez votre dernière sauvegarde ci-dessous.')}</p><label>${_('Restaurer une sauvegarde')}</label><input class="in" type="file" accept=".json,application/json" onchange="bakFile(this)"><div class="pay2 o"><button class="b gr" onclick="location.reload()">${_('Réessayer')}</button></div>`)}
 function lock(){
+ if(readFail)return readErrUI();
  if(FR)return;
  const o=S.users.find(u=>u.r=='o');lkMode=(!o||!o.pin)?'create':'enter';
  $('#lk').style.display='flex';M();
