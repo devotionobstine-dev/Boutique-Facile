@@ -21,14 +21,16 @@ async function brExport(){
  const p=brPack(BR.days);
  await outFile('rapport-'+nz(S.shop.name).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')+'-'+ymd(Date.now())+'.json',JSON.stringify(p),'application/json');
  toast(_('Rapport créé ✓'))}
+// fichier reçu d'un autre téléphone : identifiant simple (il sert dans un onclick) et listes attendues par les calculs
+const brValid=p=>!!(p&&p.kind=='bf-branch'&&p.shop&&typeof p.shop.id=='string'&&/^[a-z0-9]{1,40}$/i.test(p.shop.id)&&p.D&&['s','rt','ex','adj','ag','pu','cl'].every(k=>Array.isArray(p.D[k])));
 function brImport(inp){
  const fls=[...inp.files];if(!fls.length)return;let ok=0,bad=0,own=0,done=0;
  fls.forEach(fl=>{const rd=new FileReader();
   rd.onload=()=>{
    try{const p=JSON.parse(String(rd.result));
-    if(p.kind!='bf-branch'||!p.shop||!p.D)throw new Error('bad');
+    if(!brValid(p))throw new Error('bad');
     if(p.shop.id==S.shop.id){own++}
-    else{const o=S.br[p.shop.id];if(!o||o.t<=p.t){S.br[p.shop.id]={name:p.shop.name,t:p.t,from:p.from,sv:p.sv,cr:p.cr,sd:p.sd,D:p.D}}ok++}
+    else{const o=S.br[p.shop.id];if(!o||o.t<=p.t){S.br[p.shop.id]={name:String(p.shop.name||''),t:+p.t||0,from:+p.from||0,sv:+p.sv||0,cr:+p.cr||0,sd:+p.sd||0,D:p.D}}ok++}
    }catch(e){bad++}
    if(++done==fls.length){save(true);R();toast((ok?_('{n} rapport(s) importé(s) ✓',{n:ok}):'')+(own?' '+_('Ce rapport vient de cette boutique.'):'')+(bad?' '+_('{n} fichier(s) non reconnu(s)',{n:bad}):''),3800)}};
   rd.onerror=()=>{bad++;if(++done==fls.length){R()}};

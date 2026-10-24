@@ -38,7 +38,8 @@ function navItems(){
 function nav(){return navItems().map(([k,i,l,n])=>`<button class="${tab==k?'on':''}" onclick="go('${k}')"><i>${i}</i>${l}${n?`<em>${n>99?'99+':n}</em>`:''}</button>`).join('')}
 function banners(){
  let h='';
- if(storErr)h+=`<div class="bn r"><b>⚠ ${_('Les données ne sont pas enregistrées.')}</b> ${_('La mémoire est pleine ou bloquée. Faites une sauvegarde tout de suite.')}<br><button class="b sm gr" onclick="go('p','bak')">${_('Sauvegarder')}</button></div>`;
+ if(storErr=='read')h+=`<div class="bn r"><b>⚠ ${_('Vos données n\'ont pas pu être lues.')}</b> ${_('Rien n\'est enregistré. Fermez puis rouvrez l\'application.')}</div>`;
+ else if(storErr)h+=`<div class="bn r"><b>⚠ ${_('Les données ne sont pas enregistrées.')}</b> ${_('La mémoire est pleine ou bloquée. Faites une sauvegarde tout de suite.')}<br><button class="b sm gr" onclick="go('p','bak')">${_('Sauvegarder')}</button></div>`;
  if(newVer)h+=`<div class="bn b">${_('Une nouvelle version est prête. Fermez puis rouvrez l\'application pour l\'utiliser.')}</div>`;
  if(memWarn)h+=`<div class="bn y">${memWarn} <button class="lnk" onclick="go('p','bak')">${_('Voir')}</button></div>`;
  if((tab=='k'||tab=='p')&&!sub){

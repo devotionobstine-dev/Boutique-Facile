@@ -1,5 +1,5 @@
 // ---- état de l'application, enregistrement sûr, migration, sauvegardes
-let S=null,DB=null,CU=1,storErr=null,dirty=false,saveT=0,flushQ=Promise.resolve(),lastSave=0,legacyLoaded=false;
+let S=null,DB=null,CU=1,storErr=null,dirty=false,saveT=0,flushQ=Promise.resolve(),lastSave=0,legacyLoaded=false,readFail=false;
 const SKEY='bf5',LKEY='bf1',MEMPH={};
 function newState(demo){
  const o={v:5,n:10,rn:0,bk:0,lx:0,
@@ -56,14 +56,17 @@ async function allPhotos(){const out={};
  try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith('bf5p_'))out[k.slice(5)]=localStorage.getItem(k)}}catch(e){}
  return Object.assign(out,MEMPH)}
 async function loadState(){
- try{DB=await idbOpen()}catch(e){DB=null}
- let raw=null;
- if(DB){try{raw=await idbGet('kv','S')}catch(e){}}
+ // un téléphone lent peut dépasser le délai d'ouverture : on réessaie une fois
+ for(let i=0;i<2&&!DB;i++){try{DB=await idbOpen()}catch(e){DB=null}}
+ // lecture ratée (et non « rien d'enregistré ») : on ne sait pas ce qu'il y a, donc on n'écrit rien par-dessus
+ let raw=null,bad=false;
+ if(DB){try{raw=await idbGet('kv','S')}catch(e){try{raw=await idbGet('kv','S')}catch(e2){bad=true}}}
  if(!raw){try{raw=localStorage.getItem(SKEY)}catch(e){}}
  let st=null;
- if(raw){try{st=JSON.parse(raw)}catch(e){st=null}}
+ if(raw){try{st=JSON.parse(raw)}catch(e){st=null;bad=true}}
  let ph={};
  if(st&&st.p){const m=migrate(st);st=m.S}
+ else if(bad){readFail=true;storErr='read';S=newState(false);return S}
  else{st=null;
   try{const l=localStorage.getItem(LKEY);if(l){const o=JSON.parse(l);if(o&&o.p){const m=migrate(o);st=m.S;ph=m.ph;legacyLoaded=true}}}catch(e){}}
  S=st||newState(true);
@@ -74,7 +77,7 @@ async function loadState(){
 function save(now){dirty=true;clearTimeout(saveT);if(now)flush();else saveT=setTimeout(flush,250)}
 function flush(){flushQ=flushQ.then(doFlush).catch(()=>{});return flushQ}
 async function doFlush(){
- if(!dirty||!S)return;dirty=false;
+ if(!dirty||!S||readFail)return;dirty=false;
  let js;try{js=JSON.stringify(S)}catch(e){storErr='x';dirty=true;return}
  if(DB){try{await idbPut('kv','S',js);storErr=null;lastSave=Date.now();try{localStorage.removeItem(SKEY)}catch(e){}return}catch(e){}}
  try{localStorage.setItem(SKEY,js);storErr=null;lastSave=Date.now();return}catch(e){}
@@ -101,4 +104,4 @@ async function applyRestore(r){
  S=r.S;
  if(keep){let o=S.users.find(u=>u.r=='o');if(o){o.pin=dev.pin;o.on=1}else{S.users.unshift(dev);o=dev}S.rc=rc;CU=o.id}
  for(const k in r.ph)await phPut(k,r.ph[k]);
- dirty=true;await flush()}
+ readFail=false;storErr=null;dirty=true;await flush()}

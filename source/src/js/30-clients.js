@@ -119,7 +119,8 @@ function retOk(){
  const s=S.s.find(x=>x.id==RT.id);retCalc();
  const lines=Object.keys(RT.q).map(li=>({li:+li,q:RT.q[li],rs:$('#rrs').checked?1:0}));
  if(!lines.length)return toast(_('Indiquez au moins un article'));
- const amt=num($('#ra').value)||0,note=$('#rtn').value.trim();
+ const amt=num($('#ra').value)||0,note=$('#rtn').value.trim(),mx=s.total-S.rt.filter(r=>r.sid==s.id).reduce((a,r)=>a+r.amt,0);
+ if(amt>mx)return toast(_('Le remboursement dépasse le montant de la vente (reste {n})',{n:f(Math.max(mx,0))}),3500);
  needOwner(ap=>{
   const t=Date.now(),how=[];let rest=amt;
   if(RT.m=='d'){const c=CLI(s.cid);const cr=s.pay.filter(p=>p.m=='c').reduce((a,p)=>a+p.a,0);const dd=Math.min(rest,c.a,cr);if(dd>0){c.a-=dd;c.h.push({t,v:-dd,x:1});how.push({m:'d',a:dd});rest-=dd}}

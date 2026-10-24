@@ -92,7 +92,7 @@ function bakFile(inp){const fl=inp.files[0];if(!fl)return;const rd=new FileReade
 async function bakTry(text,pw){
  try{
   const r=await restoreFrom(text,pw);
-  sure(_('Remplacer les données de ce téléphone par cette sauvegarde ({a} produits, {b} ventes) ?',{a:r.S.p.length,b:r.S.s.length}),async()=>{await applyRestore(r);setLang(S.set.lang);toast(_('Sauvegarde restaurée ✓'));go('p')},_('Restaurer'))
+  sure(_('Remplacer les données de ce téléphone par cette sauvegarde ({a} produits, {b} ventes) ?',{a:r.S.p.length,b:r.S.s.length}),async()=>{const rf=readFail;await applyRestore(r);setLang(S.set.lang);toast(_('Sauvegarde restaurée ✓'));go('p');if(rf)lock()},_('Restaurer'))
  }catch(e){
   if(e.message=='pw'||e.message=='badpw')ask(_('Mot de passe'),e.message=='badpw'?_('Mot de passe incorrect, essayez encore'):_('Ce fichier est protégé. Entrez le mot de passe.'),v=>bakTry(text,v),{pwl:1,yes:_('Ouvrir')});
   else toast(_('Fichier non reconnu'))}}

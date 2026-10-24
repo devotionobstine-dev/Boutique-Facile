@@ -29,8 +29,9 @@ let LANG='fr',TR={};
 const _=(k,v)=>{let s=TR[k];if(s===undefined||s==='')s=k;return v?s.replace(/\{(\w+)\}/g,(m,a)=>v[a]===undefined?m:v[a]):s};
 const X=s=>s; // marqueur : texte à traduire, utilisé avec _() plus tard
 // ---- fichiers, liens
-const csvq=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';
-const toCSV=rows=>'﻿'+rows.map(r=>r.map(csvq).join(';')).join('\n');
+// un texte qui commence par = + - @ serait lu comme une formule par Excel : on le fait précéder d'une apostrophe
+const csvq=(s,raw)=>{let v=String(s==null?'':s);if(!raw&&typeof s=='string'&&/^[=+\-@\t\r]/.test(v))v="'"+v;return '"'+v.replace(/"/g,'""')+'"'};
+const toCSV=(rows,raw)=>'﻿'+rows.map(r=>r.map(c=>csvq(c,raw)).join(';')).join('\n');
 function dl(n,t,y){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:y}));a.download=n;document.body.appendChild(a);a.click();setTimeout(()=>{a.remove();URL.revokeObjectURL(a.href)},4000)}
 function ext(u){const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
 async function shareFile(n,t,y){try{const fl=new File([t],n,{type:y});if(navigator.canShare&&navigator.canShare({files:[fl]})){await navigator.share({files:[fl],title:n});return true}}catch(e){if(e&&e.name=='AbortError')return true}return false}

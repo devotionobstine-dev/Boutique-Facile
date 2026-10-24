@@ -50,7 +50,7 @@ function trSet(el){
  if(v){const need=k.match(/\{\w+\}/g)||[];const miss=need.find(x=>!v.includes(x));if(miss){el.value=T[k]||'';return toast(_('Il manque {x} dans la traduction',{x:miss}),3200)}T[k]=v;if(el.value!==v)el.value=v}else delete T[k];
  save();if(TE.c==LANG)TR=T;trProg()}
 function trExport(){outFile('traduction-'+TE.c+'.json',JSON.stringify({kind:'bf-lang',c:TE.c,n:(S.langs.find(l=>l.c==TE.c)||{}).n,tr:S.tr[TE.c]||{}},null,1),'application/json')}
-function trCSV(){const T=S.tr[TE.c]||{};outFile('traduction-'+TE.c+'.csv',toCSV([[_('Français'),_('Traduction')]].concat(CAT.map(k=>[k,T[k]||'']))),'text/csv')}
+function trCSV(){const T=S.tr[TE.c]||{};outFile('traduction-'+TE.c+'.csv',toCSV([[_('Français'),_('Traduction')]].concat(CAT.map(k=>[k,T[k]||''])),1),'text/csv')}
 function csvParse(t){
  const rows=[];let r=[],c='',q=false;t=t.replace(/^﻿/,'');
  for(let i=0;i<t.length;i++){const ch=t[i];
