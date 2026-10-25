@@ -160,6 +160,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
    <li><div><b>Présentez votre commerce</b> : nom, type de commerce, téléphone. Choisissez de commencer avec un stock vide ou d'essayer avec des produits d'exemple.</div></li>
   </ol>
   <p class="tip">Choisir « Pharmacie » active le suivi des lots, des dates de péremption et des ordonnances.</p>
+  <p class="tip">Mettez aussi un code de verrouillage sur le téléphone lui-même : c'est lui qui protège vraiment vos données si le téléphone est volé.</p>
   <p class="mut">Quand l'application reste fermée plus de 2 minutes, elle redemande le code. Le cadenas en haut à droite la verrouille tout de suite.</p>
  </div>
  <div class="figs">
@@ -183,7 +184,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
    <li><span class="key">Mettre en attente</span> met le panier de côté pour servir un autre client. Touchez-le en haut de l'écran pour le reprendre.</li>
    <li><span class="key">+ Remise</span> accorde une remise en % ou en GNF. Au-delà de la limite fixée dans les Réglages, le code du patron est demandé.</li>
    <li>Si le client donne moins que le total, choisissez où va le reste : à crédit, Orange Money, MTN MoMo. <span class="key">Répartir autrement</span> permet de mélanger les paiements.</li>
-   <li>Mobile Money : vous pouvez noter le numéro de transaction ou coller le SMS reçu. L'application vérifie le montant et signale un numéro déjà utilisé.</li>
+   <li>Mobile Money : vous pouvez noter le numéro de transaction ou coller le SMS reçu. L'application vérifie le montant et signale un numéro déjà utilisé. Avec le SMS « reception de » d'Orange Money, elle lit aussi l'heure du paiement, et prévient si c'est un SMS d'envoi ou un paiement d'un autre jour.</li>
    <li>Codes-barres : tapez le code, utilisez une douchette, ou touchez l'appareil photo à côté de la recherche.</li>
   </ul>
   <h3>Après la vente</h3>
@@ -278,7 +279,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </ol>
   <h3>Sur un nouveau téléphone</h3>
   <p>Installez l'application, puis Plus › Sauvegarde et mémoire › <b>Restaurer une sauvegarde</b>, choisissez le fichier et tapez le mot de passe des sauvegardes.</p>
-  <p class="tip">Le plus simple : chaque soir, après <b>Clôturer la caisse</b>, touchez Sauvegarder maintenant. Si une journée de ventes n'est pas sauvegardée, l'application vous le rappelle.</p>
+  <p class="tip">Le plus simple : chaque soir, après <b>Clôturer la caisse</b>, touchez Sauvegarder maintenant. Si une journée de ventes n'est pas sauvegardée, l'application vous le rappelle. Une fois par mois, elle vous fait retaper le mot de passe des sauvegardes, pour être sûr que vous ne l'avez pas oublié.</p>
  </div>
  <div class="figs"><figure><div class="phone sm"><img loading="lazy" src="captures/sauvegarde.webp" width="780" height="1520" alt="Écran Sauvegarde et mémoire"></div></figure></div>
 </section>
@@ -306,7 +307,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="faq">
    <details><summary>J'ai oublié mon code PIN</summary><p>Sur l'écran du code, touchez « Code oublié ? » et tapez le code de secours à 8 chiffres. Vous créez ensuite un nouveau code, sans perdre vos données.</p></details>
    <details><summary>J'ai perdu le code de secours aussi</summary><p>Il faut réinstaller l'application puis restaurer votre dernière sauvegarde. D'où l'importance de la sauvegarde de chaque soir.</p></details>
-   <details><summary>L'application me fait patienter avant de taper un code</summary><p>Après 5 codes faux en une journée, la saisie est bloquée un moment : 30 secondes, puis 1 minute, 5 minutes, 15 minutes et 1 heure. C'est ce qui empêche quelqu'un de deviner votre code. Le code du patron remet le compteur à zéro. Si vous avez oublié votre code, touchez « Code oublié ? ».</p></details>
+   <details><summary>L'application me fait patienter avant de taper un code</summary><p>Après 5 codes faux en une journée, la saisie est bloquée un moment : 30 secondes, puis 1 minute, 2 minutes, puis 5 minutes à chaque nouvelle erreur. C'est ce qui empêche quelqu'un de deviner votre code. Le code du patron remet le compteur à zéro, et le patron voit à sa prochaine ouverture combien de codes faux ont été tapés. Si vous avez oublié votre code, touchez « Code oublié ? ».</p></details>
    <details><summary>J'ai oublié le mot de passe des sauvegardes</summary><p>Les sauvegardes déjà faites ne peuvent plus être ouvertes. Tant que vos données sont sur ce téléphone, choisissez un nouveau mot de passe (Plus › Sauvegarde et mémoire › Changer) et refaites une sauvegarde tout de suite.</p></details>
    <details><summary>Le message « Vos données n'ont pas pu être lues » s'affiche</summary><p>Le téléphone n'a pas réussi à lire la mémoire. Rien n'est effacé et rien n'est écrit tant que le problème dure. Fermez complètement l'application et rouvrez-la. Si cela continue, redémarrez le téléphone ou restaurez une sauvegarde.</p></details>
    <details><summary>Un bandeau rouge dit que les données ne sont pas enregistrées</summary><p>La mémoire du téléphone est pleine ou bloquée. Faites une sauvegarde tout de suite, puis libérez de la place (photos, vidéos).</p></details>
