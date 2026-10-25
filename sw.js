@@ -1,4 +1,4 @@
-const V='bf-v6-635d6c666a',MUST=['./','index.html'],OPT=['manifest.webmanifest','icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png'];
+const V='bf-v6-d8613e69d2',MUST=['./','index.html'],OPT=['manifest.webmanifest','icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png'];
 const get=u=>fetch(new Request(u,{cache:'reload'})).then(r=>{if(!r.ok)throw new Error(u);return r});
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(async c=>{
  await Promise.all(MUST.map(u=>get(u).then(r=>c.put(u,r))));

@@ -246,7 +246,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <ol class="steps">
    <li><div><b>Le matin</b>, onglet Caisse, <span class="key">Ouvrir la caisse</span> : notez l'argent du tiroir et vos soldes Orange Money et MTN MoMo.</div></li>
    <li><div><b>Dans la journée</b>, vendez normalement. Notez les dépenses avec <span class="key">Dépense</span> (loyer, transport, électricité…).</div></li>
-   <li><div><b>Le soir</b>, <span class="key">Clôturer la caisse</span> : comptez l'argent. L'application compare avec ce qui est attendu et montre l'écart.</div></li>
+   <li><div><b>Le soir</b>, <span class="key">Clôturer la caisse</span> : comptez l'argent. L'application compare avec ce qui est attendu et montre l'écart. Le patron peut ensuite envoyer la sauvegarde du jour en un geste.</div></li>
   </ol>
   <p><span class="key">Envoyer le résumé du jour</span> partage les ventes, les paiements et les produits à recommander par WhatsApp.</p>
   <p class="mut">Dans les Réglages, vous pouvez obliger à ouvrir la caisse avant de vendre. Le module « Agent Mobile Money » suit aussi les dépôts, retraits et commissions.</p>
@@ -273,12 +273,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <p>Vos données sont uniquement sur ce téléphone. S'il est perdu, volé ou cassé, seule une sauvegarde permet de tout retrouver.</p>
   <ol class="steps">
    <li><div>Plus › <span class="key">Sauvegarde et mémoire</span>.</div></li>
-   <li><div>Facultatif : un mot de passe pour protéger le fichier. Notez-le, il ne peut pas être retrouvé.</div></li>
-   <li><div><span class="key">Sauvegarder maintenant</span>, puis envoyez le fichier dans WhatsApp (à vous-même), par e-mail ou dans Google Drive.</div></li>
+   <li><div>La première fois, choisissez le <b>mot de passe des sauvegardes</b> (au moins 8 caractères). Notez-le sur papier : sans lui, personne ne peut ouvrir le fichier, même vous.</div></li>
+   <li><div><span class="key">Sauvegarder maintenant</span>, puis choisissez Google Drive, WhatsApp (à vous-même) ou votre e-mail.</div></li>
   </ol>
   <h3>Sur un nouveau téléphone</h3>
-  <p>Installez l'application, puis Plus › Sauvegarde et mémoire › <b>Restaurer une sauvegarde</b> et choisissez le fichier.</p>
-  <p class="tip">Faites une sauvegarde chaque semaine. L'application vous le rappelle après 7 jours.</p>
+  <p>Installez l'application, puis Plus › Sauvegarde et mémoire › <b>Restaurer une sauvegarde</b>, choisissez le fichier et tapez le mot de passe des sauvegardes.</p>
+  <p class="tip">Le plus simple : chaque soir, après <b>Clôturer la caisse</b>, touchez Sauvegarder maintenant. Si une journée de ventes n'est pas sauvegardée, l'application vous le rappelle.</p>
  </div>
  <div class="figs"><figure><div class="phone sm"><img loading="lazy" src="captures/sauvegarde.webp" width="780" height="1520" alt="Écran Sauvegarde et mémoire"></div></figure></div>
 </section>
@@ -305,7 +305,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <h2><small>10</small>En cas de souci</h2>
   <div class="faq">
    <details><summary>J'ai oublié mon code PIN</summary><p>Sur l'écran du code, touchez « Code oublié ? » et tapez le code de secours à 8 chiffres. Vous créez ensuite un nouveau code, sans perdre vos données.</p></details>
-   <details><summary>J'ai perdu le code de secours aussi</summary><p>Il faut réinstaller l'application puis restaurer votre dernière sauvegarde. D'où l'importance de la sauvegarde hebdomadaire.</p></details>
+   <details><summary>J'ai perdu le code de secours aussi</summary><p>Il faut réinstaller l'application puis restaurer votre dernière sauvegarde. D'où l'importance de la sauvegarde de chaque soir.</p></details>
+   <details><summary>L'application me fait patienter avant de taper un code</summary><p>Après 5 codes faux en une journée, la saisie est bloquée un moment : 30 secondes, puis 1 minute, 5 minutes, 15 minutes et 1 heure. C'est ce qui empêche quelqu'un de deviner votre code. Le code du patron remet le compteur à zéro. Si vous avez oublié votre code, touchez « Code oublié ? ».</p></details>
+   <details><summary>J'ai oublié le mot de passe des sauvegardes</summary><p>Les sauvegardes déjà faites ne peuvent plus être ouvertes. Tant que vos données sont sur ce téléphone, choisissez un nouveau mot de passe (Plus › Sauvegarde et mémoire › Changer) et refaites une sauvegarde tout de suite.</p></details>
    <details><summary>Le message « Vos données n'ont pas pu être lues » s'affiche</summary><p>Le téléphone n'a pas réussi à lire la mémoire. Rien n'est effacé et rien n'est écrit tant que le problème dure. Fermez complètement l'application et rouvrez-la. Si cela continue, redémarrez le téléphone ou restaurez une sauvegarde.</p></details>
    <details><summary>Un bandeau rouge dit que les données ne sont pas enregistrées</summary><p>La mémoire du téléphone est pleine ou bloquée. Faites une sauvegarde tout de suite, puis libérez de la place (photos, vidéos).</p></details>
    <details><summary>« Une nouvelle version est prête »</summary><p>Fermez l'application et rouvrez-la pour utiliser la nouvelle version. Vos données restent en place.</p></details>
