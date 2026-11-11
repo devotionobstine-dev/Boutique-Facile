@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Boutique Facile</title><meta name="theme-color" content="#F4F6F3"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Boutique Facile"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>
+<title>Boutique Facile</title><meta name="theme-color" content="#F4F6F3"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Boutique Facile"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>
 :root{--bg:#F4F6F3;--card:#fff;--ink:#14261C;--mut:#5C6A61;--ln:#E0E6E0;--ln2:#C9D2CA;--ac:#0E6B47;--ac2:#0A5236;--acl:#E4F1EA;--aci:#fff;--red:#B3261E;--rl:#FBEBE9;--grn:#1B7A4B;--gl:#E7F3EC;--gi:#fff;--yel:#F2B705;--yi:#4A3800;--yl:#FCF5DD;--bl:#EDF1EE;--blu:#1F5FBF;--blt:#E8EFFA;--r2:12px;--r3:16px;--sh1:0 1px 2px rgba(20,38,28,.07);--sh2:0 -6px 22px rgba(20,38,28,.10);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
 html.big{font-size:18px}
@@ -16,7 +16,10 @@ button:focus-visible,.in:focus-visible,summary:focus-visible{outline:3px solid v
 .ic.is{color:var(--yel)}
 .ic.ig{color:var(--grn)}
 .ic.ir{color:var(--red)}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:12px 16px 10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid var(--ln)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:12px 16px 10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid transparent;transition:border-color .2s ease,box-shadow .2s ease}
+.scd header{border-bottom-color:var(--ln);box-shadow:0 4px 12px -8px rgba(20,38,28,.25)}
+.hl{min-width:0;flex:1}
+.hl h1,.hl small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 h1{margin:0;font-size:1.15rem;font-weight:700;letter-spacing:-.01em;line-height:1.25}
 h2{font-size:1.15rem;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
 h3{font-size:1.05rem;font-weight:700;margin:18px 16px 4px;letter-spacing:-.005em}
@@ -25,7 +28,7 @@ header small,.row small,.t small,.sum small,.sm2{display:block;color:var(--mut);
 .pill::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--grn);margin-right:6px;vertical-align:1px}
 .pill.off{background:#ECEFEC;color:var(--mut)}
 .pill.off::before{background:var(--mut)}
-.ib{border:1px solid var(--ln2);background:var(--card);border-radius:50%;width:38px;height:38px;font-size:1rem;display:grid;place-items:center;padding:0;color:var(--ink)}
+.ib{border:1px solid var(--ln2);background:var(--card);border-radius:50%;width:44px;height:44px;flex:none;font-size:1rem;display:grid;place-items:center;padding:0;color:var(--ink)}
 .ib .ic{width:18px;height:18px;vertical-align:0}
 .hint{margin:14px 16px;color:var(--mut)}
 .bn{margin:10px 16px 0;padding:11px 13px;border-radius:var(--r2);font-size:.88rem;border:1px solid var(--ln);border-left:4px solid var(--ln2);background:var(--card)}
@@ -40,7 +43,8 @@ header small,.row small,.t small,.sum small,.sm2{display:block;color:var(--mut);
 .chips{display:flex;gap:6px;overflow-x:auto;padding:10px 16px 2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
 .cart .chips{padding:0 0 8px}
-.chip{flex:none;border:1px solid var(--ln2);background:var(--card);border-radius:999px;padding:6px 13px;font-size:.84rem;font-weight:500;color:var(--ink)}
+.chip{flex:none;border:1px solid var(--ln2);background:var(--card);border-radius:999px;padding:8px 14px;min-height:38px;font-size:.84rem;font-weight:500;color:var(--ink);position:relative}
+.b.xs::after{content:"";position:absolute;inset:-4px 0}
 .chip.on{background:var(--ac);color:var(--aci);border-color:var(--ac);font-weight:600}
 .chip.r{border-color:var(--red);color:var(--red)}
 .seg{display:flex;margin:10px 16px 0;border:1px solid var(--ln2);border-radius:var(--r2);overflow:hidden;background:var(--card);padding:3px;gap:3px}
@@ -48,14 +52,15 @@ header small,.row small,.t small,.sum small,.sm2{display:block;color:var(--mut);
 .seg button.on{background:var(--ac);color:var(--aci)}
 .g{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 16px}
 .t{background:var(--card);border:1px solid var(--ln);border-radius:var(--r2);padding:12px;text-align:left;min-height:100px;position:relative;box-shadow:var(--sh1);display:flex;flex-direction:column;align-items:flex-start}
-.t:active{background:var(--acl);border-color:var(--ac)}
+.t{transition:transform .14s ease-out}
+.t:active{background:var(--acl);border-color:var(--ac);transform:scale(.955);transition:transform .5s cubic-bezier(.3,.7,.4,1)}
 .t b{display:block;font-size:.98rem;font-weight:600;line-height:1.25}
 .t span{display:block;font-weight:700;margin:5px 0 2px;font-size:1.02rem;font-variant-numeric:tabular-nums}
 .t.o{opacity:.55;background:#EEF1EE}
 .t.inc{border-color:var(--ac);box-shadow:inset 0 0 0 1px var(--ac);background:var(--acl)}
 .t .n{color:var(--ac2);font-weight:700}
 .t .st{position:absolute;right:9px;top:9px;font-size:.85rem;line-height:1}
-.t .bd{display:inline-block;font-size:.66rem;font-weight:700;border-radius:5px;padding:1px 6px;margin:3px 3px 0 0;background:var(--rl);color:var(--red)}
+.t .bd{display:inline-block;font-size:.72rem;font-weight:700;border-radius:5px;padding:1px 6px;margin:3px 3px 0 0;background:var(--rl);color:var(--red)}
 .t .bd.y{background:var(--yl);color:var(--yi)}
 .t .bd.b{background:var(--blt);color:var(--blu)}
 .card{background:var(--card);border:1px solid var(--ln);border-radius:var(--r3);padding:2px 16px;margin:12px 16px;box-shadow:var(--sh1)}
@@ -65,38 +70,46 @@ header small,.row small,.t small,.sum small,.sm2{display:block;color:var(--mut);
 .row.tap{cursor:pointer}
 .gr1{flex:1;min-width:0}
 .gr1 b{overflow-wrap:anywhere;font-weight:600}
-.qty{font-weight:700;font-size:1.15rem;text-align:right;font-variant-numeric:tabular-nums}
+.qty{font-weight:700;font-size:1.15rem;text-align:right;font-variant-numeric:tabular-nums;flex:none;min-width:2.2em;align-self:center}
 .qty.low,.owe,.neg{color:var(--red);font-weight:700}
 .pos{color:var(--grn);font-weight:700}
 .qty small{font-size:.7rem;font-weight:500}
 .b{border:1px solid transparent;border-radius:var(--r2);padding:12px 16px;font-weight:600;min-height:50px;font-size:1rem}
-.b:active{filter:brightness(.92)}
+.b,.chip,.ib,.kp button,.seg button,.sw{transition:transform .1s ease-out,background-color .1s ease-out}
+.b:active{filter:brightness(.92);transform:scale(.97)}
+.chip:active,.ib:active,.sw:active{transform:scale(.95)}
+.chip:not(.on):active,.ib:active,.seg button:not(.on):active{background:var(--bl)}
+nav button:active i{background:var(--acl)}
+.row.tap:active,.crt:active{background:var(--bl)}
+.lnk:active,.back button:active{opacity:.55}
 .b.sm{min-height:42px;padding:8px 13px;font-size:.9rem}
-.b.xs{min-height:34px;padding:5px 11px;font-size:.8rem;border-radius:9px}
+.b.xs{min-height:40px;padding:8px 12px;font-size:.82rem;border-radius:10px;position:relative}
 .b[disabled]{opacity:.45}
 .gr{background:var(--ac);color:var(--aci)}
 .yl{background:var(--yel);color:var(--yi)}
 .rd{background:var(--red);color:#fff}
 .ol{background:var(--card);border:1px solid var(--ln2);color:var(--ink)}
-.lnk{background:none;border:0;color:var(--ac2);text-decoration:underline;text-underline-offset:3px;font-size:.9rem;font-weight:500;padding:8px}
+.lnk{background:none;border:0;color:var(--ac2);text-decoration:underline;text-underline-offset:3px;font-size:.9rem;font-weight:500;padding:10px 8px;min-height:40px}
+.lnk.dg{display:block;color:var(--red);margin:14px 0 0;padding-left:0;text-align:left}
 .top{padding:14px 16px 0}
 .top .b{width:100%}
 .btns{display:flex;gap:8px;padding:10px 16px 0;flex-wrap:wrap}
 .btns .b{flex:1;min-width:120px}
 .sum{margin:14px 16px 0}
-.tot{font-size:1.9rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.tot{font-size:1.9rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1.15}
 .tot.s{font-size:1.35rem}
 .cart{position:fixed;left:0;right:0;bottom:calc(64px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--ln);box-shadow:var(--sh2);border-radius:18px 18px 0 0;padding:12px 16px 14px;z-index:4}
 .pay{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:8px;margin-top:8px}
 .pay .b{padding:10px 6px;font-size:.92rem;min-height:52px}
 nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--ln);padding-bottom:env(safe-area-inset-bottom,0px);z-index:6}
-nav button{flex:1;height:64px;border:0;background:none;color:var(--mut);font-size:.7rem;font-weight:600;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:0}
+nav button{flex:1;height:64px;border:0;background:none;color:var(--mut);font-size:.72rem;letter-spacing:.01em;font-weight:600;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:0}
 nav button i{display:grid;place-items:center;width:54px;height:30px;border-radius:15px;font-style:normal}
 nav button .ic{width:23px;height:23px;vertical-align:0}
 nav button.on{color:var(--ac2)}
 nav button.on i{background:var(--acl);color:var(--ac)}
 nav button em{position:absolute;top:5px;right:calc(50% - 27px);background:var(--red);color:#fff;font-style:normal;font-size:.62rem;font-weight:700;border-radius:9px;min-width:17px;padding:0 5px;line-height:17px;border:2px solid var(--card);box-sizing:content-box}
-#t{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 76px);background:var(--ink);color:#fff;padding:11px 18px;border-radius:14px;font-weight:600;font-size:.92rem;opacity:0;transition:opacity .2s;pointer-events:none;z-index:90;max-width:92vw;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.22)}
+#t{position:fixed;left:50%;transform:translateX(-50%) translateY(-8px) scale(.96);top:calc(env(safe-area-inset-top,0px) + 76px);background:var(--ink);color:#fff;padding:11px 18px;border-radius:14px;font-weight:600;font-size:.92rem;opacity:0;transition:opacity .2s ease,transform .3s cubic-bezier(.22,1,.36,1);pointer-events:none;z-index:90;max-width:92vw;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.22)}
+#t.on{transform:translateX(-50%)}
 .rs{margin:20px 16px}
 .lk{display:none;position:fixed;inset:0;z-index:80;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center}
 .lk h1{font-size:1.55rem;font-weight:800;letter-spacing:-.02em}
@@ -110,8 +123,12 @@ nav button em{position:absolute;top:5px;right:calc(50% - 27px);background:var(--
 .br .b{flex:1}
 .ov{position:fixed;inset:0;background:rgba(20,38,28,.48);z-index:40;display:flex;align-items:flex-end}
 .sh{background:var(--card);width:100%;max-height:92vh;max-height:92dvh;display:flex;flex-direction:column;overflow:hidden;border-radius:20px 20px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.18)}
-.sh::before{content:"";display:block;flex:none;width:38px;height:4px;border-radius:2px;background:var(--ln2);margin:8px auto 0}
-.sb{overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:12px 18px 16px;flex:1 1 auto;min-height:0}
+.sh{will-change:transform}
+.sg{flex:none;height:24px;display:grid;place-items:center;touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none}
+.sg i{display:block;width:38px;height:5px;border-radius:3px;background:var(--ln2)}
+.sh.nd .sg{height:14px;cursor:default}.sh.nd .sg i{display:none}
+#mx .ov{pointer-events:none;z-index:39}
+.sb{overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:2px 18px 16px;flex:1 1 auto;min-height:0}
 .sb:last-child{padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
 .sf{flex:0 0 auto;padding:10px 16px calc(14px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--ln);background:var(--card)}
 .sf .pay2{margin:0}
@@ -119,6 +136,9 @@ nav button em{position:absolute;top:5px;right:calc(50% - 27px);background:var(--
 label,.lb{display:block;font-size:.8rem;font-weight:500;color:var(--mut);margin-top:10px}
 .in{width:100%;padding:12px 14px;border:1px solid var(--ln2);border-radius:var(--r2);font:inherit;background:var(--card);color:var(--ink);margin:4px 0;min-height:48px}
 .in:focus{border-color:var(--ac);box-shadow:0 0 0 3px var(--acl);outline:0}
+.in.er,.in.er:focus{border-color:var(--red);box-shadow:0 0 0 3px var(--rl)}
+@keyframes shk{0%,100%{transform:none}20%{transform:translateX(-9px)}45%{transform:translateX(7px)}70%{transform:translateX(-4px)}}
+.shk{animation:shk .32s ease-out}
 .in::placeholder{color:#8C978F}
 select.in{appearance:auto}
 .two{display:grid;grid-template-columns:2fr 1fr;gap:8px}
@@ -127,7 +147,7 @@ select.in{appearance:auto}
 .pay2{display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-top:12px}
 .pay2.e{grid-template-columns:1fr 1fr}
 .pay2.o{grid-template-columns:1fr}
-button,.chip,.in,select,summary,.gv{touch-action:manipulation}
+button,.chip,.in,select,summary,.gv,.tap,[onclick],label{touch-action:manipulation}
 .t{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .gv{border:1.5px solid var(--ac);border-radius:var(--r2);padding:8px 14px;font-size:1.9rem;font-weight:700;text-align:right;font-variant-numeric:tabular-nums;letter-spacing:-.01em;background:var(--card);min-height:58px;line-height:1.5;cursor:pointer;-webkit-user-select:none;user-select:none}
 .gv .ph{color:#9AA59D;font-weight:600}
@@ -139,15 +159,17 @@ button,.chip,.in,select,summary,.gv{touch-action:manipulation}
 .bn.chg{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:8px 0 0}
 .bn.chg b{font-size:1.2rem}
 .bn.chg>b:last-child{white-space:nowrap;font-size:1.05rem}
-.lnk.sm{display:block;padding:2px 0;font-size:.85rem;text-align:left}
+.lnk.sm{display:block;padding:8px 12px 8px 0;min-height:36px;font-size:.85rem;text-align:left}
 #pdst{flex-wrap:wrap}
-#pdst .chip{font-size:.8rem;padding:6px 10px}
+#pdst .chip{font-size:.8rem;padding:8px 11px}
 .lsm{color:var(--mut);font-size:.85rem}
 details.dt{margin:0 0 2px}
 details.dt summary,#pcd summary{color:var(--mut);font-size:.88rem;padding:5px 0;cursor:pointer}
 .cart.ls{display:flex;align-items:center;gap:8px}
 .cart.ls .gr1{font-size:.95rem}
-.chg2{color:var(--grn);font-size:1.2rem;font-weight:800}
+.chg2{color:var(--grn);font-size:1.2rem;font-weight:800;line-height:1.2;font-variant-numeric:tabular-nums}
+.chg2 small{display:block;color:var(--grn);font-size:.8rem;font-weight:600}
+.nw{white-space:nowrap}
 #hold:empty{display:none}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;pointer-events:none;background:var(--bg)}
 .fo{display:none}
@@ -162,8 +184,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .menu button small{display:block;color:var(--mut);font-size:.78rem;font-weight:400}
 .menu button span{flex:1}
 .menu button::after{content:"›";color:var(--ln2);font-size:1.5rem;line-height:1}
-.back{padding:10px 16px 0}
-.back button{background:none;border:0;color:var(--ac2);font-size:1rem;font-weight:600;padding:6px 0}
+.back{padding:4px 16px 0}
+.back button{background:none;border:0;color:var(--ac2);font-size:1rem;font-weight:600;padding:10px 14px 10px 0;min-height:44px}
 .kv{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--ln)}
 .kv:last-child{border-bottom:0}
 .kv b{font-variant-numeric:tabular-nums;text-align:right;font-weight:600}
@@ -173,7 +195,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .bar.d i{background:var(--red)}
 .ch{padding:8px 4px}
 .ch svg{width:100%;height:auto;display:block}
-.tg{display:flex;align-items:center;gap:10px;margin:12px 0 4px;font-size:.95rem;color:var(--ink)}
+.tg{display:flex;align-items:center;gap:10px;margin:6px 0 2px;min-height:44px;font-size:.95rem;color:var(--ink)}
 .tg input{width:22px;height:22px;flex:none;accent-color:var(--ac)}
 .tg span{flex:1}
 .sws{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 2px}
@@ -195,6 +217,19 @@ table.tb th{color:var(--mut);font-weight:600;font-size:.72rem}
 .simple nav button{height:68px;font-size:.8rem}
 .simple nav button .ic{width:26px;height:26px}
 .big-ic{font-size:2rem;display:block}
+.row.cr{display:block}
+.crt{display:flex;align-items:center;gap:12px}
+.cra{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+.cra .b{min-width:116px;min-height:44px}
+.rb{display:flex;flex-direction:column;gap:8px}
+label,.lb,.sm2,small{letter-spacing:.005em}
+@media (prefers-reduced-motion:reduce){
+ .b:active,.chip:active,.ib:active,.sw:active,.t:active{transform:none}
+ .t,.b,.chip{transition:none}
+ #t,#t.on{transform:translateX(-50%);transition:opacity .2s ease}
+ .shk{animation:none}
+}
+@media (prefers-contrast:more){:root{--ln:#8C9A91;--ln2:#5F6E65;--mut:#39443D}.b.ol,.chip,.in{border-width:1.5px}}
 #pr{display:none}
 @media print{
  body>*:not(#pr){display:none!important}
@@ -216,13 +251,13 @@ table.tb th{color:var(--mut);font-weight:600;font-size:.72rem}
 <header id="hd"></header>
 <main id="app"></main>
 <nav id="nv"></nav>
-<div id="lk" class="lk"><div class="mk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="lgi" aria-hidden="true" focusable="false"><rect width="256" height="256" rx="56.01" fill="#0E6B47"/><g transform="translate(78.74 43.01) scale(0.52)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23,213V23H108.1A43.7,43.7 0 0 1 108.1,110.4H23M23,110.4H114.5A51.3,51.3 0 0 1 114.5,213H23" stroke="#FFFFFF" stroke-width="46"/><path d="M9.5,268.5H179.3M9.5,304.5H179.3" stroke="#F5B800" stroke-width="19"/></g></svg></div><h1 id="lh">Boutique Facile</h1><p id="lm"></p><input class="in" id="pn" type="password" inputmode="numeric" maxlength="4" autocomplete="off" onkeydown="if(event.key=='Enter')unlock()" style="max-width:220px;text-align:center;font-size:28px;letter-spacing:8px"><button class="b gr" id="lo" onclick="unlock()">Ouvrir</button><button class="lnk" id="lf" onclick="forgot()">Code oublié ?</button><div class="lkb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1431.71 191" class="lgw" aria-hidden="true" focusable="false"><g transform="translate(0 0) scale(1) translate(9.5 137.5)" fill="none" stroke="currentColor" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"><path transform="translate(0 0)" d="M0,-128V0"/><path transform="translate(0 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(116 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(240 0)" d="M0,-80V-40A40,40 0 0 0 80,-40"/><path transform="translate(240 0)" d="M80,-80V0"/><path transform="translate(382 0)" d="M0,-106V-17A17,17 0 0 0 17,0H24"/><path transform="translate(382 0)" d="M-21,-80H31"/><path transform="translate(454 0)" d="M0,-80V0"/><circle cx="454" cy="-110.28" r="11.78" fill="currentColor" stroke="none"/><path transform="translate(498 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(498 0)" d="M80,-80V44"/><path transform="translate(630 0)" d="M0,-80V-40A40,40 0 0 0 80,-40"/><path transform="translate(630 0)" d="M80,-80V0"/><path transform="translate(754 0)" d="M0,-40H80A40,40 0 1 0 63.51,-7.64"/><path transform="translate(934 0)" d="M0,0V-97A31,31 0 0 1 31,-128H40"/><path transform="translate(934 0)" d="M-21,-80H35"/><path transform="translate(1009 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(1009 0)" d="M80,-80V0"/><path transform="translate(1133 0)" d="M65.71,-70.64A40,40 0 1 0 65.71,-9.36"/><path transform="translate(1236.71 0)" d="M0,-80V0"/><circle cx="1236.71" cy="-110.28" r="11.78" fill="currentColor" stroke="none"/><path transform="translate(1288.71 0)" d="M0,-128V0"/><path transform="translate(1332.71 0)" d="M0,-40H80A40,40 0 1 0 63.51,-7.64"/></g></svg></div></div>
-<div id="t"></div><div id="m"></div><div class="cam" id="cam"></div><div id="pr"></div>
+<div id="lk" class="lk"><div class="mk"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="lgi" aria-hidden="true" focusable="false"><rect width="256" height="256" rx="56.01" fill="#0E6B47"/><g transform="translate(78.74 43.01) scale(0.52)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23,213V23H108.1A43.7,43.7 0 0 1 108.1,110.4H23M23,110.4H114.5A51.3,51.3 0 0 1 114.5,213H23" stroke="#FFFFFF" stroke-width="46"/><path d="M9.5,268.5H179.3M9.5,304.5H179.3" stroke="#F5B800" stroke-width="19"/></g></svg></div><h1 id="lh">Boutique Facile</h1><p id="lm"></p><input class="in" id="pn" type="password" inputmode="numeric" maxlength="4" autocomplete="off" onkeydown="if(event.key=='Enter')unlock()" style="max-width:220px;text-align:center;font-size:1.75rem;letter-spacing:.3em"><button class="b gr" id="lo" onclick="unlock()">Ouvrir</button><button class="lnk" id="lf" onclick="forgot()">Code oublié ?</button><div class="lkb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1431.71 191" class="lgw" aria-hidden="true" focusable="false"><g transform="translate(0 0) scale(1) translate(9.5 137.5)" fill="none" stroke="currentColor" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"><path transform="translate(0 0)" d="M0,-128V0"/><path transform="translate(0 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(116 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(240 0)" d="M0,-80V-40A40,40 0 0 0 80,-40"/><path transform="translate(240 0)" d="M80,-80V0"/><path transform="translate(382 0)" d="M0,-106V-17A17,17 0 0 0 17,0H24"/><path transform="translate(382 0)" d="M-21,-80H31"/><path transform="translate(454 0)" d="M0,-80V0"/><circle cx="454" cy="-110.28" r="11.78" fill="currentColor" stroke="none"/><path transform="translate(498 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(498 0)" d="M80,-80V44"/><path transform="translate(630 0)" d="M0,-80V-40A40,40 0 0 0 80,-40"/><path transform="translate(630 0)" d="M80,-80V0"/><path transform="translate(754 0)" d="M0,-40H80A40,40 0 1 0 63.51,-7.64"/><path transform="translate(934 0)" d="M0,0V-97A31,31 0 0 1 31,-128H40"/><path transform="translate(934 0)" d="M-21,-80H35"/><path transform="translate(1009 0)" d="M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40"/><path transform="translate(1009 0)" d="M80,-80V0"/><path transform="translate(1133 0)" d="M65.71,-70.64A40,40 0 1 0 65.71,-9.36"/><path transform="translate(1236.71 0)" d="M0,-80V0"/><circle cx="1236.71" cy="-110.28" r="11.78" fill="currentColor" stroke="none"/><path transform="translate(1288.71 0)" d="M0,-128V0"/><path transform="translate(1332.71 0)" d="M0,-40H80A40,40 0 1 0 63.51,-7.64"/></g></svg></div></div>
+<div id="t" role="status" aria-live="polite"></div><div id="m"></div><div id="mx" aria-hidden="true"></div><div class="cam" id="cam"></div><div id="pr"></div>
 <script>
 'use strict';
-const CAT=["Pas possible dans la version d'essai", "Cette action est bloquée dans la version d'essai en ligne. Elle fonctionne dans la version installée sur le téléphone.", "Copiez ce texte", "Touchez le texte pour le sélectionner, copiez-le, puis collez-le dans WhatsApp ou un message.", "Fermer", "Texte copié : collez-le dans WhatsApp ou un message", "Retour", "Annuler", "Valider", "Oui", "Non", "Version d'essai en ligne", "Tout est enregistré sur ce téléphone", "En ligne", "Hors ligne", "Verrouiller", "Vendre", "Stock", "Clients", "Caisse", "Plus", "Vos données n'ont pas pu être lues.", "Rien n'est enregistré. Fermez puis rouvrez l'application.", "Les données ne sont pas enregistrées.", "La mémoire est pleine ou bloquée. Faites une sauvegarde tout de suite.", "Sauvegarder", "Une nouvelle version est prête. Fermez puis rouvrez l'application pour l'utiliser.", "Voir", "Version d'essai en ligne : vos données ne sont pas garanties ici, et la caméra, l'impression et l'enregistrement de fichiers sont bloqués. Pour garder vos données et travailler sans internet, utilisez la version installée sur le téléphone.", "Aucune sauvegarde pour le moment.", "Dernière sauvegarde il y a 1 jour.", "Dernière sauvegarde il y a {n} jours.", "Sauvegardez chaque soir, à la clôture de la caisse.", "Sauvegarder maintenant", "La mémoire du téléphone est presque pleine. Faites une sauvegarde et libérez de la place.", "La mémoire de l'application est presque pleine. Faites une sauvegarde.", "{n} codes faux", "1 code faux", "{n} codes de secours faux", "1 code de secours faux", "Codes faux tapés", "Depuis votre dernière ouverture : {x}. Le dernier le {d}.", "Si ce n'est pas une simple erreur de frappe, quelqu'un a peut-être essayé de deviner un code. Vous pouvez changer les codes dans Plus › Vendeurs et codes.", "J'ai compris", "Trop d'essais. Réessayez dans {t}.", "Code incorrect. Encore {n} essais avant une attente.", "Code incorrect. Encore 1 essai avant une attente.", "Code incorrect", "Trop d'essais", "Code du patron", "Le patron doit saisir son code pour autoriser cette action.", "Vos données n'ont pas pu être lues", "Le téléphone n'a pas réussi à lire la mémoire de l'application. Rien n'a été effacé et rien ne sera enregistré tant que la lecture échoue.", "Fermez complètement l'application puis rouvrez-la. Si le problème continue, redémarrez le téléphone, ou restaurez votre dernière sauvegarde ci-dessous.", "Restaurer une sauvegarde", "Réessayer", "Ouvrir", "Code oublié ?", "Créez le code PIN du propriétaire (4 chiffres)", "Entrez votre code PIN", "Le code a 4 chiffres", "Votre code de secours", "Si vous oubliez votre code PIN, ce code de secours permet d'en créer un nouveau sans perdre vos données.", "Notez-le sur papier et gardez-le en lieu sûr. Il ne sera plus affiché.", "J'ai noté le code", "Code de secours absent", "Aucun code de secours n'a été créé sur ce téléphone. Réinstallez l'application puis restaurez une sauvegarde.", "Code de secours", "Entrez le code de secours à 8 chiffres", "Code de secours incorrect", "Bienvenue", "Nom de votre commerce", "Ma boutique", "Type de commerce", "Boutique, alimentation", "Pharmacie", "Quincaillerie, matériaux", "Autre commerce", "Votre téléphone (facultatif)", "Pour commencer", "Commencer avec un stock vide", "Essayer avec des produits d'exemple", "Conseil : mettez aussi un code de verrouillage sur ce téléphone. C'est lui qui protège vraiment vos données si le téléphone est volé.", "Commencer", "Vert", "Bleu", "Violet", "Orange", "Rouge", "Ardoise", "Rechercher ou scanner un code…", "Tout", "Favoris", "Détail", "Gros", "Périmé", "Bientôt périmé", "en stock", "au panier", "Même substance :", "Aucun produit trouvé.", "Aucun produit. Ajoutez-en dans l'onglet Stock.", "Modifier", "Mettre en attente", "Vider", "Espèces", "À crédit", "Aucun produit pour « {q} »", "Stock insuffisant pour {n} : il reste {q}. Ajouter quand même ?", "Ajouter", "Effacer", "Quantité", "unité", "Ajouter au panier", "Quantité invalide", "En attente", "art.", "Vente mise en attente. Touchez-la en haut pour la reprendre.", "Prix du tarif", "prix négocié", "Sous le prix d'achat", "Format", "Prix unitaire", "Total", "Modifier le panier", "Total du panier", "OK", "Autre", "La caisse est fermée. L'ouvrir maintenant ?", "Ouvrir la caisse", "Prix négocié", "Encaisser", "{n} article(s)", "Total à payer", "Remise", "Le client donne aussi des espèces", "À crédit (dette du client)", "Montant donné par le client", "Monnaie à rendre", "Revenir au calcul automatique", "Numéro de transaction du SMS (facultatif)", "Coller le SMS reçu pour le contrôler (facultatif)", "Nom du client", "Détails du crédit (téléphone, échéance, pièce d'identité)", "Téléphone", "Échéance", "Dans {n} jours", "Dans 7 jours", "Dans 30 jours", "Pas de date", "Autre date…", "N° de carte d'identité ou de passeport", "Photo de la pièce (facultatif)", "Le client accepte l'enregistrement de sa pièce d'identité.", "Ordonnance (n° ou nom du médecin, facultatif)", "Répartir autrement", "Valider la vente", "Le client donne (espèces)", "Exact", "Reste à payer", "Si le client donne moins, le reste va sur :", "À payer avec :", "Acompte reçu : {a}. Reste dû par le client : {b}.", "Reste à répartir : {n}", "Trop payé de {n}", "Crédit", "Dette actuelle : {n}", "Client connu, aucune dette", "Plafond : {n}", "pièce déjà enregistrée", "Photo prête ✓", "C'est un SMS d'envoi : l'argent est parti de ce compte. Pour un paiement reçu, collez le SMS « reception de » arrivé sur le téléphone de la boutique.", "Aucun montant trouvé dans ce SMS. Vérifiez le texte collé.", "Le SMS indique {n}, comme le montant à payer.", "Le SMS indique {a} mais cette vente demande {b} en Mobile Money.", "Paiement reçu aujourd'hui à {h}.", "Ce paiement date du {d} à {h}, pas d'aujourd'hui : vérifiez qu'il n'a pas déjà servi.", "Ce numéro de transaction a déjà servi pour la vente n° {n}.", "Ce contrôle lit seulement le texte collé. Vérifiez aussi votre solde Orange Money / MTN.", "Le total payé doit être égal à {n}", "Le nom du client est nécessaire", "Le client doit accepter l'enregistrement de sa pièce", "Choisissez la date d'échéance", "Remise de {n} % : le patron doit autoriser.", "Plafond de crédit dépassé : {a} + {b} dépasse {l}. Autoriser quand même ?", "Le patron doit autoriser un dépassement du plafond.", "Autoriser", "Ce numéro de transaction a déjà servi pour la vente n° {n}. Continuer quand même ?", "Continuer", "Vente enregistrée", "Reçu", "Trop tard pour annuler ici", "Pour annuler une ancienne vente, allez dans Plus > Ventes.", "Annuler cette vente ? Le stock sera remis.", "Vente annulée", "Annuler la vente", "Tél.", "Reçu n° {n}", "Vendeur : {n}", "TOTAL", "Donné", "Rendu", "Reste dû par {n} : {a}", "Envoyer le reçu", "Imprimer", "Nouvelle vente", "Autre application", "Numéro du client (facultatif)", "Impression impossible ici", "Rechercher un produit…", "Tous", "À recommander", "Péremption", "Archivés", "Ajouter un produit", "Inventaire", "Prix en bloc", "Achats", "Valeur du stock (prix d'achat)", "Aucun produit dans cette liste.", "Aucun produit. Touchez « Ajouter un produit ».", "Expire dans {n} j", "lot(s)", "Vente", "achat", "Code", "Réactiver", "Couleur (facultatif)", "Unité de base", "pièce, kg, boîte…", "Code-barres (à taper, avec une douchette ou la caméra)", "Prix de gros (facultatif)", "Alerte quand il reste moins de", "Autres formats de vente (carton, boîte, plaquette…)", "Nom du format", "Contient (en unités de base)", "Prix de vente", "Prix de gros", "Retirer ce format", "Ajouter un format", "Format vendu par défaut", "Vendu au poids ou à la mesure (quantités avec virgule)", "Favori (affiché en premier à la caisse)", "TVA applicable à ce produit", "Fournisseur habituel", "Vendu sur ordonnance", "Substance active (DCI) — pour trouver les équivalents", "Suivre les lots et les dates de péremption", "N° de lot", "Plus d'options", "Nouveau produit", "Modifier le produit", "Nom du produit", "Format (ex. 500 g, 1 L)", "Catégorie (ex. boissons, médicaments)", "Prix d'achat (GNF)", "Prix de vente (GNF)", "Quantité en stock au départ", "Stock actuel", "Ajouter du stock", "Corriger le stock", "Archiver", "Enregistrer", "Le nom et les prix sont nécessaires", "Chaque format a un nom, un contenu et un prix", "Ce code-barres est déjà utilisé par « {n} ». Touchez Enregistrer pour confirmer.", "Produit enregistré ✓", "Écart de comptage", "Casse", "Vol ou perte", "Don ou échantillon", "Stock de départ", "Retour abîmé", "stock actuel", "Lot", "Quantité réellement comptée", "Motif", "Note (facultatif)", "Stock corrigé ✓", "Comptez ce qu'il y a sur les étagères et notez la quantité. Laissez vide les produits que vous ne comptez pas.", "Rechercher…", "Voir les écarts", "Dans l'appli", "Compté", "Aucun produit.", "Aucune quantité comptée", "Écarts trouvés", "compté", "Valeur des écarts", "Aucun écart : le stock est exact. Bravo !", "Motif des écarts", "Appliquer", "Inventaire enregistré ✓", "Changer les prix en bloc", "Quels produits ?", "Tous les produits", "Une catégorie", "Je choisis les produits", "Changement", "Arrondir à", "Pas d'arrondi", "Prix de vente (détail)", "prix vont changer", "gros", "sous le prix d'achat", "Appliquer ces prix", "Aucun prix ne change avec ces réglages.", "Annuler le dernier changement de prix", "Changer {n} prix ?", "Prix modifiés ✓", "Remettre les anciens prix ?", "Anciens prix remis ✓", "Remettre", "En retard de {n} j", "À payer aujourd'hui", "Échéance dans {n} j", "Personne dans cette liste.", "Aucun client. Une vente « À crédit » ou le bouton « Ajouter un client » en crée un.", "pièce n° {n}", "photo de la pièce", "aucune pièce enregistrée", "Relancer", "Aucune dette", "Total que les clients vous doivent", "{n} client(s) en retard : {a}", "Rechercher un client…", "Dettes", "En retard", "Ajouter un client", "Fiche client", "Nouveau client", "Nom", "Plafond de crédit (GNF)", "sans limite", "Photo de la pièce", "déjà enregistrée", "Date promise de paiement", "Le nom est nécessaire", "Ce nom existe déjà", "Client enregistré ✓", "Vente n° {n}", "Annulation / retour", "Paiement", "Dette actuelle", "Plafond de crédit", "Date promise", "Achats enregistrés", "Voir la pièce", "Historique", "Rien pour le moment.", "Pièce d'identité", "Photo introuvable.", "Montant reçu", "Montant invalide", "Montant trop élevé", "Paiement enregistré ✓", "Envoyer un reçu de paiement à {n} ?", "Paiement reçu de", "Reste dû", "Dette soldée. Merci !", "Envoyer", "Bonjour {n}, c'est {s}. Vous nous devez {a}", "(échéance dépassée depuis le {d})", "(à régler avant le {d})", "Merci de passer régler.", "Merci !", "Message", "Pas de numéro enregistré : choisissez le contact dans l'application.", "Ventes", "N° de reçu, client, produit…", "Aucune vente.", "remise", "retour", "annulée", "tarif", "Client", "Ordonnance", "Retour du {d}", "Retour / échange", "Cette vente a déjà un retour : annulation impossible.", "Annulation impossible", "Le client a déjà payé une partie de cette dette. Utilisez « Retour / échange » pour rembourser le client.", "Annuler une vente demande le code du patron.", "Tout a déjà été retourné.", "Indiquez ce que le client rapporte. Pour un échange, faites le retour puis une nouvelle vente.", "vendu", "Montant à rembourser", "Rembourser en", "Déduire de la dette", "Remettre les articles en stock", "Motif (facultatif)", "Valider le retour", "Indiquez au moins un article", "Le remboursement dépasse le montant de la vente (reste {n})", "Retour enregistré ✓", "Un retour demande le code du patron.", "Autre mobile", "Annulation de la vente n° {n}", "Retour sur la vente n° {n}", "Paiement de {n}", "Retrait du patron", "Apport d'argent", "Annulation", "Achat", "Annulation d'un achat", "Paiement à {n}", "Commission", "Loyer", "Transport", "Carburant, électricité", "Salaires", "Fournitures", "Impôts et taxes", "Frais Mobile Money", "Réparations", "Nouvelle dépense", "Retrait personnel du patron", "Montant (GNF)", "Catégorie", "Reçu en", "Payé avec", "Date", "Enregistré ✓", "Dépenses", "Dépenses du mois", "Dépense", "Apport", "Aucune dépense ce mois-ci.", "Supprimer cette ligne ?", "Supprimer", "Notez l'argent qui est déjà dans le tiroir et sur vos comptes Mobile Money.", "Caisse ouverte ✓", "Clôturer la caisse", "Comptez l'argent et notez le solde réel de chaque compte. L'appli calcule l'écart.", "Attendu", "Compté / solde réel", "Écart", "Clôturer", "Entrez le montant compté pour chaque ligne", "Caisse clôturée", "Les espèces sont justes. Bravo !", "Il manque {n} en espèces.", "Il y a {n} en trop en espèces.", "Envoyer le résumé", "Sauvegarde du jour", "Envoyez une copie protégée dans Google Drive ou WhatsApp : si le téléphone est perdu, vous retrouvez tout.", "La sauvegarde est faite par le patron : envoyez-lui le résumé pour qu'il sache que la caisse est clôturée.", "Clôture de caisse", "attendu", "écart", "Résumé du {d}", "ventes", "vente", "Dettes remboursées", "Retours remboursés", "Bénéfice estimé", "Les plus vendus", "Les clients vous doivent", "{n} en retard", "Produits à recommander", "Ventes du jour", "vente(s)", "retours", "Envoyer le résumé du jour", "Caisse ouverte à {h}", "Espèces attendues", "Caisse fermée", "Ouvrez la caisse pour que l'appli vérifie l'argent en fin de journée.", "Voir les dépenses", "Agent Mobile Money", "{n} paiement(s) à vérifier avec l'opérateur", "Remises accordées", "Commissions Mobile Money", "après dépenses et pertes", "Dernières ventes", "Aucune vente aujourd'hui.", "Toutes les ventes", "Dernières clôtures", "Dépôt client", "Retrait client", "Achat de float", "Retour de float en espèces", "Votre commission (GNF)", "Reçue en espèces", "Créditée sur le compte", "Téléphone du client (facultatif)", "Référence (facultatif)", "Opération enregistrée ✓", "Acheter du float", "Rendre du float", "Dépôts du jour", "Retraits du jour", "Commissions du jour", "Solde {w} attendu", "Ouvrez la caisse pour suivre le solde attendu de vos comptes.", "commission", "Aucune opération aujourd'hui.", "Achats et fournisseurs", "Nouvel achat", "Fournisseurs", "Achat comptant", "produit(s)", "annulé", "dû", "Aucun achat enregistré. Touchez « Nouvel achat » quand vous recevez de la marchandise.", "Payé", "Annuler cet achat", "Annuler cet achat ? Le stock ajouté sera retiré et la dette au fournisseur corrigée.", "Achat annulé", "Annuler l'achat", "Le montant payé dépasse le total", "Reste à payer au fournisseur : {n}", "En stock", "Aucun produit. Ajoutez-le d'abord dans le Stock.", "Aucun achat en cours.", "Fournisseur", "Achat comptant (sans fournisseur)", "Nouveau fournisseur", "N° de facture ou bon de livraison (facultatif)", "Ajouter un produit reçu…", "Total de l'achat", "Payé maintenant (GNF)", "Enregistrer l'achat", "prix d'achat actuel", "Prix d'achat unitaire", "Abandonner cet achat ?", "Abandonner", "Ajoutez au moins un produit", "Indiquez la quantité de chaque produit", "« {n} » se compte en entier", "Choisissez le fournisseur pour acheter à crédit", "Achat enregistré ✓", "Attention : le prix d'achat a augmenté", "vendu {p}, moins cher que l'achat", "vendu {p}", "Pensez à ajuster vos prix de vente (Stock → Prix en bloc).", "Compris", "Ce que vous devez aux fournisseurs", "Ajouter un fournisseur", "Rien à payer", "Aucun fournisseur. Ajoutez celui qui vous livre.", "Modifier le fournisseur", "Téléphone (WhatsApp)", "Fournisseur enregistré ✓", "Achat à crédit", "Produits liés", "Payer", "Historique de la dette", "Montant payé", "Les quantités proposées couvrent environ 2 semaines de ventes. Vous pouvez les changer.", "Sans fournisseur", "Reste", "alerte à", "Acheter", "Rien à recommander pour le moment. Tout est en stock.", "Bonjour{n}, c'est {s}. Je voudrais commander :", "Aucun produit choisi", "Aujourd'hui", "7 derniers jours", "7 jours", "Ce mois", "Mois dernier", "Cette année", "Autre…", "établi le {d}", "Document établi à partir des données saisies dans Boutique Facile. Il n'est pas certifié par un tiers.", "Rapports", "panier moyen", "Coût d'achat des produits vendus", "Marge brute", "Pertes de stock", "casse, vol, périmés, écarts", "Dettes remboursées par les clients", "Ventes par jour", "Moyens de paiement", "Produits les plus vendus", "Produit", "Qté", "Marge", "Par catégorie", "Sans catégorie", "Heures de vente", "Par vendeur", "Imprimer / PDF", "Fichier Excel (CSV)", "Rapport des ventes", "Résumé", "Ligne", "Retours", "Ventes nettes", "Moyen", "Heure", "N° reçu", "Vendeur", "Total ligne", "Remise de la vente", "Annulée", "oui", "{n} produit(s) vont bientôt manquer", "{n} client(s) en retard de paiement", "Vendu moins cher que l'achat", "perte", "Manque en caisse à la dernière clôture", "Manque en caisse à {n} clôtures récentes", "À surveiller", "Tous les conseils", "Ventes de la semaine", "Vous avez vendu {p} % de plus que la semaine d'avant ({a} contre {b}).", "Vous avez vendu {p} % de moins que la semaine d'avant ({a} contre {b}).", "En hausse", "En baisse", "Produits qui vont manquer", "Calculé avec vos ventes des 30 derniers jours.", "Rupture", "{n} jour(s)", "vendu environ {q} par jour", "Préparer la commande", "Aucun produit ne risque de manquer dans les 10 prochains jours.", "Les prévisions apparaissent après quelques jours de ventes.", "Vendu moins cher que l'achat (30 jours)", "vendu(s)", "Vérifiez le prix de vente ou la remise accordée.", "Prix de vente plus bas que le prix d'achat", "Changer les prix", "Produits qui rapportent le plus (30 jours)", "Stock qui ne bouge pas", "Aucune vente depuis 60 jours. Argent immobilisé : {n}", "Idée : une petite promotion, ou ne plus le racheter.", "Ce conseil apparaît après 45 jours d'utilisation.", "Clients en retard", "Voir et relancer", "Écarts de caisse", "Il manquait de l'argent à la dernière clôture : {a}.", "Il manquait de l'argent à {n} des {m} dernières clôtures, pour {a} en tout.", "{n} produit(s) périmés ou bientôt périmés.", "Conseiller", "Ces conseils sont de simples calculs faits sur votre téléphone avec vos ventes. Aucune donnée ne quitte l'appareil.", "Pas encore assez de ventes pour donner des conseils.", "Ventes (toutes taxes comprises)", "Coût d'achat des marchandises vendues", "Pertes de stock (casse, vol, périmés, écarts)", "Commissions Mobile Money gagnées", "Résultat de la période", "À côté du résultat", "Marchandises achetées", "Dettes clients encaissées", "Retraits du patron", "Apports d'argent", "TVA (estimation)", "TVA sur les ventes", "TVA sur les achats", "TVA à reverser", "Calculée avec un taux de {t} % compris dans les prix. À vérifier avec votre comptable.", "Entrées", "Sorties", "Solde de la période", "Entrée", "Sortie", "Cumul", "Seuls les {n} derniers mouvements sont affichés ici. Le fichier CSV contient tout.", "Aucun mouvement sur cette période.", "Les ventes à crédit n'apparaissent pas ici : l'argent n'est pas encore rentré.", "Situation à aujourd'hui. La trésorerie est une estimation basée sur vos dernières clôtures de caisse.", "Ce que vous avez", "Valeur du stock (prix d'achat moyen)", "Clients qui vous doivent", "Faites une clôture de caisse pour connaître votre argent disponible.", "Ce que vous devez", "Dettes envers les fournisseurs", "Valeur nette estimée", "Comptabilité", "Documents indicatifs, faits avec vos saisies. À faire valider par un comptable avant toute déclaration.", "Résultat", "Livre de caisse", "Situation", "Pour le comptable", "Livre de caisse (CSV)", "Ventes (CSV)", "Dépenses et achats (CSV)", "Stock valorisé (CSV)", "Créances et dettes (CSV)", "Compte", "Type", "Libellé", "Saisi par", "Catégorie ou fournisseur", "Montant", "Note", "Achat de marchandises", "Payé {a}, reste {b}", "Unité", "Prix d'achat moyen", "Valeur", "Dossier comptable", "Résultat simplifié", "Situation à aujourd'hui", "Clients qui doivent", "estimation", "Seuls les {n} derniers mouvements sont imprimés. Le fichier CSV contient tout.", "Les ventes à crédit ne figurent pas dans le livre de caisse. À valider par un comptable.", "Dossier pour une banque", "Un document d'une page avec vos chiffres réels des derniers mois, à imprimer ou envoyer en PDF. Il est établi par vous, à partir de vos ventes enregistrées : il n'est pas certifié.", "Période", "mois", "Montant demandé (GNF, facultatif)", "Objet du financement (facultatif)", "Nom du gérant", "Données disponibles", "jours", "Ventes sur la période", "Ventes moyennes par mois", "Nombre de ventes", "Résultat estimé sur la période", "Valeur du stock", "Vous n'utilisez l'application que depuis {n} jours : le dossier sera plus convaincant avec plus de mois de ventes.", "Résumé d'activité", "Période : {n} derniers mois", "Résultat estimé", "Montant demandé", "Données issues de l'application Boutique Facile, non certifiées.", "Dossier d'activité commerciale", "{n} derniers mois", "Le commerce", "Information", "Gérant", "Adresse", "NIF", "Début des enregistrements", "Demande", "Objet", "Activité mois par mois", "Mois", "Nb ventes", "Indicateurs", "Indicateur", "Panier moyen", "Je certifie que ces chiffres sont tirés de mes enregistrements.", "Fait le {d}", "Signature", "Patron", "Historique, reçus, retours, annulations", "Loyer, transport, retraits du patron…", "Marchandise reçue, dettes, commandes", "Dépôts, retraits, commissions", "Ventes, bénéfice, produits, graphiques", "Ruptures à venir, pertes, stock qui dort", "Livre de caisse, résultat, pour le comptable", "Document d'activité à imprimer", "Vendeurs et codes", "Un code par personne", "Plusieurs boutiques", "Voir toutes vos boutiques ensemble", "Sauvegarde et mémoire", "Dernière : {d}", "Pas encore de sauvegarde", "Langue", "Réglages", "Commerce, reçus, modules, remises", "Aide et à propos", "Version {v}", "Votre commerce", "Reçus", "Largeur du papier", "Message en bas du reçu", "Arrondir les totaux vers le bas à", "Remise maximale d'un vendeur sans le code du patron (%)", "Délai de paiement par défaut des clients (jours)", "Après une vente", "Barre rapide (le plus rapide)", "Reçu complet à chaque vente", "Les vendeurs voient les prix d'achat et les bénéfices", "Obliger à ouvrir la caisse avant de vendre", "Modules", "Pharmacie : lots, péremption, ordonnances, équivalents", "Alerte de péremption (jours avant)", "Agent Mobile Money : dépôts, retraits, commissions", "Commission habituelle (% du montant)", "TVA : calculer une estimation (désactivée par défaut)", "Taux de TVA (%)", "Affichage", "Couleur principale", "Mode simple : gros boutons, moins de choses à l'écran", "Écriture plus grande", "Le nom du commerce est nécessaire", "Réglages enregistrés ✓", "Module pharmacie", "L'application aide à suivre les lots, les dates de péremption et les ordonnances. Elle ne remplace ni la réglementation pharmaceutique, ni le pharmacien responsable, ni les contrôles de l'autorité sanitaire.", "Vérifiez toujours les dates et les ordonnances avant de délivrer un médicament.", "Version d'essai en ligne : l'enregistrement de fichiers est bloqué ici. La sauvegarde fonctionne dans la version installée sur le téléphone.", "Calcul de la mémoire…", "Mot de passe des sauvegardes", "Choisi le {d}. Il faudra le taper pour ouvrir vos sauvegardes : gardez-le noté sur papier.", "Vérifier", "Changer", "Obligatoire : il protège le fichier, qui contient vos ventes, vos clients et les photos de pièces d'identité.", "Choisir le mot de passe", "Vous n'avez encore jamais fait de sauvegarde.", "Dernière sauvegarde : {a}", "Dernière sauvegarde : {a} (il y a 1 jour)", "Dernière sauvegarde : {a} (il y a {n} jours)", "Le fichier contient tous vos produits, ventes, clients et photos. Gardez-le dans Google Drive, WhatsApp, votre e-mail ou sur un ordinateur. Le mieux : chaque soir, à la clôture de la caisse.", "Remplace les données de ce téléphone par celles du fichier. Utile après un changement de téléphone.", "Protéger la mémoire", "Demande au téléphone de ne pas effacer les données de l'application quand il manque de place.", "Protéger", "Mettez aussi un code de verrouillage sur le téléphone : c'est lui qui protège vraiment vos données s'il est volé.", "{a} utilisés sur {b} disponibles", "{a} utilisés sur environ 4,5 Mo disponibles", "Mémoire de l'application", "produits", "produit", "clients", "client", "photos", "photo", "Presque plein : faites une sauvegarde puis libérez de la place.", "Votre navigateur limite la mémoire à environ 5 Mo. Faites des sauvegardes régulières.", "Protégée", "Pas encore protégée", "Mémoire protégée ✓", "Le téléphone n'a pas accepté. Faites des sauvegardes.", "Impossible ici", "Sauvegarde annulée : rien n'a été envoyé.", "Sauvegarde faite", "Sauvegarde créée ✓", "Sauvegarde impossible", "Il protège chaque fichier de sauvegarde : sans lui, personne ne peut l'ouvrir, même vous. Au moins 8 caractères.", "Mot de passe", "Le même, encore une fois", "Notez-le sur papier et gardez-le loin du téléphone. Personne ne peut le retrouver si vous l'oubliez.", "Les sauvegardes déjà faites gardent l'ancien mot de passe.", "Au moins 8 caractères", "Mot de passe trop facile à deviner", "Les deux mots de passe ne sont pas pareils", "Impossible d'enregistrer le mot de passe", "Mot de passe enregistré", "Vos sauvegardes seront protégées par ce mot de passe.", "Plus tard", "Mot de passe changé ✓", "Mot de passe enregistré ✓", "Vérifier le mot de passe", "Tapez votre mot de passe des sauvegardes", "C'est le bon mot de passe ✓", "Ce n'est pas le bon mot de passe", "Vérification du mois", "Une fois par mois, l'appli vérifie que vous vous souvenez du mot de passe des sauvegardes. Sans lui, vos sauvegardes ne pourront pas être ouvertes.", "Je l'ai oublié", "Tapez le mot de passe", "Ce n'est pas le bon mot de passe. Réessayez, ou touchez « Je l'ai oublié ».", "Bon mot de passe", "Prochaine vérification dans un mois.", "Fichier illisible", "Remplacer les données de ce téléphone par cette sauvegarde ({a} produits, {b} ventes) ?", "Sauvegarde restaurée ✓", "Sauvegarde restaurée ✓ Le mot de passe des sauvegardes est repris.", "Restaurer", "Mot de passe incorrect, essayez encore", "Ce fichier est protégé. Entrez le mot de passe.", "Fichier non reconnu", "Chaque personne a son code à 4 chiffres. Les ventes sont notées au nom du vendeur. Une remise trop forte, un retour, une annulation ou un dépassement de crédit demandent le code du patron.", "désactivé", "sans code", "Désactiver", "Activer", "Ajouter un vendeur", "Ce que peut faire un vendeur", "Vendre, encaisser une dette, voir ses propres ventes et ouvrir ou fermer sa caisse. Il ne voit pas les prix d'achat ni les bénéfices (sauf si vous l'autorisez dans les Réglages) et ne peut pas modifier le stock, les prix ou les rapports.", "Nouveau vendeur", "Nouveau code à 4 chiffres (laisser vide pour garder l'ancien)", "Code à 4 chiffres", "Ce code est déjà utilisé par quelqu'un d'autre", "Comment ça marche", "touchez les produits, puis choisissez Espèces, Mobile Money ou À crédit. Un client peut aussi payer une partie maintenant (acompte) et le reste plus tard.", "ajoutez vos produits et vos achats. L'appli prévient quand il faut recommander.", "suivez les dettes, relancez par WhatsApp ou SMS, encaissez.", "ouvrez la caisse le matin, fermez-la le soir : l'appli montre s'il manque de l'argent.", "Où sont vos données ?", "Dans la version d'essai en ligne, vos données ne sont pas garanties : elles peuvent disparaître. Installez l'application sur le téléphone pour les garder.", "Tout est enregistré sur ce téléphone, sans internet. Personne d'autre ne peut les voir. Si le téléphone est perdu ou cassé, vos données sont perdues : faites une sauvegarde chaque soir, à la clôture de la caisse.", "Le code PIN empêche les curieux d'ouvrir l'application, mais il ne chiffre pas les données. Ne laissez pas votre téléphone déverrouillé.", "Mettez un code de verrouillage sur le téléphone lui-même : c'est lui qui protège vraiment vos données s'il est volé.", "Après 5 codes faux, l'application fait patienter (jusqu'à 5 minutes) et prévient le patron à sa prochaine ouverture.", "Limites à connaître", "Plusieurs boutiques : les chiffres se regroupent par fichiers échangés, pas en direct.", "Les paiements Mobile Money sont notés à la main : vérifiez-les avec le SMS de l'opérateur.", "Les rapports et la comptabilité sont indicatifs : faites-les valider par un comptable.", "L'impression passe par le système du téléphone (imprimante ou PDF).", "version {v}", "Chaque boutique garde ses données sur son propre téléphone. Pour voir toutes vos boutiques ensemble, chaque gérant envoie un « rapport de boutique » (un petit fichier) et vous l'importez ici. Le fichier ne contient ni photos, ni pièces d'identité.", "Envoyer le rapport de cette boutique", "Période à envoyer", "30 derniers jours", "3 derniers mois", "12 derniers mois", "Créer et envoyer le rapport", "Importer le rapport d'une autre boutique", "Boutiques importées", "Rapport du {d}", "depuis le {d}", "Aucune boutique importée.", "Voir toutes les boutiques ensemble", "Rapport créé ✓", "{n} rapport(s) importé(s) ✓", "Ce rapport vient de cette boutique.", "{n} fichier(s) non reconnu(s)", "Retirer cette boutique de la liste ?", "Retirer", "Toutes les boutiques", "résultat estimé", "Boutique", "Clients doivent", "données incomplètes", "rapport du {d}", "Les rapports importés sont des photos prises à leur date. Demandez de nouveaux rapports pour mettre à jour.", "Rapport de toutes les boutiques", "traduit", "Traduire", "Ajouter une langue", "Les traductions en soussou, pular ou malinké ne sont pas fournies : elles doivent être saisies par une personne qui parle la langue. Tant qu'un texte n'est pas traduit, le français s'affiche.", "Astuce : exportez le fichier de traduction, faites-le compléter par un proche, puis importez-le sur chaque téléphone.", "Nom de la langue", "Cette langue existe déjà", "Tout est traduit. Bravo !", "Rien trouvé.", "Avant", "Après", "textes traduits", "Choisissez une langue.", "Chercher un texte…", "Pas encore traduits", "Gardez les mots entre accolades, comme {n}, tels quels.", "Fichiers de traduction", "Exporter (fichier)", "Exporter pour Excel (CSV)", "Importer un fichier de traduction (.json ou .csv)", "Supprimer cette langue", "Il manque {x} dans la traduction", "Français", "Traduction", "{n} texte(s) importé(s) ✓", "Aucun texte reconnu", "Supprimer cette langue et ses traductions ?", "La caméra n'est pas disponible ici", "Placez le code-barres à plat dans le cadre", "Terminer", "Autorisez la caméra dans les réglages du téléphone", "La caméra ne démarre pas", "Code lu : {c}", "Code {c} inconnu", "{n} au panier", "stock insuffisant"];
+const CAT=["Pas possible dans la version d'essai", "Cette action est bloquée dans la version d'essai en ligne. Elle fonctionne dans la version installée sur le téléphone.", "Copiez ce texte", "Touchez le texte pour le sélectionner, copiez-le, puis collez-le dans WhatsApp ou un message.", "Fermer", "Texte copié : collez-le dans WhatsApp ou un message", "Retour", "Appuyez encore sur Retour pour quitter", "Annuler", "Valider", "Oui", "Non", "Version d'essai en ligne", "Enregistré sur ce téléphone", "En ligne", "Hors ligne", "Verrouiller", "Vendre", "Stock", "Clients", "Caisse", "Plus", "Vos données n'ont pas pu être lues.", "Rien n'est enregistré. Fermez puis rouvrez l'application.", "Les données ne sont pas enregistrées.", "La mémoire est pleine ou bloquée. Faites une sauvegarde tout de suite.", "Sauvegarder", "La mémoire est pleine ou bloquée. Prévenez le patron tout de suite.", "Une nouvelle version est prête. Fermez puis rouvrez l'application pour l'utiliser.", "Voir", "Version d'essai en ligne : vos données ne sont pas garanties ici, et la caméra, l'impression et l'enregistrement de fichiers sont bloqués. Pour garder vos données et travailler sans internet, utilisez la version installée sur le téléphone.", "Aucune sauvegarde pour le moment.", "Dernière sauvegarde il y a 1 jour.", "Dernière sauvegarde il y a {n} jours.", "Sauvegardez chaque soir, à la clôture de la caisse.", "Sauvegarder maintenant", "Réservé au patron", "La mémoire du téléphone est presque pleine. Faites une sauvegarde et libérez de la place.", "La mémoire de l'application est presque pleine. Faites une sauvegarde.", "{n} codes faux", "1 code faux", "{n} codes de secours faux", "1 code de secours faux", "Codes faux tapés", "Depuis votre dernière ouverture : {x}. Le dernier le {d}.", "Si ce n'est pas une simple erreur de frappe, quelqu'un a peut-être essayé de deviner un code. Vous pouvez changer les codes dans Plus › Vendeurs et codes.", "J'ai compris", "Trop d'essais. Réessayez dans {t}.", "Code incorrect. Encore {n} essais avant une attente.", "Code incorrect. Encore 1 essai avant une attente.", "Code incorrect", "Trop d'essais", "Code du patron", "Le patron doit saisir son code pour autoriser cette action.", "Votre code PIN", "Retapez votre code pour confirmer que c'est bien vous.", "Vos données n'ont pas pu être lues", "Le téléphone n'a pas réussi à lire la mémoire de l'application. Rien n'a été effacé et rien ne sera enregistré tant que la lecture échoue.", "Fermez complètement l'application puis rouvrez-la. Si le problème continue, redémarrez le téléphone, ou restaurez votre dernière sauvegarde ci-dessous.", "Restaurer une sauvegarde", "Réessayer", "Ouvrir", "Code oublié ?", "Créez le code PIN du propriétaire (4 chiffres)", "Entrez votre code PIN", "Le code a 4 chiffres", "Code trop facile à deviner. Choisissez-en un autre.", "Votre code de secours", "Si vous oubliez votre code PIN, ce code de secours permet d'en créer un nouveau sans perdre vos données.", "Notez-le sur papier et gardez-le en lieu sûr. Il ne sera plus affiché.", "J'ai noté le code", "Code de secours absent", "Aucun code de secours n'a été créé sur ce téléphone. Réinstallez l'application puis restaurez une sauvegarde.", "Code de secours", "Entrez le code de secours à 8 chiffres", "Code de secours incorrect", "Bienvenue", "Nom de votre commerce", "Ma boutique", "Type de commerce", "Boutique, alimentation", "Pharmacie", "Quincaillerie, matériaux", "Autre commerce", "Votre téléphone (facultatif)", "Pour commencer", "Commencer avec un stock vide", "Essayer avec des produits d'exemple", "Conseil : mettez aussi un code de verrouillage sur ce téléphone. C'est lui qui protège vraiment vos données si le téléphone est volé.", "Commencer", "Vert", "Bleu", "Violet", "Orange", "Rouge", "Ardoise", "Rechercher ou scanner un code…", "Tout", "Favoris", "Détail", "Gros", "Périmé", "Bientôt périmé", "en stock", "au panier", "Même substance :", "Aucun produit trouvé.", "Aucun produit. Ajoutez-en dans l'onglet Stock.", "Modifier", "Mettre en attente", "Vider", "Espèces", "À crédit", "Aucun produit pour « {q} »", "Stock insuffisant pour {n} : il reste {q}. Ajouter quand même ?", "Ajouter", "Effacer", "Quantité", "unité", "Ajouter au panier", "Quantité invalide", "Reprendre le panier vidé", "En attente", "art.", "Vente mise en attente. Touchez-la en haut pour la reprendre.", "Panier vidé", "Prix du tarif", "prix négocié", "Sous le prix d'achat", "Format", "Prix unitaire", "Total", "Modifier le panier", "Total du panier", "OK", "Autre", "La caisse est fermée. L'ouvrir maintenant ?", "Ouvrir la caisse", "Prix négocié", "Encaisser", "{n} article(s)", "Total à payer", "Remise", "Le client donne aussi des espèces", "À crédit (dette du client)", "Montant donné par le client", "Monnaie à rendre", "Revenir au calcul automatique", "Numéro de transaction du SMS (facultatif)", "Coller le SMS reçu pour le contrôler (facultatif)", "Nom du client", "Détails du crédit (téléphone, échéance, pièce d'identité)", "Téléphone", "Échéance", "Dans {n} jours", "Dans 7 jours", "Dans 30 jours", "Pas de date", "Autre date…", "N° de carte d'identité ou de passeport", "Photo de la pièce (facultatif)", "Le client accepte l'enregistrement de sa pièce d'identité.", "Ordonnance (n° ou nom du médecin, facultatif)", "Répartir autrement", "Valider la vente", "Le client donne (espèces)", "Exact", "Reste à payer", "Si le client donne moins, le reste va sur :", "À payer avec :", "Acompte reçu : {a}. Reste dû par le client : {b}.", "Reste à répartir : {n}", "Trop payé de {n}", "Crédit", "Dette actuelle : {n}", "Client connu, aucune dette", "Plafond : {n}", "pièce déjà enregistrée", "Photo prête ✓", "C'est un SMS d'envoi : l'argent est parti de ce compte. Pour un paiement reçu, collez le SMS « reception de » arrivé sur le téléphone de la boutique.", "Aucun montant trouvé dans ce SMS. Vérifiez le texte collé.", "Le SMS indique {n}, comme le montant à payer.", "Le SMS indique {a} mais cette vente demande {b} en Mobile Money.", "Paiement reçu aujourd'hui à {h}.", "Ce paiement date du {d} à {h}, pas d'aujourd'hui : vérifiez qu'il n'a pas déjà servi.", "Ce numéro de transaction a déjà servi pour la vente n° {n}.", "Ce contrôle lit seulement le texte collé. Vérifiez aussi votre solde Orange Money / MTN.", "Le total payé doit être égal à {n}", "Le nom du client est nécessaire", "Le client doit accepter l'enregistrement de sa pièce", "Choisissez la date d'échéance", "Remise de {n} % : le patron doit autoriser.", "Plafond de crédit dépassé : {a} + {b} dépasse {l}. Autoriser quand même ?", "Le patron doit autoriser un dépassement du plafond.", "Autoriser", "Ce numéro de transaction a déjà servi pour la vente n° {n}. Continuer quand même ?", "Continuer", "Vente enregistrée", "Reçu", "Trop tard pour annuler ici", "Pour annuler une ancienne vente, allez dans Plus > Ventes.", "Annuler cette vente ? Le stock sera remis.", "Vente annulée", "Annuler la vente", "Tél.", "Reçu n° {n}", "Vendeur : {n}", "TOTAL", "Donné", "Rendu", "Reste dû par {n} : {a}", "Envoyer le reçu", "Imprimer", "Nouvelle vente", "Autre application", "Numéro du client (facultatif)", "Impression impossible ici", "Rechercher un produit…", "Tous", "À recommander", "Péremption", "Archivés", "Ajouter un produit", "Inventaire", "Prix en bloc", "Achats", "Valeur du stock (prix d'achat)", "Aucun produit dans cette liste.", "Aucun produit. Touchez « Ajouter un produit ».", "Expire dans {n} j", "lot(s)", "Vente", "achat", "Code", "Réactiver", "Couleur (facultatif)", "Unité de base", "pièce, kg, boîte…", "Code-barres (à taper, avec une douchette ou la caméra)", "Prix de gros (facultatif)", "Alerte quand il reste moins de", "Autres formats de vente (carton, boîte, plaquette…)", "Nom du format", "Contient (en unités de base)", "Prix de vente", "Prix de gros", "Retirer ce format", "Ajouter un format", "Format vendu par défaut", "Vendu au poids ou à la mesure (quantités avec virgule)", "Favori (affiché en premier à la caisse)", "TVA applicable à ce produit", "Fournisseur habituel", "Vendu sur ordonnance", "Substance active (DCI) — pour trouver les équivalents", "Suivre les lots et les dates de péremption", "N° de lot", "Plus d'options", "Nouveau produit", "Modifier le produit", "Nom du produit", "Format (ex. 500 g, 1 L)", "Catégorie (ex. boissons, médicaments)", "Prix d'achat (GNF)", "Prix de vente (GNF)", "Quantité en stock au départ", "Stock actuel", "Ajouter du stock", "Corriger le stock", "Archiver ce produit (il ne sera plus proposé à la vente)", "Enregistrer", "« {n} » archivé. Il reste dans Stock › Archivés.", "Le nom et les prix sont nécessaires", "Chaque format a un nom, un contenu et un prix", "Ce code-barres est déjà utilisé par « {n} ». Touchez Enregistrer pour confirmer.", "Produit enregistré ✓", "Écart de comptage", "Casse", "Vol ou perte", "Don ou échantillon", "Stock de départ", "Retour abîmé", "stock actuel", "Lot", "Quantité réellement comptée", "Motif", "Note (facultatif)", "Stock corrigé ✓", "Comptez ce qu'il y a sur les étagères et notez la quantité. Laissez vide les produits que vous ne comptez pas.", "Rechercher…", "Voir les écarts", "Dans l'appli", "Compté", "Aucun produit.", "Aucune quantité comptée", "Écarts trouvés", "compté", "Valeur des écarts", "Aucun écart : le stock est exact. Bravo !", "Motif des écarts", "Appliquer", "Inventaire enregistré ✓", "Changer les prix en bloc", "Quels produits ?", "Tous les produits", "Une catégorie", "Je choisis les produits", "Changement", "Arrondir à", "Pas d'arrondi", "Prix de vente (détail)", "prix vont changer", "gros", "sous le prix d'achat", "Appliquer ces prix", "Aucun prix ne change avec ces réglages.", "Annuler le dernier changement de prix", "Changer {n} prix ?", "Prix modifiés ✓", "Remettre les anciens prix ?", "Anciens prix remis ✓", "Remettre", "En retard de {n} j", "À payer aujourd'hui", "Échéance dans {n} j", "Personne dans cette liste.", "Aucun client. Une vente « À crédit » ou le bouton « Ajouter un client » en crée un.", "pièce n° {n}", "photo de la pièce", "aucune pièce enregistrée", "Aucune dette", "Relancer", "Total que les clients vous doivent", "{n} client(s) en retard : {a}", "Rechercher un client…", "Dettes", "En retard", "Ajouter un client", "Fiche client", "Nouveau client", "Nom", "Plafond de crédit (GNF)", "sans limite", "Photo de la pièce", "déjà enregistrée", "Date promise de paiement", "Le nom est nécessaire", "Ce nom existe déjà", "Client enregistré ✓", "Vente n° {n}", "Annulation / retour", "Paiement", "Dette actuelle", "Plafond de crédit", "Date promise", "Achats enregistrés", "Voir la pièce", "Historique", "Rien pour le moment.", "Pièce d'identité", "Photo introuvable.", "Montant reçu", "Montant invalide", "Montant trop élevé", "Paiement enregistré ✓", "Envoyer un reçu de paiement à {n} ?", "Paiement reçu de", "Reste dû", "Dette soldée. Merci !", "Envoyer", "Bonjour {n}, c'est {s}. Vous nous devez {a}", "(échéance dépassée depuis le {d})", "(à régler avant le {d})", "Merci de passer régler.", "Merci !", "Message", "Pas de numéro enregistré : choisissez le contact dans l'application.", "Ventes", "N° de reçu, client, produit…", "Aucune vente.", "remise", "retour", "annulée", "tarif", "Client", "Ordonnance", "Retour du {d}", "Retour / échange", "Cette vente a déjà un retour : annulation impossible.", "Annulation impossible", "Le client a déjà payé une partie de cette dette. Utilisez « Retour / échange » pour rembourser le client.", "Annuler une vente demande le code du patron.", "Tout a déjà été retourné.", "Indiquez ce que le client rapporte. Pour un échange, faites le retour puis une nouvelle vente.", "vendu", "Montant à rembourser", "Rembourser en", "Déduire de la dette", "Remettre les articles en stock", "Motif (facultatif)", "Valider le retour", "Indiquez au moins un article", "Le remboursement dépasse le montant de la vente (reste {n})", "Retour enregistré ✓", "Un retour demande le code du patron.", "Autre mobile", "Annulation de la vente n° {n}", "Retour sur la vente n° {n}", "Paiement de {n}", "Retrait du patron", "Apport d'argent", "Annulation", "Achat", "Annulation d'un achat", "Paiement à {n}", "Commission", "Loyer", "Transport", "Carburant, électricité", "Salaires", "Fournitures", "Impôts et taxes", "Frais Mobile Money", "Réparations", "Nouvelle dépense", "Retrait personnel du patron", "Montant (GNF)", "Catégorie", "Reçu en", "Payé avec", "Date", "Enregistré ✓", "Dépenses", "Dépenses du mois", "Dépense", "Apport", "Aucune dépense ce mois-ci.", "Supprimer cette ligne ?", "Supprimer", "Notez l'argent qui est déjà dans le tiroir et sur vos comptes Mobile Money.", "Caisse ouverte ✓", "Clôturer la caisse", "Comptez l'argent et notez le solde réel de chaque compte. L'appli calcule l'écart.", "Attendu", "Compté / solde réel", "Écart", "Clôturer", "Entrez le montant compté pour chaque ligne", "Caisse clôturée", "Les espèces sont justes. Bravo !", "Il manque {n} en espèces.", "Il y a {n} en trop en espèces.", "Envoyer le résumé", "Sauvegarde du jour", "Envoyez une copie protégée dans Google Drive ou WhatsApp : si le téléphone est perdu, vous retrouvez tout.", "La sauvegarde est faite par le patron : envoyez-lui le résumé pour qu'il sache que la caisse est clôturée.", "Clôture de caisse", "attendu", "écart", "Résumé du {d}", "ventes", "vente", "Dettes remboursées", "Retours remboursés", "Bénéfice estimé", "Les plus vendus", "Les clients vous doivent", "{n} en retard", "Produits à recommander", "Ventes du jour", "vente(s)", "retours", "Envoyer le résumé du jour", "Caisse ouverte à {h}", "Espèces attendues", "Caisse fermée", "Ouvrez la caisse pour que l'appli vérifie l'argent en fin de journée.", "Voir les dépenses", "Agent Mobile Money", "{n} paiement(s) à vérifier avec l'opérateur", "Remises accordées", "Commissions Mobile Money", "après dépenses et pertes", "Dernières ventes", "Aucune vente aujourd'hui.", "Toutes les ventes", "Dernières clôtures", "Dépôt client", "Retrait client", "Achat de float", "Retour de float en espèces", "Votre commission (GNF)", "Reçue en espèces", "Créditée sur le compte", "Téléphone du client (facultatif)", "Référence (facultatif)", "Opération enregistrée ✓", "Acheter du float", "Rendre du float", "Dépôts du jour", "Retraits du jour", "Commissions du jour", "Solde {w} attendu", "Ouvrez la caisse pour suivre le solde attendu de vos comptes.", "commission", "Aucune opération aujourd'hui.", "Achats et fournisseurs", "Nouvel achat", "Fournisseurs", "Achat comptant", "produit(s)", "annulé", "dû", "Aucun achat enregistré. Touchez « Nouvel achat » quand vous recevez de la marchandise.", "Payé", "Annuler cet achat", "Annuler cet achat ? Le stock ajouté sera retiré et la dette au fournisseur corrigée.", "Achat annulé", "Annuler l'achat", "Le montant payé dépasse le total", "Reste à payer au fournisseur : {n}", "En stock", "Aucun produit. Ajoutez-le d'abord dans le Stock.", "Aucun achat en cours.", "Fournisseur", "Achat comptant (sans fournisseur)", "Nouveau fournisseur", "N° de facture ou bon de livraison (facultatif)", "Ajouter un produit reçu…", "Total de l'achat", "Payé maintenant (GNF)", "Enregistrer l'achat", "prix d'achat actuel", "Prix d'achat unitaire", "Abandonner cet achat ?", "Abandonner", "Ajoutez au moins un produit", "Indiquez la quantité de chaque produit", "« {n} » se compte en entier", "Choisissez le fournisseur pour acheter à crédit", "Achat enregistré ✓", "Attention : le prix d'achat a augmenté", "vendu {p}, moins cher que l'achat", "vendu {p}", "Pensez à ajuster vos prix de vente (Stock → Prix en bloc).", "Compris", "Ce que vous devez aux fournisseurs", "Ajouter un fournisseur", "Rien à payer", "Aucun fournisseur. Ajoutez celui qui vous livre.", "Modifier le fournisseur", "Téléphone (WhatsApp)", "Fournisseur enregistré ✓", "Achat à crédit", "Produits liés", "Payer", "Historique de la dette", "Montant payé", "Les quantités proposées couvrent environ 2 semaines de ventes. Vous pouvez les changer.", "Sans fournisseur", "Reste", "alerte à", "Acheter", "Rien à recommander pour le moment. Tout est en stock.", "Bonjour{n}, c'est {s}. Je voudrais commander :", "Aucun produit choisi", "Aujourd'hui", "7 derniers jours", "7 jours", "Ce mois", "Mois dernier", "Cette année", "Autre…", "établi le {d}", "Document établi à partir des données saisies dans Boutique Facile. Il n'est pas certifié par un tiers.", "Rapports", "panier moyen", "Coût d'achat des produits vendus", "Marge brute", "Pertes de stock", "casse, vol, périmés, écarts", "Dettes remboursées par les clients", "Ventes par jour", "Moyens de paiement", "Produits les plus vendus", "Produit", "Qté", "Marge", "Par catégorie", "Sans catégorie", "Heures de vente", "Par vendeur", "Imprimer / PDF", "Fichier Excel (CSV)", "Rapport des ventes", "Résumé", "Ligne", "Retours", "Ventes nettes", "Moyen", "Heure", "N° reçu", "Vendeur", "Total ligne", "Remise de la vente", "Annulée", "oui", "{n} produit(s) vont bientôt manquer", "{n} client(s) en retard de paiement", "Vendu moins cher que l'achat", "perte", "Manque en caisse à la dernière clôture", "Manque en caisse à {n} clôtures récentes", "À surveiller", "Tous les conseils", "Ventes de la semaine", "Vous avez vendu {p} % de plus que la semaine d'avant ({a} contre {b}).", "Vous avez vendu {p} % de moins que la semaine d'avant ({a} contre {b}).", "En hausse", "En baisse", "Produits qui vont manquer", "Calculé avec vos ventes des 30 derniers jours.", "Rupture", "{n} jour(s)", "vendu environ {q} par jour", "Préparer la commande", "Aucun produit ne risque de manquer dans les 10 prochains jours.", "Les prévisions apparaissent après quelques jours de ventes.", "Vendu moins cher que l'achat (30 jours)", "vendu(s)", "Vérifiez le prix de vente ou la remise accordée.", "Prix de vente plus bas que le prix d'achat", "Changer les prix", "Produits qui rapportent le plus (30 jours)", "Stock qui ne bouge pas", "Aucune vente depuis 60 jours. Argent immobilisé : {n}", "Idée : une petite promotion, ou ne plus le racheter.", "Ce conseil apparaît après 45 jours d'utilisation.", "Clients en retard", "Voir et relancer", "Écarts de caisse", "Il manquait de l'argent à la dernière clôture : {a}.", "Il manquait de l'argent à {n} des {m} dernières clôtures, pour {a} en tout.", "{n} produit(s) périmés ou bientôt périmés.", "Conseiller", "Ces conseils sont de simples calculs faits sur votre téléphone avec vos ventes. Aucune donnée ne quitte l'appareil.", "Pas encore assez de ventes pour donner des conseils.", "Ventes (toutes taxes comprises)", "Coût d'achat des marchandises vendues", "Pertes de stock (casse, vol, périmés, écarts)", "Commissions Mobile Money gagnées", "Résultat de la période", "À côté du résultat", "Marchandises achetées", "Dettes clients encaissées", "Retraits du patron", "Apports d'argent", "TVA (estimation)", "TVA sur les ventes", "TVA sur les achats", "TVA à reverser", "Calculée avec un taux de {t} % compris dans les prix. À vérifier avec votre comptable.", "Entrées", "Sorties", "Solde de la période", "Entrée", "Sortie", "Cumul", "Seuls les {n} derniers mouvements sont affichés ici. Le fichier CSV contient tout.", "Aucun mouvement sur cette période.", "Les ventes à crédit n'apparaissent pas ici : l'argent n'est pas encore rentré.", "Situation à aujourd'hui. La trésorerie est une estimation basée sur vos dernières clôtures de caisse.", "Ce que vous avez", "Valeur du stock (prix d'achat moyen)", "Clients qui vous doivent", "Faites une clôture de caisse pour connaître votre argent disponible.", "Ce que vous devez", "Dettes envers les fournisseurs", "Valeur nette estimée", "Comptabilité", "Documents indicatifs, faits avec vos saisies. À faire valider par un comptable avant toute déclaration.", "Résultat", "Livre de caisse", "Situation", "Pour le comptable", "Livre de caisse (CSV)", "Ventes (CSV)", "Dépenses et achats (CSV)", "Stock valorisé (CSV)", "Créances et dettes (CSV)", "Compte", "Type", "Libellé", "Saisi par", "Catégorie ou fournisseur", "Montant", "Note", "Achat de marchandises", "Payé {a}, reste {b}", "Unité", "Prix d'achat moyen", "Valeur", "Dossier comptable", "Résultat simplifié", "Situation à aujourd'hui", "Clients qui doivent", "estimation", "Seuls les {n} derniers mouvements sont imprimés. Le fichier CSV contient tout.", "Les ventes à crédit ne figurent pas dans le livre de caisse. À valider par un comptable.", "Dossier pour une banque", "Un document d'une page avec vos chiffres réels des derniers mois, à imprimer ou envoyer en PDF. Il est établi par vous, à partir de vos ventes enregistrées : il n'est pas certifié.", "Période", "mois", "Montant demandé (GNF, facultatif)", "Objet du financement (facultatif)", "Nom du gérant", "Données disponibles", "jours", "Ventes sur la période", "Ventes moyennes par mois", "Nombre de ventes", "Résultat estimé sur la période", "Valeur du stock", "Vous n'utilisez l'application que depuis {n} jours : le dossier sera plus convaincant avec plus de mois de ventes.", "Résumé d'activité", "Période : {n} derniers mois", "Résultat estimé", "Montant demandé", "Données issues de l'application Boutique Facile, non certifiées.", "Dossier d'activité commerciale", "{n} derniers mois", "Le commerce", "Information", "Gérant", "Adresse", "NIF", "Début des enregistrements", "Demande", "Objet", "Activité mois par mois", "Mois", "Nb ventes", "Indicateurs", "Indicateur", "Panier moyen", "Je certifie que ces chiffres sont tirés de mes enregistrements.", "Fait le {d}", "Signature", "Patron", "Historique, reçus, retours, annulations", "Loyer, transport, retraits du patron…", "Marchandise reçue, dettes, commandes", "Dépôts, retraits, commissions", "Ventes, bénéfice, produits, graphiques", "Ruptures à venir, pertes, stock qui dort", "Livre de caisse, résultat, pour le comptable", "Document d'activité à imprimer", "Vendeurs et codes", "Un code par personne", "Plusieurs boutiques", "Voir toutes vos boutiques ensemble", "Sauvegarde et mémoire", "Dernière : {d}", "Pas encore de sauvegarde", "Langue", "Réglages", "Commerce, reçus, modules, remises", "Aide et à propos", "Version {v}", "Votre commerce", "Reçus", "Largeur du papier", "Message en bas du reçu", "Arrondir les totaux vers le bas à", "Remise maximale d'un vendeur sans le code du patron (%)", "Délai de paiement par défaut des clients (jours)", "Après une vente", "Barre rapide (le plus rapide)", "Reçu complet à chaque vente", "Les vendeurs voient les prix d'achat et les bénéfices", "Obliger à ouvrir la caisse avant de vendre", "Sécurité", "Verrouiller l'application quand personne ne touche l'écran", "Après 2 minutes", "Après 5 minutes", "Après 15 minutes", "Jamais (déconseillé)", "Il faut alors retaper son code. Le panier en cours est gardé.", "Modules", "Pharmacie : lots, péremption, ordonnances, équivalents", "Alerte de péremption (jours avant)", "Agent Mobile Money : dépôts, retraits, commissions", "Commission habituelle (% du montant)", "TVA : calculer une estimation (désactivée par défaut)", "Taux de TVA (%)", "Affichage", "Couleur principale", "Mode simple : gros boutons, moins de choses à l'écran", "Écriture plus grande", "Le nom du commerce est nécessaire", "Réglages enregistrés ✓", "Module pharmacie", "L'application aide à suivre les lots, les dates de péremption et les ordonnances. Elle ne remplace ni la réglementation pharmaceutique, ni le pharmacien responsable, ni les contrôles de l'autorité sanitaire.", "Vérifiez toujours les dates et les ordonnances avant de délivrer un médicament.", "Version d'essai en ligne : l'enregistrement de fichiers est bloqué ici. La sauvegarde fonctionne dans la version installée sur le téléphone.", "Calcul de la mémoire…", "Mot de passe des sauvegardes", "Choisi le {d}. Il faudra le taper pour ouvrir vos sauvegardes : gardez-le noté sur papier.", "Vérifier", "Changer", "Obligatoire : il protège le fichier, qui contient vos ventes, vos clients et les photos de pièces d'identité.", "Choisir le mot de passe", "Vous n'avez encore jamais fait de sauvegarde.", "Dernière sauvegarde : {a}", "Dernière sauvegarde : {a} (il y a 1 jour)", "Dernière sauvegarde : {a} (il y a {n} jours)", "Le fichier contient tous vos produits, ventes, clients et photos. Gardez-le dans Google Drive, WhatsApp, votre e-mail ou sur un ordinateur. Le mieux : chaque soir, à la clôture de la caisse.", "Remplace les données de ce téléphone par celles du fichier. Utile après un changement de téléphone.", "Protéger la mémoire", "Demande au téléphone de ne pas effacer les données de l'application quand il manque de place.", "Protéger", "Mettez aussi un code de verrouillage sur le téléphone : c'est lui qui protège vraiment vos données s'il est volé.", "{a} utilisés sur {b} disponibles", "{a} utilisés sur environ 4,5 Mo disponibles", "Mémoire de l'application", "produits", "produit", "clients", "client", "photos", "photo", "Presque plein : faites une sauvegarde puis libérez de la place.", "Votre navigateur limite la mémoire à environ 5 Mo. Faites des sauvegardes régulières.", "Protégée", "Pas encore protégée", "Mémoire protégée ✓", "Le téléphone n'a pas accepté. Faites des sauvegardes.", "Impossible ici", "Sauvegarde annulée : rien n'a été envoyé.", "Sauvegarde faite", "Sauvegarde créée ✓", "Sauvegarde impossible", "Changer le mot de passe des sauvegardes demande votre code.", "Il protège chaque fichier de sauvegarde : sans lui, personne ne peut l'ouvrir, même vous. Au moins 8 caractères.", "Mot de passe", "Le même, encore une fois", "Notez-le sur papier et gardez-le loin du téléphone. Personne ne peut le retrouver si vous l'oubliez.", "Les sauvegardes déjà faites gardent l'ancien mot de passe.", "Au moins 8 caractères", "Mot de passe trop facile à deviner", "Les deux mots de passe ne sont pas pareils", "Impossible d'enregistrer le mot de passe", "Mot de passe enregistré", "Vos sauvegardes seront protégées par ce mot de passe.", "Plus tard", "Mot de passe changé ✓", "Mot de passe enregistré ✓", "Vérifier le mot de passe", "Tapez votre mot de passe des sauvegardes", "C'est le bon mot de passe ✓", "Ce n'est pas le bon mot de passe", "Vérification du mois", "Une fois par mois, l'appli vérifie que vous vous souvenez du mot de passe des sauvegardes. Sans lui, vos sauvegardes ne pourront pas être ouvertes.", "Je l'ai oublié", "Tapez le mot de passe", "Ce n'est pas le bon mot de passe. Réessayez, ou touchez « Je l'ai oublié ».", "Bon mot de passe", "Prochaine vérification dans un mois.", "Fichier illisible", "Remplacer les données de ce téléphone par cette sauvegarde ({a} produits, {b} ventes) ?", "Sauvegarde restaurée ✓", "Sauvegarde restaurée ✓ Le mot de passe des sauvegardes est repris.", "Restaurer une sauvegarde remplace toutes les données : retapez votre code.", "Restaurer", "Mot de passe incorrect, essayez encore", "Ce fichier est protégé. Entrez le mot de passe.", "Fichier non reconnu", "Chaque personne a son code à 4 chiffres. Les ventes sont notées au nom du vendeur. Une remise trop forte, un retour, une annulation ou un dépassement de crédit demandent le code du patron.", "désactivé", "sans code", "Désactiver", "Activer", "Ajouter un vendeur", "Ce que peut faire un vendeur", "Vendre, encaisser une dette, voir ses propres ventes et ouvrir ou fermer sa caisse. Il ne voit pas les prix d'achat ni les bénéfices (sauf si vous l'autorisez dans les Réglages) et ne peut pas modifier le stock, les prix ou les rapports.", "Nouveau vendeur", "Nouveau code à 4 chiffres (laisser vide pour garder l'ancien)", "Code à 4 chiffres", "Ce code est déjà utilisé par quelqu'un d'autre", "Pour changer votre code, retapez d'abord l'ancien.", "Comment ça marche", "touchez les produits, puis choisissez Espèces, Mobile Money ou À crédit. Un client peut aussi payer une partie maintenant (acompte) et le reste plus tard.", "ajoutez vos produits et vos achats. L'appli prévient quand il faut recommander.", "suivez les dettes, relancez par WhatsApp ou SMS, encaissez.", "ouvrez la caisse le matin, fermez-la le soir : l'appli montre s'il manque de l'argent.", "Où sont vos données ?", "Dans la version d'essai en ligne, vos données ne sont pas garanties : elles peuvent disparaître. Installez l'application sur le téléphone pour les garder.", "Tout est enregistré sur ce téléphone, sans internet. Personne d'autre ne peut les voir. Si le téléphone est perdu ou cassé, vos données sont perdues : faites une sauvegarde chaque soir, à la clôture de la caisse.", "Le code PIN empêche les curieux d'ouvrir l'application, mais il ne chiffre pas les données. Ne laissez pas votre téléphone déverrouillé.", "Mettez un code de verrouillage sur le téléphone lui-même : c'est lui qui protège vraiment vos données s'il est volé.", "Après 5 codes faux, l'application fait patienter (jusqu'à 5 minutes) et prévient le patron à sa prochaine ouverture.", "L'application se verrouille seule quand personne ne touche l'écran pendant quelques minutes (durée à choisir dans les Réglages). Restaurer une sauvegarde, changer le mot de passe des sauvegardes ou le code du patron demandent de retaper le code du patron.", "Limites à connaître", "Plusieurs boutiques : les chiffres se regroupent par fichiers échangés, pas en direct.", "Les paiements Mobile Money sont notés à la main : vérifiez-les avec le SMS de l'opérateur.", "Les rapports et la comptabilité sont indicatifs : faites-les valider par un comptable.", "L'impression passe par le système du téléphone (imprimante ou PDF).", "Donner votre avis", "Un problème, une idée, quelque chose de pas clair ? Dites-le : votre message part par WhatsApp ou SMS, avec la version de l'appli et le modèle du téléphone. Aucun chiffre de votre boutique n'est envoyé.", "Écrire un avis", "version {v}", "navigateur", "installée", "Qu'est-ce qui s'est passé, ou que voudriez-vous ?", "Exemple : quand je vends à crédit, je ne trouve pas…", "Ajouté au message :", "Écrivez votre message", "Avis sur Boutique Facile", "Chaque boutique garde ses données sur son propre téléphone. Pour voir toutes vos boutiques ensemble, chaque gérant envoie un « rapport de boutique » (un petit fichier) et vous l'importez ici. Le fichier ne contient ni photos, ni pièces d'identité.", "Envoyer le rapport de cette boutique", "Période à envoyer", "30 derniers jours", "3 derniers mois", "12 derniers mois", "Créer et envoyer le rapport", "Importer le rapport d'une autre boutique", "Boutiques importées", "Rapport du {d}", "depuis le {d}", "Aucune boutique importée.", "Voir toutes les boutiques ensemble", "Rapport créé ✓", "{n} rapport(s) importé(s) ✓", "Ce rapport vient de cette boutique.", "{n} fichier(s) non reconnu(s)", "Retirer cette boutique de la liste ?", "Retirer", "Toutes les boutiques", "résultat estimé", "Boutique", "Clients doivent", "données incomplètes", "rapport du {d}", "Les rapports importés sont des photos prises à leur date. Demandez de nouveaux rapports pour mettre à jour.", "Rapport de toutes les boutiques", "traduit", "Traduire", "Ajouter une langue", "Les traductions en soussou, pular ou malinké ne sont pas fournies : elles doivent être saisies par une personne qui parle la langue. Tant qu'un texte n'est pas traduit, le français s'affiche.", "Astuce : exportez le fichier de traduction, faites-le compléter par un proche, puis importez-le sur chaque téléphone.", "Nom de la langue", "Cette langue existe déjà", "Tout est traduit. Bravo !", "Rien trouvé.", "Avant", "Après", "textes traduits", "Choisissez une langue.", "Chercher un texte…", "Pas encore traduits", "Gardez les mots entre accolades, comme {n}, tels quels.", "Fichiers de traduction", "Exporter (fichier)", "Exporter pour Excel (CSV)", "Importer un fichier de traduction (.json ou .csv)", "Supprimer cette langue", "Il manque {x} dans la traduction", "Français", "Traduction", "{n} texte(s) importé(s) ✓", "Aucun texte reconnu", "Supprimer cette langue et ses traductions ?", "La caméra n'est pas disponible ici", "Placez le code-barres à plat dans le cadre", "Terminer", "Autorisez la caméra dans les réglages du téléphone", "La caméra ne démarre pas", "Code lu : {c}", "Code {c} inconnu", "{n} au panier", "stock insuffisant"];
 const LOGO_IC="<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" class=\"lgi\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"256\" height=\"256\" rx=\"56.01\" fill=\"#0E6B47\"/><g transform=\"translate(78.74 43.01) scale(0.52)\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M23,213V23H108.1A43.7,43.7 0 0 1 108.1,110.4H23M23,110.4H114.5A51.3,51.3 0 0 1 114.5,213H23\" stroke=\"#FFFFFF\" stroke-width=\"46\"/><path d=\"M9.5,268.5H179.3M9.5,304.5H179.3\" stroke=\"#F5B800\" stroke-width=\"19\"/></g></svg>",LOGO_WORD="<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1431.71 191\" class=\"lgw\" aria-hidden=\"true\" focusable=\"false\"><g transform=\"translate(0 0) scale(1) translate(9.5 137.5)\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path transform=\"translate(0 0)\" d=\"M0,-128V0\"/><path transform=\"translate(0 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(116 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(240 0)\" d=\"M0,-80V-40A40,40 0 0 0 80,-40\"/><path transform=\"translate(240 0)\" d=\"M80,-80V0\"/><path transform=\"translate(382 0)\" d=\"M0,-106V-17A17,17 0 0 0 17,0H24\"/><path transform=\"translate(382 0)\" d=\"M-21,-80H31\"/><path transform=\"translate(454 0)\" d=\"M0,-80V0\"/><circle cx=\"454\" cy=\"-110.28\" r=\"11.78\" fill=\"currentColor\" stroke=\"none\"/><path transform=\"translate(498 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(498 0)\" d=\"M80,-80V44\"/><path transform=\"translate(630 0)\" d=\"M0,-80V-40A40,40 0 0 0 80,-40\"/><path transform=\"translate(630 0)\" d=\"M80,-80V0\"/><path transform=\"translate(754 0)\" d=\"M0,-40H80A40,40 0 1 0 63.51,-7.64\"/><path transform=\"translate(934 0)\" d=\"M0,0V-97A31,31 0 0 1 31,-128H40\"/><path transform=\"translate(934 0)\" d=\"M-21,-80H35\"/><path transform=\"translate(1009 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(1009 0)\" d=\"M80,-80V0\"/><path transform=\"translate(1133 0)\" d=\"M65.71,-70.64A40,40 0 1 0 65.71,-9.36\"/><path transform=\"translate(1236.71 0)\" d=\"M0,-80V0\"/><circle cx=\"1236.71\" cy=\"-110.28\" r=\"11.78\" fill=\"currentColor\" stroke=\"none\"/><path transform=\"translate(1288.71 0)\" d=\"M0,-128V0\"/><path transform=\"translate(1332.71 0)\" d=\"M0,-40H80A40,40 0 1 0 63.51,-7.64\"/></g></svg>",LOGO_H="<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 643.8 120\" class=\"lgh\" aria-hidden=\"true\" focusable=\"false\"><rect width=\"120\" height=\"120\" rx=\"26.26\" fill=\"#0E6B47\"/><g transform=\"translate(36.91 20.16) scale(0.24)\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M23,213V23H108.1A43.7,43.7 0 0 1 108.1,110.4H23M23,110.4H114.5A51.3,51.3 0 0 1 114.5,213H23\" stroke=\"#FFFFFF\" stroke-width=\"46\"/><path d=\"M9.5,268.5H179.3M9.5,304.5H179.3\" stroke=\"#F5B800\" stroke-width=\"19\"/></g><g transform=\"translate(144 25.96) scale(0.35) translate(9.5 137.5)\" fill=\"none\" stroke=\"#0E6B47\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path transform=\"translate(0 0)\" d=\"M0,-128V0\"/><path transform=\"translate(0 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(116 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(240 0)\" d=\"M0,-80V-40A40,40 0 0 0 80,-40\"/><path transform=\"translate(240 0)\" d=\"M80,-80V0\"/><path transform=\"translate(382 0)\" d=\"M0,-106V-17A17,17 0 0 0 17,0H24\"/><path transform=\"translate(382 0)\" d=\"M-21,-80H31\"/><path transform=\"translate(454 0)\" d=\"M0,-80V0\"/><circle cx=\"454\" cy=\"-110.28\" r=\"11.78\" fill=\"#0E6B47\" stroke=\"none\"/><path transform=\"translate(498 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(498 0)\" d=\"M80,-80V44\"/><path transform=\"translate(630 0)\" d=\"M0,-80V-40A40,40 0 0 0 80,-40\"/><path transform=\"translate(630 0)\" d=\"M80,-80V0\"/><path transform=\"translate(754 0)\" d=\"M0,-40H80A40,40 0 1 0 63.51,-7.64\"/><path transform=\"translate(934 0)\" d=\"M0,0V-97A31,31 0 0 1 31,-128H40\"/><path transform=\"translate(934 0)\" d=\"M-21,-80H35\"/><path transform=\"translate(1009 0)\" d=\"M0,-40A40,40 0 1 1 80,-40A40,40 0 1 1 0,-40\"/><path transform=\"translate(1009 0)\" d=\"M80,-80V0\"/><path transform=\"translate(1133 0)\" d=\"M65.71,-70.64A40,40 0 1 0 65.71,-9.36\"/><path transform=\"translate(1236.71 0)\" d=\"M0,-80V0\"/><circle cx=\"1236.71\" cy=\"-110.28\" r=\"11.78\" fill=\"#0E6B47\" stroke=\"none\"/><path transform=\"translate(1288.71 0)\" d=\"M0,-128V0\"/><path transform=\"translate(1332.71 0)\" d=\"M0,-40H80A40,40 0 1 0 63.51,-7.64\"/></g></svg>";
-const BUILD='f2e5930aaf';
+const BUILD='94a306c142';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
@@ -288,7 +323,7 @@ const SKEY='bf5',LKEY='bf1',MEMPH={};
 function newState(demo){
  const o={v:5,n:10,rn:0,bk:0,lx:0,
   shop:{id:uid(),name:'Ma boutique',addr:'',tel:'',nif:'',own:''},
-  set:{lang:'fr',simple:0,big:0,mods:{ph:0,ag:0,tv:0},tva:18,round:0,sellMaxDisc:10,sellCost:0,reqOpen:0,rcw:80,dueDays:15,op:'om',type:'',setup:0,agRate:0,msg:'Merci de votre confiance !',expd:90,rdest:'c',rcm:'',ac:''},
+  set:{lang:'fr',simple:0,big:0,mods:{ph:0,ag:0,tv:0},tva:18,round:0,sellMaxDisc:10,sellCost:0,reqOpen:0,rcw:80,dueDays:15,op:'om',type:'',setup:0,agRate:0,msg:'Merci de votre confiance !',expd:90,rdest:'c',rcm:'',ac:'',idle:5},
   users:[{id:1,n:'Patron',r:'o',pin:null,on:1}],rc:null,pg:{},
   p:[],s:[],rt:[],cl:[],ex:[],pu:[],sup:[],adj:[],ag:[],cx:[],cs:{},pl:[],tr:{},langs:[],br:{},hold:[]};
  if(demo)o.p=[
@@ -383,6 +418,30 @@ async function bkStore(o){const js=JSON.stringify(o);
 async function bkSetPw(pw){const salt=crypto.getRandomValues(new Uint8Array(16)),now=Date.now();return bkStore({s:b64(salt),k:b64(await pwBits(pw,salt)),t:now,c:now})}
 async function bkCheckPw(pw){if(!BKEY)return false;return b64(await pwBits(pw,unb64(BKEY.s)))===BKEY.k}
 async function memInfo(){let used=0,quota=0;try{const e=await navigator.storage.estimate();used=e.usage||0;quota=e.quota||0}catch(e){}let js=0;try{js=JSON.stringify(S).length}catch(e){}return{used,quota,js}}
+// ---- fichier reçu de l'extérieur (sauvegarde, rapport d'une autre boutique) : on ne fait pas confiance à son contenu.
+// Textes sans balises, identifiants simples (ils servent dans des boutons), nombres là où l'appli attend des nombres.
+const ID_K=new Set(['id','cid','sid','pid','sup']);
+const fin=(x,d)=>{const v=+x;return isFinite(v)?v:(d||0)};
+function cleanIn(o){
+ const walk=(v,k,top)=>{
+  if(typeof v=='string')return ID_K.has(k)?v.replace(/[^\w.|\-]/g,'').slice(0,60):v.replace(/[<>]/g,'');
+  if(Array.isArray(v)){for(let i=0;i<v.length;i++)v[i]=walk(v[i],k,0);return v}
+  if(v&&typeof v=='object')for(const kk of Object.keys(v)){
+   if(top&&kk=='tr')continue;                      // traductions : nettoyées par ensure()
+   if(/[<>"'`\\&]/.test(kk)){delete v[kk];continue}
+   v[kk]=walk(v[kk],kk,0)}
+  return v};
+ walk(o,'',1);
+ if(Array.isArray(o.p))o.p.forEach(p=>{if(!p||typeof p!='object')return;
+  ['id','pr','c','q','m','pg'].forEach(k=>{if(p[k]!==undefined)p[k]=fin(p[k])});if(p.du!==undefined)p.du=fin(p.du,-1);
+  if(Array.isArray(p.us))p.us.forEach(u=>{if(u)['f','pr','pg'].forEach(k=>{if(u[k]!==undefined)u[k]=fin(u[k])})});
+  if(Array.isArray(p.lots))p.lots.forEach(l=>{if(l)l.q=fin(l.q)})});
+ if(Array.isArray(o.users))o.users.forEach(u=>{if(u&&typeof u=='object')u.id=fin(u.id,1)});
+ if(o.set&&typeof o.set=='object'){['tva','round','sellMaxDisc','rcw','dueDays','agRate','expd','idle'].forEach(k=>{if(o.set[k]!==undefined)o.set[k]=fin(o.set[k])});
+  if(!/^#[0-9a-f]{6}$/i.test(o.set.ac||''))o.set.ac=''}
+ if(o.br&&typeof o.br=='object')for(const k of Object.keys(o.br))if(!/^[a-z0-9]{1,40}$/i.test(k))delete o.br[k];
+ return o}
+const phOk=(k,d)=>/^\w{1,60}$/.test(k)&&typeof d=='string'&&/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+\/=]+$/.test(d);
 // ---- sauvegarde et restauration
 async function makeBackup(o){o=o||{};const ph=o.photos===false?{}:await allPhotos();
  const keep=new Set(S.cl.map(c=>c.ph).filter(Boolean));for(const k in ph)if(!keep.has(k))delete ph[k];
@@ -393,7 +452,9 @@ async function restoreFrom(text,pw){
  if(o.kind=='bf-backup-enc'){if(!pw)throw new Error('pw');try{o=JSON.parse(await decText(o,pw))}catch(e){throw new Error('badpw')}}
  let st,ph={};
  if(o.kind=='bf-backup'&&o.S){st=o.S;ph=o.photos||{}}else if(o.p&&o.s){st=o}else throw new Error('bad');
+ cleanIn(st);
  const m=migrate(st);st=m.S;ph=Object.assign({},m.ph,ph);
+ for(const k of Object.keys(ph))if(!phOk(k,ph[k]))delete ph[k];
  return{S:st,ph}}
 async function applyRestore(r){
  const dev=S.users.find(u=>u.r=='o'),rc=S.rc,keep=dev&&dev.pin;
@@ -412,19 +473,113 @@ const chip=(l,on,js,c)=>`<button class="chip${on?' on':''}${c?' '+c:''}" onclick
 const kv=(a,b,c)=>`<div class="kv"><span>${a}</span><b${c?' class="'+c+'"':''}>${b}</b></div>`;
 const rowh=(a,b,s,c)=>`<div class="row"><div class="gr1">${a}${s?`<small>${s}</small>`:''}</div><b${c?' class="'+c+'"':''}>${b}</b></div>`;
 const back=()=>{sub='';R();scrollTo(0,0)};
-const backBtn=(to)=>`<div class="back"><button onclick="${to||'back()'}">‹ ${_('Retour')}</button></div>`;
-function toast(m,ms){const t=$('#t');t.textContent=m;t.style.opacity=1;clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.opacity=0,ms||2400)}
-let mBusy=0,mQ=null;
+const backBtn=(to)=>`<div class="back"><button onclick="${to||'back()'}"><span aria-hidden="true">‹</span> ${_('Retour')}</button></div>`;
+function toast(m,ms){const t=$('#t');t.textContent=m;t.classList.add('on');t.style.opacity=1;clearTimeout(toast.h);toast.h=setTimeout(()=>{t.style.opacity=0;t.classList.remove('on')},ms||2400)}
+// petite vibration (Android) : courte pour « c'est fait », double pour une erreur. Jamais pour un simple toucher.
+const hap=k=>{try{if(navigator.vibrate)navigator.vibrate(k?[28,50,28]:14)}catch(e){}};
+// erreur de saisie : le champ fautif est entouré de rouge et reçoit le curseur, en plus du message
+function bad(id,msg,ms){const e=typeof id=='string'?$('#'+id):id;
+ if(e){e.classList.add('er');try{e.focus({preventScroll:true});e.scrollIntoView({block:'center',behavior:RM()?'auto':'smooth'})}catch(x){}
+  const off=()=>{e.classList.remove('er');e.removeEventListener('input',off);e.removeEventListener('change',off)};e.addEventListener('input',off);e.addEventListener('change',off)}
+ toast(msg,ms||3200);hap(1)}
+const RM=()=>{try{return matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){return false}};
+let mBusy=0,mQ=null,mT0=-1e9,mNoOut=0;
 function M(h){
  if(mBusy){mQ={h};return}
  mBusy=1;try{
-  const m=$('#m');m.innerHTML=h?`<div class="ov"><div class="sh"><div class="sb">${h}</div></div></div>`:'';
+  const m=$('#m'),was=m.firstElementChild,now=performance.now();
+  // fermeture : la fenêtre qui part glisse vers le bas, hors de #m (qui est vide tout de suite, comme avant)
+  if(!h&&was){mT0=now;if(!mNoOut)mLeave(was)}
+  m.innerHTML=h?`<div class="ov"><div class="sh" role="dialog" aria-modal="true"><div class="sg"><i></i></div><div class="sb">${h}</div></div></div>`:'';
   // la barre de boutons du bas reste visible : elle sort de la zone qui défile
   if(h){const sh=m.querySelector('.sh'),bars=[...m.querySelector('.sb').children].filter(x=>x.classList.contains('pay2')||x.classList.contains('kpf'));
-   if(bars.length){const f=document.createElement('div');f.className='sf';bars.forEach(b=>f.appendChild(b));sh.appendChild(f)}}
+   if(bars.length){const f=document.createElement('div');f.className='sf';bars.forEach(b=>f.appendChild(b));sh.appendChild(f)}
+   const t=sh.querySelector('h2');if(t){t.id='mh';sh.setAttribute('aria-labelledby','mh')}
+   // la poignée n'est montrée que si la fenêtre peut vraiment être fermée en la tirant
+   if(!mCloser())sh.classList.add('nd');
+   mGrab(sh);
+   // une fenêtre qui en remplace une autre (ou qui suit aussitôt une fermeture) ne rejoue pas l'arrivée
+   const fresh=!was&&now-mT0>90;if(!fresh)$('#mx').innerHTML='';
+   if(fresh)mEnter(m.firstElementChild);
+   hGuard()}
  }finally{mBusy=0}
  document.body.classList.toggle('noscroll',!!h);
  if(mQ){const q=mQ;mQ=null;M(q.h)}}
+// le bouton qui ferme simplement la fenêtre (Annuler, Fermer, Retour) : c'est lui qu'on actionne en tirant la poignée
+// ou avec le bouton Retour du téléphone. Sans lui (code de secours à noter, choix obligatoire), la fenêtre ne se ferme pas ainsi.
+function mCloser(){return [...document.querySelectorAll('#m .sh button[onclick]')].find(b=>/^M\(\)(;(R|lock)\(\))?$/.test(b.getAttribute('onclick').trim()))||null}
+const EASE_IN='cubic-bezier(.22,1,.36,1)',EASE_OUT='cubic-bezier(.64,0,.78,0)'; // la sortie est le miroir de l'entrée
+function mEnter(ov){
+ const sh=ov.firstElementChild;if(!sh.animate)return;
+ if(RM()){ov.animate([{opacity:0},{opacity:1}],{duration:160,easing:'ease'});return}
+ ov.animate([{backgroundColor:'rgba(20,38,28,0)'},{backgroundColor:'rgba(20,38,28,.48)'}],{duration:260,easing:'ease-out'});
+ sh.animate([{transform:'translateY(100%)'},{transform:'translateY(0)'}],{duration:380,easing:EASE_IN})}
+function mLeave(ov,y0){
+ const sh=ov.firstElementChild,x=$('#mx');if(!sh||!sh.animate||!x){return}
+ ov.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));x.innerHTML='';x.appendChild(ov);
+ const done=()=>{if(ov.parentNode==x)ov.remove()};
+ if(RM()){ov.animate([{opacity:1},{opacity:0}],{duration:140,easing:'ease'}).onfinish=done;return}
+ const a0=ov.style.backgroundColor||'rgba(20,38,28,.48)';
+ ov.animate([{backgroundColor:a0},{backgroundColor:'rgba(20,38,28,0)'}],{duration:220,easing:'ease-in',fill:'forwards'});
+ sh.animate([{transform:`translateY(${y0||0}px)`},{transform:'translateY(100%)'}],{duration:y0?180:240,easing:y0?'ease-out':EASE_OUT,fill:'forwards'}).onfinish=done}
+// ---- tirer la fenêtre : elle suit le doigt, résiste quand on ne peut pas aller plus loin, et garde l'élan au lâcher
+const rubber=(d,dim)=>(d*dim*.55)/(dim+.55*Math.abs(d));
+const project=v=>(v/1000)*.998/(1-.998);
+let SPR=null; // ressort en cours (on peut le reprendre au doigt à tout moment)
+function spring(sh,ov,y,v,to,zeta,end){
+ // ressort : réponse 0,3 s ; zeta = 1 sans rebond, 0,8 avec un léger rebond (seulement après un vrai geste)
+ const w=2*Math.PI/.3,H=sh.offsetHeight||1;let last=performance.now();
+ const me={stop:0};SPR=me;
+ const step=now=>{
+  if(me.stop)return;
+  let dt=Math.min(.032,(now-last)/1000);last=now;
+  for(let i=0;i<2;i++){const a=-w*w*(y-to)-2*zeta*w*v;v+=a*dt/2;y+=v*dt/2}
+  if(Math.abs(y-to)<.5&&Math.abs(v)<12){y=to;mSet(sh,ov,y,H);SPR=null;if(end)end();return}
+  mSet(sh,ov,y,H);requestAnimationFrame(step)};
+ requestAnimationFrame(step)}
+function mSet(sh,ov,y,H){sh.style.transform=y?`translateY(${y.toFixed(1)}px)`:'';sh._y=y;
+ if(ov)ov.style.backgroundColor=y>0?`rgba(20,38,28,${(.48*Math.max(0,1-y/H)).toFixed(3)})`:''}
+function mGrab(sh){
+ const g=sh.querySelector('.sg'),ov=sh.parentNode;if(!g)return;
+ let on=0,y0=0,base=0,hist=[];
+ g.addEventListener('pointerdown',e=>{
+  if(e.button)return;
+  // on repart de la position réelle à l'écran : une animation en cours est reprise là où elle en est
+  if(SPR){SPR.stop=1;SPR=null}
+  let cur=sh._y||0;try{const m=new DOMMatrixReadOnly(getComputedStyle(sh).transform);cur=m.m42||cur}catch(x){}
+  try{sh.getAnimations().forEach(a=>a.cancel())}catch(x){}
+  on=1;y0=e.clientY;base=cur;hist=[{t:e.timeStamp,y:e.clientY}];mSet(sh,ov,cur,sh.offsetHeight||1);
+  try{g.setPointerCapture(e.pointerId)}catch(x){}});
+ g.addEventListener('pointermove',e=>{
+  if(!on)return;const H=sh.offsetHeight||1,can=!sh.classList.contains('nd');
+  let d=base+e.clientY-y0;
+  d=d<0?-rubber(-d,H):can?d:rubber(d,H);        // vers le haut, ou fenêtre obligatoire : ça résiste
+  mSet(sh,ov,d,H);
+  hist.push({t:e.timeStamp,y:e.clientY});if(hist.length>6)hist.shift()});
+ const up=e=>{
+  if(!on)return;on=0;
+  const H=sh.offsetHeight||1,y=sh._y||0,a=hist[0],b=hist[hist.length-1],dt=(b.t-a.t)/1000;
+  let v=dt>.008?(b.y-a.y)/dt:0;if(e.timeStamp-b.t>90)v=0;   // doigt arrêté avant de lâcher : pas d'élan
+  const can=!sh.classList.contains('nd'),btn=can?mCloser():null;
+  // on décide avec l'endroit où le geste allait, pas seulement avec l'endroit où il s'arrête
+  if(btn&&y>8&&y+project(v)>H*.45&&v>=-50){
+   if(RM()){btn.click();return}
+   spring(sh,ov,y,v,H+20,1,()=>{mNoOut=1;try{btn.click()}finally{mNoOut=0}});return}
+  if(RM()){mSet(sh,ov,0,H);return}
+  spring(sh,ov,y,can?v:0,0,Math.abs(v)>500&&can?.8:1)};
+ g.addEventListener('pointerup',up);g.addEventListener('pointercancel',up)}
+// ---- bouton Retour du téléphone (Android) : il ferme la fenêtre, puis revient d'un écran, au lieu de quitter l'appli
+let hArm=false;
+function hGuard(){if(FR||hArm)return;try{history.pushState({bf:1},'');hArm=true}catch(e){}}
+function backAct(){
+ if($('#cam').style.display=='flex'&&typeof scanStop=='function'){scanStop();return true}
+ if($('#lk').style.display=='flex')return false;
+ const ov=$('#m').firstElementChild;
+ if(ov){const b=mCloser();if(b)b.click();else{const sh=ov.firstElementChild;if(!RM())spring(sh,null,0,-260,0,.8)}return true}
+ if(sub){const b=document.querySelector('#app .back button');if(b)b.click();else back();return true}
+ if(tab!='v'){go('v');return true}
+ return false}
+addEventListener('popstate',()=>{hArm=false;let ok=false;try{ok=backAct()}catch(e){console.error(e)}if(ok)hGuard();else if(S&&$('#lk').style.display!='flex')toast(_('Appuyez encore sur Retour pour quitter'),2200)});
 const acts=(yes,js,no,njs)=>`<div class="pay2"><button class="b ol" onclick="${njs||'M()'}">${no||_('Annuler')}</button><button class="b gr" onclick="${js}">${yes}</button></div>`;
 function ask(t,lb,fn,o){o=o||{};cb=fn;
  M(`<h2>${t}</h2><label>${lb}</label><input class="in${o.nm?' nm':''}" id="ai" ${o.pw?'type="password" maxlength="4" ':o.pwl?'type="password" ':''}${o.txt||o.pwl?'':'inputmode="numeric" '}autocomplete="off" value="${esc(o.val||'')}" onkeydown="if(event.key=='Enter')askok()">${acts(o.yes||_('Valider'),'askok()')}`);
@@ -435,7 +590,7 @@ function sureok(){const fn=cb;M();if(fn)fn()}
 function info(t,body,close){M(`<h2>${t}</h2>${body}<div class="pay2 o"><button class="b gr" onclick="M()">${close||_('Fermer')}</button></div>`)}
 function hdr(){
  const u=me();
- return `<div><h1>${esc(S.shop.name||'Boutique Facile')}</h1><small>${esc(u.n)} · ${FR?_('Version d\'essai en ligne'):_("Tout est enregistré sur ce téléphone")}</small></div><div style="display:flex;gap:6px;align-items:center"><span class="pill${navigator.onLine?'':' off'}">${navigator.onLine?_('En ligne'):_('Hors ligne')}</span>${FR?'':`<button class="ib" onclick="lock()" aria-label="${_('Verrouiller')}">🔒</button>`}</div>`}
+ return `<div class="hl"><h1>${esc(S.shop.name||'Boutique Facile')}</h1><small>${esc(u.n)} · ${FR?_('Version d\'essai en ligne'):_("Enregistré sur ce téléphone")}</small></div><div style="display:flex;gap:6px;align-items:center"><span class="pill${navigator.onLine?'':' off'}">${navigator.onLine?_('En ligne'):_('Hors ligne')}</span>${FR?'':`<button class="ib" onclick="lock()" aria-label="${_('Verrouiller')}">🔒</button>`}</div>`}
 function navItems(){
  const low=S.p.filter(p=>isLow(p)).length+(typeof nExp=='function'?nExp():0);
  const od=S.cl.filter(c=>c.a>0&&c.due&&c.due<Date.now()).length;
@@ -444,9 +599,9 @@ function nav(){return navItems().map(([k,i,l,n])=>`<button class="${tab==k?'on':
 function banners(){
  let h='';
  if(storErr=='read')h+=`<div class="bn r"><b>⚠ ${_('Vos données n\'ont pas pu être lues.')}</b> ${_('Rien n\'est enregistré. Fermez puis rouvrez l\'application.')}</div>`;
- else if(storErr)h+=`<div class="bn r"><b>⚠ ${_('Les données ne sont pas enregistrées.')}</b> ${_('La mémoire est pleine ou bloquée. Faites une sauvegarde tout de suite.')}<br><button class="b sm gr" onclick="go('p','bak')">${_('Sauvegarder')}</button></div>`;
+ else if(storErr)h+=`<div class="bn r"><b>⚠ ${_('Les données ne sont pas enregistrées.')}</b> ${isO()?_('La mémoire est pleine ou bloquée. Faites une sauvegarde tout de suite.')+`<br><button class="b sm gr" onclick="go('p','bak')">${_('Sauvegarder')}</button>`:_('La mémoire est pleine ou bloquée. Prévenez le patron tout de suite.')}</div>`;
  if(newVer)h+=`<div class="bn b">${_('Une nouvelle version est prête. Fermez puis rouvrez l\'application pour l\'utiliser.')}</div>`;
- if(memWarn)h+=`<div class="bn y">${memWarn} <button class="lnk" onclick="go('p','bak')">${_('Voir')}</button></div>`;
+ if(memWarn)h+=`<div class="bn y">${memWarn}${isO()?` <button class="lnk" onclick="go('p','bak')">${_('Voir')}</button>`:''}</div>`;
  if((tab=='k'||tab=='p')&&!sub){
   if(FR)h+=`<div class="bn b">${_('Version d\'essai en ligne : vos données ne sont pas garanties ici, et la caméra, l\'impression et l\'enregistrement de fichiers sont bloqués. Pour garder vos données et travailler sans internet, utilisez la version installée sur le téléphone.')}</div>`;
   else if(isO()&&(S.s.length||S.cl.length)){const d=S.bk?Math.floor((Date.now()-S.bk)/DAY):-1;
@@ -454,7 +609,7 @@ function banners(){
    const news=d>=1&&(S.s.some(x=>x.t>S.bk)||S.cl.some(c=>(c.h||[]).some(x=>x.t>S.bk)));
    if(d<0||news)h+=`<div class="bn y"><b>${d<0?_('Aucune sauvegarde pour le moment.'):d==1?_('Dernière sauvegarde il y a 1 jour.'):_('Dernière sauvegarde il y a {n} jours.',{n:d})}</b> ${_('Sauvegardez chaque soir, à la clôture de la caisse.')}<br><button class="b sm gr" onclick="bakNow()">${_('Sauvegarder maintenant')}</button></div>`}}
  return h}
-function go(t,s){tab=t;sub=s||'';R();scrollTo(0,0)}
+function go(t,s){tab=t;sub=s||'';R();scrollTo(0,0);hGuard()}
 let rBusy=0,rAgain=0;
 function R(){
  if(!S)return;
@@ -467,6 +622,7 @@ function R0(){
  document.body.classList.toggle('v',tab=='v'&&!sub);
  document.body.classList.toggle('simple',!!S.set.simple);
  $('#hd').innerHTML=hdr();$('#nv').innerHTML=nav();
+ if(sub&&OWN_SUB.has(sub)&&!isO()){sub='';toast(_('Réservé au patron'),3000)}
  const fn=sub?SUB[sub]:SCR[tab];let h='';
  try{h=fn?fn():''}catch(e){console.error(e);h=`<p class="hint">Erreur : ${esc(e.message)}</p>`}
  $('#app').innerHTML=banners()+h;
@@ -478,6 +634,8 @@ async function checkMem(){const m=await memInfo();let w='';
  if(w!==memWarn){memWarn=w;R()}}
 function checkUpdate(){if(FR||!navigator.onLine)return;fetch('index.html?chk='+Date.now(),{cache:'no-store'}).then(r=>r.text()).then(t=>{const m=/const BUILD='([^']+)'/.exec(t);if(m&&m[1]!==BUILD&&BUILD!='__BUILD__'){newVer=true;R()}}).catch(()=>{})}
 addEventListener('online',R);addEventListener('offline',R);
+document.addEventListener('touchstart',()=>{},{passive:true});
+addEventListener('scroll',()=>document.documentElement.classList.toggle('scd',scrollY>4),{passive:true});
 
 // ---- utilisateurs, droits, code PIN, première utilisation
 const me=()=>S.users.find(u=>u.id==CU)||S.users[0];
@@ -519,6 +677,22 @@ function needOwner(fn,why){
   const o=S.users.find(u=>u.r=='o'&&u.on&&u.pin&&u.pin==hs(v));
   if(!o){const n=gFail('pin'),s=gLeft('pin');return toast(s>0?gWaitMsg(s):gMsg(n),3500)}
   gOk('pin');gOk('rc');ovr++;try{fn(o.id)}finally{ovr--}},{pw:1})}
+// ---- écrans réservés au patron : un vendeur n'y entre jamais, même par un bouton d'un bandeau
+const OWN_SUB=new Set(['exp','inv','bulk','buy','buyn','sup','reo','rep','adv','cpt','bank','team','shops','cons','bak','set','tr']);
+const ownOnly=()=>{if(isO())return true;toast(_('Réservé au patron'),3000);return false};
+// codes trop faciles à deviner : quatre chiffres pareils ou une suite
+const weakPin=v=>/^(\d)\1{3}$/.test(v)||['0123','1234','2345','3456','4567','5678','6789','9876','8765','7654','6543','5432','4321','3210'].includes(v);
+// actions les plus sensibles (restaurer, changer le mot de passe des sauvegardes, changer le code du patron) :
+// le patron retape son code, même si l'appli est déjà ouverte à son nom. Un téléphone laissé ouvert ne suffit donc pas.
+function ownerPin(fn,why){
+ const o=S.users.find(u=>u.r=='o');
+ if(FR||readFail||!o||!o.pin)return fn();
+ if(me().r!='o')return toast(_('Réservé au patron'),3000);
+ const w=gLeft('pin');if(w>0)return info(_('Trop d\'essais'),`<p>${gWaitMsg(w)}</p>`);
+ ask(_('Votre code PIN'),why||_('Retapez votre code pour confirmer que c\'est bien vous.'),v=>{
+  const w2=gLeft('pin');if(w2>0)return toast(gWaitMsg(w2),3500);
+  if(o.pin!=hs(v)){const n=gFail('pin'),s=gLeft('pin');return toast(s>0?gWaitMsg(s):gMsg(n),3500)}
+  gOk('pin');fn()},{pw:1})}
 function readErrUI(){
  $('#lk').style.display='none';
  M(`<h2>⚠ ${_('Vos données n\'ont pas pu être lues')}</h2><p>${_('Le téléphone n\'a pas réussi à lire la mémoire de l\'application. Rien n\'a été effacé et rien ne sera enregistré tant que la lecture échoue.')}</p><p>${_('Fermez complètement l\'application puis rouvrez-la. Si le problème continue, redémarrez le téléphone, ou restaurez votre dernière sauvegarde ci-dessous.')}</p><label>${_('Restaurer une sauvegarde')}</label><input class="in" type="file" accept=".json,application/json" onchange="bakFile(this)"><div class="pay2 o"><button class="b gr" onclick="location.reload()">${_('Réessayer')}</button></div>`)}
@@ -542,9 +716,9 @@ function unlock(){
  const v=$('#pn').value;
  if(lkMode=='enter'&&gLeft('pin')>0)return lkWait();
  if(!/^\d{4}$/.test(v))return toast(_('Le code a 4 chiffres'));
- if(lkMode=='create'){const o=S.users.find(u=>u.r=='o');o.pin=hs(v);CU=o.id;gOk('pin');save(true);clearInterval(lkT);$('#lk').style.display='none';afterUnlock();return gAlert()}
+ if(lkMode=='create'){if(weakPin(v)){$('#pn').value='';return toast(_('Code trop facile à deviner. Choisissez-en un autre.'),3500)}const o=S.users.find(u=>u.r=='o');o.pin=hs(v);CU=o.id;gOk('pin');save(true);clearInterval(lkT);$('#lk').style.display='none';afterUnlock();return gAlert()}
  const u=S.users.find(x=>x.on&&x.pin&&x.pin==hs(v));
- if(!u){const n=gFail('pin');$('#pn').value='';if(gLeft('pin')>0){clearTimeout(toast.h);$('#t').style.opacity=0;return lkWait()}return toast(gMsg(n),3000)}
+ if(!u){const n=gFail('pin');$('#pn').value='';hap(1);$('#pn').classList.remove('shk');void $('#pn').offsetWidth;$('#pn').classList.add('shk');if(gLeft('pin')>0){clearTimeout(toast.h);$('#t').style.opacity=0;return lkWait()}return toast(gMsg(n),3000)}
  if(u.r=='o'){gOk('pin');gOk('rc')}
  clearInterval(lkT);CU=u.id;$('#lk').style.display='none';afterUnlock();
  if(u.r=='o')gAlert()}
@@ -579,10 +753,18 @@ function wizOk(){
  S.shop.name=$('#wn').value.trim()||'Ma boutique';S.shop.tel=$('#wp').value.trim();S.set.type=t;S.set.mods.ph=t=='ph'?1:0;
  if($('#wd').value=='0'){S.p=[]}
  S.set.setup=1;save(true);M();R()}
-let hid=0;
+// verrouillage : après 2 minutes en arrière-plan, et après quelques minutes sans toucher l'écran (réglable)
+let hid=0,lastAct=Date.now();
+const idleMin=()=>{const v=+S.set.idle;return isFinite(v)&&v>=0?v:5};
+function idleCheck(){
+ const m=idleMin();if(!m||!S||readFail||$('#lk').style.display=='flex')return;
+ if($('#cam').style.display=='flex')return;                    // caméra ouverte : on ne coupe pas un scan
+ if(Date.now()-lastAct>m*60000)lock()}
 function lockInit(){
  if(FR)return;
- document.addEventListener('visibilitychange',()=>{if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>120000)lock()})}
+ ['pointerdown','keydown','input'].forEach(e=>addEventListener(e,()=>{lastAct=Date.now()},{capture:true,passive:true}));
+ setInterval(idleCheck,15000);
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)hid=Date.now();else if(hid&&Date.now()-hid>120000)lock();else idleCheck()})}
 
 // ---- icônes : les emoji du texte sont remplacés par des icônes au trait fin, identiques sur tous les téléphones
 const IC={
@@ -625,6 +807,7 @@ const IC={
 '📤':'<path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="m16 6-4-4-4 4M12 2v13"/>',
 '🟢':'<circle cx="12" cy="12" r="6"/>',
 '🔴':'<circle cx="12" cy="12" r="6"/>',
+'🔑':'<circle cx="7.5" cy="15.5" r="5"/><path d="m11.2 11.8 9.3-9.3M16 7l3.2 3.2M19 4l2.5 2.5"/>',
 '👋':'','😴':''};
 const IC_X={'★':'f is','🟢':'f ig','🔴':'f ir'};
 const IC_RE=new RegExp('('+Object.keys(IC).join('|')+')\\uFE0F?','g'),IC_SKIP=/^(OPTION|TEXTAREA|SCRIPT|STYLE|TITLE|svg|INPUT)$/;
@@ -775,12 +958,12 @@ function qtyK(k){
 function qtyU(i){QY.u=i;$$('#qun .chip').forEach(b=>b.classList.toggle('on',+b.dataset.i==i))}
 function qtyOk(){
  const q=QY.g===''?1:dec(QY.g),p=P(QY.id);
- if(!(q>0)||!p)return toast(_('Quantité invalide'));
+ if(!(q>0)||!p){hap(1);return toast(_('Quantité invalide'))}
  const id=QY.id,u=QY.u;M();vadd(id,u,false,p.dec?q:Math.max(1,Math.round(q)))}
 // ---- ventes en attente : on met le panier de côté pour servir un autre client
 const holdTot=h=>h.lines.reduce((a,l)=>{const p=P(l.id);return p?a+Math.round(l.q*(l.pr!=null?l.pr:uprice(p,l.u,h.tier||'r'))):a},0);
 const holdLines=()=>cart.map(l=>({id:l.id,u:l.u,q:l.q,pr:l.pr}));
-function holdChips(){return S.hold.map(h=>`<button class="chip" onclick="holdGet('${h.id}')">${_('En attente')} ${hm(h.t)} · ${h.lines.length} ${_('art.')} · ${fm(holdTot(h))}</button>`).join('')}
+function holdChips(){return (CUN&&!cart.length&&Date.now()-CUN.t<20000?`<button class="chip on" onclick="cundo()">↩ ${_('Reprendre le panier vidé')}</button>`:'')+S.hold.map(h=>`<button class="chip" onclick="holdGet('${h.id}')">${_('En attente')} ${hm(h.t)} · ${h.lines.length} ${_('art.')} · ${fm(holdTot(h))}</button>`).join('')}
 function holdPut(){
  if(!cart.length)return;
  S.hold.push({id:uid(),t:Date.now(),tier,lines:holdLines()});
@@ -792,7 +975,10 @@ function holdGet(id){
  cart=h.lines.filter(l=>{const p=P(l.id);return p&&!p.off}).map(l=>({id:l.id,u:l.u,q:l.q,pr:l.pr}));tier=h.tier||'r';
  save();R()}
 function cdec(i){const l=cart[i];l.q=rq(l.q-1);if(l.q<=0)cart.splice(i,1);vupd();if($('#m').innerHTML)cedit()}
-function cclear(){cart=[];vupd()}
+let CUN=null;
+function cclear(){if(!cart.length)return;CUN={lines:holdLines(),tier,t:Date.now()};cart=[];vupd();toast(_('Panier vidé'),1800);
+ clearTimeout(cclear.h);cclear.h=setTimeout(()=>{CUN=null;const h=$('#hold');if(h)h.innerHTML=holdChips()},20000)}
+function cundo(){if(!CUN)return;const u=CUN;CUN=null;if(!cart.length){cart=u.lines.filter(l=>{const p=P(l.id);return p&&!p.off});tier=u.tier}R()}
 function cwarn(l){
  const p=P(l.id),cost=Math.round(p.c*unit(p,l.u).f);
  return (l.pr!=null&&l.pr!=uprice(p,l.u,tier)?`<small class="sm2">${_('Prix du tarif')} ${f(uprice(p,l.u,tier))} — ${_('prix négocié')}</small>`:'')+(seeCost()&&lp(l)<cost?`<small class="neg">⚠ ${_('Sous le prix d\'achat')} (${f(cost)})</small>`:'')}
@@ -990,12 +1176,12 @@ function payOk(){
  if(PY.man&&A.un!=0)return toast(_('Le total payé doit être égal à {n}',{n:f(A.T)}));
  let cl=null;
  if(A.c>0){
-  const n=$('#cn').value.trim();if(!n)return toast(_('Le nom du client est nécessaire'));
+  const n=$('#cn').value.trim();if(!n)return bad('cn',_('Le nom du client est nécessaire'));
   const ex=S.cl.find(x=>x.n.toLowerCase()==n.toLowerCase());
   const tel=$('#cp').value.trim(),pi=$('#ci').value.trim();
   if((pi||PY.idp)&&!$('#cc').checked)return toast(_('Le client doit accepter l\'enregistrement de sa pièce'));
   cl={n,tel,pi,ex,due:$('#cd').value=='x'?pd($('#cdd').value):(+$('#cd').value>0?D0(Date.now())+(+$('#cd').value)*DAY:0)};
-  if($('#cd').value=='x'&&isNaN(cl.due))return toast(_('Choisissez la date d\'échéance'))}
+  if($('#cd').value=='x'&&isNaN(cl.due))return bad('cdd',_('Choisissez la date d\'échéance'))}
  const a={sub:A.sub,d:A.d,T:A.T,e:A.e,mo:A.mo,c:A.c};
  const args={a,cl,op:A.op,ref:(($('#rf')||{}).value||'').trim(),tend:A.tend,rx:$('#rxn')?$('#rxn').value.trim():'',idp:PY.idp,ap:0};
  const step2=()=>{
@@ -1027,7 +1213,7 @@ function commitSale(g,ap){
   if(g.idp){const old=c.ph;c.ph='ph'+uid();phPut(c.ph,g.idp);if(old)phDel(old)}
   c.a+=a.c;c.h.push({t,v:a.c,sid:sale.id,no:sale.no});if(g.cl.due)c.due=g.cl.due;
   sale.cl=c.n;sale.cid=c.id}
- S.s.push(sale);cart=[];vq0='';
+ S.s.push(sale);cart=[];vq0='';CUN=null;hap();
  saleDone(sale)}
 // après la vente : un bandeau en bas (monnaie à rendre, reçu, annuler) et on peut servir le client suivant ; l'enregistrement se fait juste après l'affichage
 function saleDone(s){
@@ -1041,7 +1227,7 @@ function lsBar(){
  if(!LS)return'';
  const s=S.s.find(x=>x.id==LS.id);
  if(!s||s.v||Date.now()-LS.t>120000){LS=null;return''}
- const left=s.chg?`<div class="lsm">✓ ${_('Vente enregistrée')} · ${f(s.total)}</div><div class="chg2">${_('Monnaie à rendre')} : ${f(s.chg)}</div>`:`<b>✓ ${_('Vente enregistrée')}</b><div class="lsm">${f(s.total)}</div>`;
+ const left=s.chg?`<div class="lsm">✓ ${_('Vente enregistrée')} · <span class="nw">${f(s.total)}</span></div><div class="chg2"><small>${_('Monnaie à rendre')}</small><span class="nw">${f(s.chg)}</span></div>`:`<b>✓ ${_('Vente enregistrée')}</b><div class="lsm">${f(s.total)}</div>`;
  return `<div class="cart ls"><div class="gr1">${left}</div><button class="b sm ol" onclick="rcOpen('${s.id}')">${_('Reçu')}</button><button class="b sm ol" onclick="lsUndo('${s.id}')">${_('Annuler')}</button></div>`}
 function rcOpen(id){const s=S.s.find(x=>x.id==id);if(s)rcDone(s)}
 function lsUndo(id){
@@ -1107,7 +1293,7 @@ function stlist(L){
   const bd=(p.rx&&S.set.mods.ph?'<span class="bd">Rx</span>':'')+(e.exp?`<span class="bd">${_('Périmé')} (${fq(e.eq)})</span>`:e.soon?`<span class="bd y">${_('Expire dans {n} j',{n:e.d})}</span>`:'')+(p.lt?`<span class="bd b">${p.lots.length} ${_('lot(s)')}</span>`:'');
   return `<div class="row"><div class="gr1"><b>${esc(p.n)} ${esc(p.g||'')}</b><small>${[p.cat,p.col].filter(Boolean).map(esc).join(', ')}${p.cat||p.col?' · ':''}${_('Vente')} ${f(p.pr)}${seeCost()?', '+_('achat')+' '+f(p.c):''}${p.us.length?' · '+p.us.map(u=>esc(u.n)).join('/'):''}</small>${p.bc?`<small>${_('Code')} ${esc(p.bc)}</small>`:''}${bd?'<div>'+bd+'</div>':''}</div>
 <div class="qty${lo?' low':''}">${fq(p.q)}${p.bu?`<small>${esc(p.bu)}</small>`:''}${lo?`<small>${_('À recommander')}</small>`:''}</div>
-${isO()?`<div style="display:flex;flex-direction:column;gap:4px">${p.off?`<button class="b xs ol" onclick="pfOff(${p.id},0)">${_('Réactiver')}</button>`:`<button class="b xs gr" onclick="quickBuy(${p.id})">＋ ${_('Stock')}</button>`}<button class="b xs ol" onclick="pf(${p.id})">${_('Modifier')}</button></div>`:''}</div>`}).join('')}
+${isO()?`<div class="rb">${p.off?`<button class="b xs ol" onclick="pfOff(${p.id},0)">${_('Réactiver')}</button>`:`<button class="b xs gr" onclick="quickBuy(${p.id})">＋ ${_('Stock')}</button>`}<button class="b xs ol" onclick="pf(${p.id})">${_('Modifier')}</button></div>`:''}</div>`}).join('')}
 function stq(v){sq0=v;const e=$('#stl');if(e){const nq=nz(v);let L=S.p.filter(p=>sf0=='off'?p.off:!p.off);if(sf0=='low')L=L.filter(isLow);if(sf0=='exp')L=L.filter(p=>{const x=expInfo(p);return x.exp||x.soon});if(nq)L=L.filter(p=>nz([p.n,p.g,p.bc,p.cat,p.dci,p.col].join(' ')).includes(nq));e.innerHTML=stlist(L.slice().sort((a,b)=>a.n.localeCompare(b.n,'fr')))}}
 function stf(k){sf0=k;R()}
 function pfOff(id,v){P(id).off=v;save();R()}
@@ -1153,14 +1339,17 @@ ${p.lt&&p.isNew?`<div class="eq"><div><label>${_('N° de lot')}</label><input cl
 <div class="eq"><div><label>${_('Prix d\'achat (GNF)')}</label><input class="in nm" id="fa" inputmode="numeric" value="${nv(p.c)}"></div><div><label>${_('Prix de vente (GNF)')}</label><input class="in nm" id="fv" inputmode="numeric" value="${nv(p.pr)}"></div></div>
 ${p.isNew?`<label>${_('Quantité en stock au départ')}</label><input class="in" id="fq" inputmode="decimal" value="${esc(p.q0)}">`:`<div class="kv"><span>${_('Stock actuel')}</span><b>${stockTxt(p0(p))}</b></div><div class="btns" style="padding:6px 0 0"><button class="b sm ol" onclick="M();quickBuy(${p.id})">＋ ${_('Ajouter du stock')}</button><button class="b sm ol" onclick="M();adjust(${p.id})">✎ ${_('Corriger le stock')}</button></div>`}
 ${adv}
-<div class="pay2">${p.isNew?`<button class="b ol" onclick="M()">${_('Retour')}</button>`:`<button class="b ol" onclick="pfOff(${p.id},1);M()">${_('Archiver')}</button>`}<button class="b gr" onclick="pfSave()">${_('Enregistrer')}</button></div>`)}
+${p.isNew?'':`<button class="lnk dg" onclick="pfArch(${p.id})">${_('Archiver ce produit (il ne sera plus proposé à la vente)')}</button>`}
+<div class="pay2"><button class="b ol" onclick="M()">${_('Retour')}</button><button class="b gr" onclick="pfSave()">${_('Enregistrer')}</button></div>`)}
+// archiver se défait d'un geste : pas de question, mais un bouton pour revenir en arrière dans la liste « Archivés »
+function pfArch(id){const p=P(id);if(!p)return;pfOff(id,1);M();toast(_('« {n} » archivé. Il reste dans Stock › Archivés.',{n:p.n}),3800)}
 const p0=p=>P(p.id)||p;
 function pfAddU(){pfRead();PF.us.push({n:'',f:'',pr:'',pg:''});pfUI(1)}
 function pfRmU(i){pfRead();PF.us.splice(i,1);if(PF.du==i)PF.du=-1;else if(PF.du>i)PF.du--;pfUI(1)}
 function pfSave(){
  pfRead();const p=PF;
  const c=num(p.c),pr=num(p.pr);
- if(!p.n||isNaN(c)||isNaN(pr))return toast(_('Le nom et les prix sont nécessaires'));
+ if(!p.n||isNaN(c)||isNaN(pr))return bad(!p.n?'fn':isNaN(c)?'fa':'fv',_('Le nom et les prix sont nécessaires'));
  const us=[];
  for(const u of p.us){if(!u.n&&u.f===''&&u.pr==='')continue;const f1=dec(u.f),up=num(u.pr);if(!u.n||!(f1>0)||isNaN(up))return toast(_('Chaque format a un nom, un contenu et un prix'));us.push({n:u.n,f:f1,pr:up,pg:num(u.pg)||0})}
  if(p.bc){const d=S.p.find(x=>x.bc==p.bc&&x.id!=p.id);if(d&&!PF.dupOk){PF.dupOk=1;return toast(_('Ce code-barres est déjà utilisé par « {n} ». Touchez Enregistrer pour confirmer.',{n:d.n}),4000)}}
@@ -1185,7 +1374,7 @@ ${p.lt?`<label>${_('Lot')}</label><select class="in" id="alot">${p.lots.map((l,i
 <label>${_('Motif')}</label><select class="in" id="aw">${['count','casse','vol','perime','don','autre'].map(k=>`<option value="${k}">${_(WHY[k])}</option>`).join('')}</select>
 <label>${_('Note (facultatif)')}</label><input class="in" id="an">${acts(_('Enregistrer'),'adjOk('+id+')')}`)}
 function adjOk(id){
- const p=P(id),q=dec($('#aq').value);if(isNaN(q)||q<0)return toast(_('Quantité invalide'));
+ const p=P(id),q=dec($('#aq').value);if(isNaN(q)||q<0)return bad('aq',_('Quantité invalide'));
  const why=$('#aw').value,note=$('#an').value.trim();let d;
  if(p.lt){const l=p.lots[+$('#alot').value];d=rq(q-l.q);l.q=q;p.lots=p.lots.filter(x=>Math.abs(x.q)>1e-9);p.q=lotQ(p)}
  else{d=rq(q-p.q);p.q=q}
@@ -1256,7 +1445,7 @@ function clList(){
  if(nq)L=L.filter(c=>nz(c.n+' '+c.tel).includes(nq));
  L.sort((a,b)=>((b.a>0&&b.due&&b.due<Date.now())?1:0)-((a.a>0&&a.due&&a.due<Date.now())?1:0)||b.a-a.a||a.n.localeCompare(b.n,'fr'));
  if(!L.length)return`<p class="hint">${S.cl.length?_('Personne dans cette liste.'):_('Aucun client. Une vente « À crédit » ou le bouton « Ajouter un client » en crée un.')}</p>`;
- return L.map(c=>`<div class="row tap"><div class="gr1" onclick="cfi('${c.id}')"><b>${esc(c.n)}</b><small>${c.tel?esc(c.tel)+' · ':''}${c.pi?_('pièce n° {n}',{n:esc(c.pi)}):(c.ph?_('photo de la pièce'):_('aucune pièce enregistrée'))}</small>${c.a>0?`<small>${dueTxt(c)}</small>`:''}</div>${c.a>0?`<div class="owe" onclick="cfi('${c.id}')">${f(c.a)}</div><div style="display:flex;flex-direction:column;gap:4px"><button class="b xs gr" onclick="enc('${c.id}')">${_('Encaisser')}</button><button class="b xs ol" onclick="relance('${c.id}')">${_('Relancer')}</button></div>`:`<div class="sm2" onclick="cfi('${c.id}')">${_('Aucune dette')}</div>`}</div>`).join('')}
+ return L.map(c=>`<div class="row tap cr"><div class="crt" onclick="cfi('${c.id}')"><div class="gr1"><b>${esc(c.n)}</b><small>${c.tel?esc(c.tel)+' · ':''}${c.pi?_('pièce n° {n}',{n:esc(c.pi)}):(c.ph?_('photo de la pièce'):_('aucune pièce enregistrée'))}</small>${c.a>0?`<small>${dueTxt(c)}</small>`:''}</div>${c.a>0?`<div class="owe">${f(c.a)}</div>`:`<div class="sm2">${_('Aucune dette')}</div>`}</div>${c.a>0?`<div class="cra"><button class="b sm ol" onclick="relance('${c.id}')">${_('Relancer')}</button><button class="b sm gr" onclick="enc('${c.id}')">${_('Encaisser')}</button></div>`:''}</div>`).join('')}
 function CLS(){
  const tot=S.cl.reduce((a,c)=>a+Math.max(c.a,0),0),late=S.cl.filter(c=>c.a>0&&c.due&&c.due<Date.now());
  return `<div class="sum"><small>${_('Total que les clients vous doivent')}</small><div class="tot">${f(tot)}</div>${late.length?`<small class="neg">${_('{n} client(s) en retard : {a}',{n:late.length,a:f(late.reduce((a,c)=>a+c.a,0))})}</small>`:''}</div>
@@ -1277,8 +1466,8 @@ function cform(c){
 ${acts(_('Enregistrer'),'cSave('+(c.id?"'"+c.id+"'":'null')+')',_('Fermer'))}`)}
 function kphoto(i){const fl=i.files[0];if(!fl)return;const im=new Image();im.onload=()=>{const k=Math.min(1,520/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);cphoto=c.toDataURL('image/jpeg',.6);toast(_('Photo prête ✓'))};im.src=URL.createObjectURL(fl)}
 function cSave(id){
- const n=$('#kn').value.trim();if(!n)return toast(_('Le nom est nécessaire'));
- if(S.cl.some(x=>x.n.toLowerCase()==n.toLowerCase()&&x.id!=id))return toast(_('Ce nom existe déjà'));
+ const n=$('#kn').value.trim();if(!n)return bad('kn',_('Le nom est nécessaire'));
+ if(S.cl.some(x=>x.n.toLowerCase()==n.toLowerCase()&&x.id!=id))return bad('kn',_('Ce nom existe déjà'));
  const pi=$('#ki').value.trim();if((pi||cphoto)&&!$('#kc').checked)return toast(_('Le client doit accepter l\'enregistrement de sa pièce'));
  let c=id?CLI(id):null;if(!c){c={id:uid(),n,tel:'',pi:'',ph:'',a:0,h:[],due:0,lim:0,t0:Date.now()};S.cl.push(c)}
  c.n=n;c.tel=$('#kt').value.trim();c.pi=pi;c.lim=num($('#kl').value)||0;
@@ -1304,7 +1493,7 @@ function enc(id){
 function encM(k){EN.m=k=='e'?'e':'m';if(k!='e')EN.op=k;const chips=$$('#m .chips .chip');chips.forEach((b,i)=>b.classList.toggle('on',(i==0&&k=='e')||(i==1&&k=='om')||(i==2&&k=='mtn')));$('#enr').style.display=k=='e'?'none':''}
 function encOk(){
  const c=CLI(EN.id),v=num($('#en').value);
- if(!(v>0))return toast(_('Montant invalide'));if(v>c.a)return toast(_('Montant trop élevé'));
+ if(!(v>0))return bad('en',_('Montant invalide'));if(v>c.a)return bad('en',_('Montant trop élevé'));
  c.a-=v;c.h.push({t:Date.now(),v:-v,m:EN.m,op:EN.m=='m'?EN.op:'',by:CU,ref:EN.m=='m'?($('#enrf').value||'').trim():''});
  if(EN.m=='m')S.set.op=EN.op;
  save(true);M();toast(_('Paiement enregistré ✓'));R();
@@ -1410,7 +1599,7 @@ ${k=='x'?`<label>${_('Catégorie')}</label><div class="chips" style="padding:4px
 <label>${k=='k'?_('Reçu en'):_('Payé avec')}</label><div class="chips" style="padding:4px 0" id="xms">${[['e','💵 '+_('Espèces')],['om','📱 Orange Money'],['mtn','📱 MTN MoMo']].map(([c,l])=>`<button class="chip${c=='e'?' on':''}" data-k="${c}" onclick="EX.m=this.dataset.k=='e'?'e':'m';EX.op=this.dataset.k;$$('#xms .chip').forEach(b=>b.classList.toggle('on',b==this))">${l}</button>`).join('')}</div>
 <label>${_('Date')}</label><input class="in" id="xd" type="date" value="${ymd(Date.now())}"><label>${_('Note (facultatif)')}</label><input class="in" id="xn">${acts(_('Enregistrer'),'exOk()')}`)}
 function exOk(){
- const a=num($('#xa').value);if(!(a>0))return toast(_('Montant invalide'));
+ const a=num($('#xa').value);if(!(a>0))return bad('xa',_('Montant invalide'));
  const d=pd($('#xd').value),t=isNaN(d)||D0(d)==D0(Date.now())?Date.now():d+12*3600e3;
  S.ex.push({id:uid(),t,by:CU,k:EX.k,cat:EX.k=='x'?EX.cat:'',a,m:EX.m,op:EX.m=='m'?EX.op:'',note:$('#xn').value.trim()});
  if(EX.m=='m')S.set.op=EX.op;
@@ -1497,7 +1686,7 @@ ${k=='dep'||k=='ret'?`<label>${_('Votre commission (GNF)')}</label><input class=
 <label>${_('Référence (facultatif)')}</label><input class="in" id="gr">${acts(_('Enregistrer'),'agOk()')}`)}
 function agCom(){const r=+S.set.agRate||0;if(r>0&&$('#gc')&&!$('#gc').dataset.t){$('#gc').value=fm(Math.round((num($('#ga').value)||0)*r/100))}}
 function agOk(){
- const a=num($('#ga').value);if(!(a>0))return toast(_('Montant invalide'));
+ const a=num($('#ga').value);if(!(a>0))return bad('ga',_('Montant invalide'));
  S.ag.push({id:uid(),t:Date.now(),by:CU,k:AG.k,op:AG.op,a,cm:$('#gc')?(num($('#gc').value)||0):0,cw:AG.cw,ph:$('#gp')?$('#gp').value.trim():'',ref:$('#gr').value.trim()});
  S.set.op=AG.op;save(true);M();toast(_('Opération enregistrée ✓'));R()}
 SUB.ag=()=>{
@@ -2006,6 +2195,9 @@ SUB.set=()=>{
 <label>${_('Délai de paiement par défaut des clients (jours)')}</label><input class="in" id="rdu" inputmode="numeric" value="${s.dueDays}">
 <label>${_('Après une vente')}</label><select class="in" id="rcm"><option value=""${s.rcm=='full'?'':' selected'}>${_('Barre rapide (le plus rapide)')}</option><option value="full"${s.rcm=='full'?' selected':''}>${_('Reçu complet à chaque vente')}</option></select>
 ${ck('rsc',s.sellCost,_('Les vendeurs voient les prix d\'achat et les bénéfices'))}${ck('rro',s.reqOpen,_('Obliger à ouvrir la caisse avant de vendre'))}</div>
+<div class="card pl"><b>${_('Sécurité')}</b>
+<label>${_('Verrouiller l\'application quand personne ne touche l\'écran')}</label><select class="in" id="rid">${[[2,_('Après 2 minutes')],[5,_('Après 5 minutes')],[15,_('Après 15 minutes')],[0,_('Jamais (déconseillé)')]].map(([k,l])=>`<option value="${k}"${idleMin()==k?' selected':''}>${l}</option>`).join('')}</select>
+<p class="sm2">${_('Il faut alors retaper son code. Le panier en cours est gardé.')}</p></div>
 <div class="card pl"><b>${_('Modules')}</b>
 ${ck('rph',s.mods.ph,_('Pharmacie : lots, péremption, ordonnances, équivalents'))}
 <label>${_('Alerte de péremption (jours avant)')}</label><input class="in" id="rex" inputmode="numeric" value="${s.expd}">
@@ -2018,14 +2210,15 @@ ${ck('rtv',s.mods.tv,_('TVA : calculer une estimation (désactivée par défaut)
 ${ck('rsi',s.simple,_('Mode simple : gros boutons, moins de choses à l\'écran'))}${ck('rbg',s.big,_('Écriture plus grande'))}</div>
 <div class="top"><button class="b gr" onclick="setSave()">${_('Enregistrer')}</button></div>`};
 function setSave(){
+ if(!ownOnly())return;
  const g=id=>$('#'+id),s=S.set,v=id=>g(id).value,c=id=>g(id).checked?1:0;
- const nm=v('rn').trim();if(!nm)return toast(_('Le nom du commerce est nécessaire'));
+ const nm=v('rn').trim();if(!nm)return bad('rn',_('Le nom du commerce est nécessaire'));
  const dsc=dec(v('rd')),dd=num(v('rdu')),ex=num(v('rex')),tx=dec(v('rtx'));
  Object.assign(S.shop,{name:nm,addr:v('ra').trim(),tel:v('rt').trim(),nif:v('rf').trim(),own:v('ro').trim()});
  s.rcw=+v('rw');s.msg=v('rm2').trim();s.round=+v('rr');s.sellMaxDisc=isNaN(dsc)?10:Math.max(0,Math.min(100,dsc));s.dueDays=isNaN(dd)?15:dd;
  s.sellCost=c('rsc');s.reqOpen=c('rro');s.rcm=v('rcm')=='full'?'full':'';
  const wasPh=s.mods.ph;s.mods.ph=c('rph');s.expd=isNaN(ex)?90:ex;s.mods.ag=c('rag');s.agRate=dec(v('rar'))||0;s.mods.tv=c('rtv');s.tva=isNaN(tx)?18:tx;
- s.simple=c('rsi');s.big=c('rbg');
+ s.simple=c('rsi');s.big=c('rbg');s.idle=+v('rid')||0;
  save(true);back();toast(_('Réglages enregistrés ✓'));
  if(s.mods.ph&&!wasPh)info(_('Module pharmacie'),`<p>${_('L\'application aide à suivre les lots, les dates de péremption et les ordonnances. Elle ne remplace ni la réglementation pharmaceutique, ni le pharmacien responsable, ni les contrôles de l\'autorité sanitaire.')}</p><p>${_('Vérifiez toujours les dates et les ordonnances avant de délivrer un médicament.')}</p>`,_('J\'ai compris'))}
 // ---- sauvegarde et mémoire
@@ -2056,6 +2249,7 @@ async function bakPersist(){try{const ok=navigator.storage&&navigator.storage.pe
 // toutes les sauvegardes sont chiffrées avec le mot de passe des sauvegardes, choisi une fois : ensuite, un seul geste
 async function bakNow(){
  if(FR)return frNo();
+ if(!ownOnly())return;
  if(!BKEY)return bkPwUI(1);
  if(Date.now()-(BKEY.c||BKEY.t||0)>30*DAY)return bkMonthUI();
  try{
@@ -2068,6 +2262,9 @@ async function bakNow(){
  }catch(e){console.error(e);toast(_('Sauvegarde impossible'))}}
 // choisir ou changer le mot de passe des sauvegardes ; after=1 : on propose ensuite de sauvegarder
 function bkPwUI(after){
+ if(!ownOnly())return;
+ // changer un mot de passe déjà choisi : le patron retape d'abord son code
+ if(BKEY&&!bkPwUI.ok)return ownerPin(()=>{bkPwUI.ok=1;try{bkPwUI(after)}finally{bkPwUI.ok=0}},_('Changer le mot de passe des sauvegardes demande votre code.'));
  M(`<h2>🔑 ${_('Mot de passe des sauvegardes')}</h2><p class="sm2">${_('Il protège chaque fichier de sauvegarde : sans lui, personne ne peut l\'ouvrir, même vous. Au moins 8 caractères.')}</p>
 <label>${_('Mot de passe')}</label><input class="in" id="bp1" type="password" autocomplete="new-password">
 <label>${_('Le même, encore une fois')}</label><input class="in" id="bp2" type="password" autocomplete="new-password" onkeydown="if(event.key=='Enter')bkPwOk(${after?1:0})">
@@ -2076,10 +2273,11 @@ ${BKEY?`<p class="sm2">${_('Les sauvegardes déjà faites gardent l\'ancien mot 
  setTimeout(()=>{const e=$('#bp1');if(e)e.focus()},60)}
 const BADPW=['12345678','123456789','1234567890','87654321','azertyui','azertyuiop','qwertyui','qwertyuiop','password','motdepasse'];
 async function bkPwOk(after){
+ if(!ownOnly())return;
  const a=($('#bp1')||{}).value||'',b=($('#bp2')||{}).value||'';
- if(a.length<8)return toast(_('Au moins 8 caractères'));
- if(/^(.)\1+$/.test(a)||BADPW.includes(a.toLowerCase()))return toast(_('Mot de passe trop facile à deviner'));
- if(a!==b)return toast(_('Les deux mots de passe ne sont pas pareils'));
+ if(a.length<8)return bad('bp1',_('Au moins 8 caractères'));
+ if(/^(.)\1+$/.test(a)||BADPW.includes(a.toLowerCase()))return bad('bp1',_('Mot de passe trop facile à deviner'));
+ if(a!==b)return bad('bp2',_('Les deux mots de passe ne sont pas pareils'));
  const btn=$('#m .pay2 .gr');if(btn)btn.disabled=true;
  const had=!!BKEY;let ok=false;try{ok=await bkSetPw(a)}catch(e){console.error(e)}
  if(!ok){if(btn)btn.disabled=false;return toast(_('Impossible d\'enregistrer le mot de passe'))}
@@ -2102,14 +2300,14 @@ async function bkMonthOk(){
  if(!ok)return toast(_('Ce n\'est pas le bon mot de passe. Réessayez, ou touchez « Je l\'ai oublié ».'),4000);
  await bkMark();
  M(`<h2>✓ ${_('Bon mot de passe')}</h2><p>${_('Prochaine vérification dans un mois.')}</p>${acts(_('Sauvegarder maintenant'),'M();bakNow()',_('Plus tard'))}`)}
-function bakFile(inp){const fl=inp.files[0];if(!fl)return;const rd=new FileReader();rd.onload=()=>bakTry(String(rd.result),'');rd.onerror=()=>toast(_('Fichier illisible'));rd.readAsText(fl)}
+function bakFile(inp){if(!readFail&&!ownOnly()){inp.value='';return}const fl=inp.files[0];if(!fl)return;const rd=new FileReader();rd.onload=()=>bakTry(String(rd.result),'');rd.onerror=()=>toast(_('Fichier illisible'));rd.readAsText(fl)}
 async function bakTry(text,pw){
  try{
   const r=await restoreFrom(text,pw);
-  sure(_('Remplacer les données de ce téléphone par cette sauvegarde ({a} produits, {b} ventes) ?',{a:r.S.p.length,b:r.S.s.length}),async()=>{const rf=readFail;await applyRestore(r);setLang(S.set.lang);
+  sure(_('Remplacer les données de ce téléphone par cette sauvegarde ({a} produits, {b} ventes) ?',{a:r.S.p.length,b:r.S.s.length}),()=>ownerPin(async()=>{const rf=readFail;await applyRestore(r);setLang(S.set.lang);
    // fichier protégé et téléphone sans mot de passe des sauvegardes : on reprend celui qui vient d'ouvrir le fichier
    let msg=_('Sauvegarde restaurée ✓');if(pw&&!BKEY){try{if(await bkSetPw(pw))msg=_('Sauvegarde restaurée ✓ Le mot de passe des sauvegardes est repris.')}catch(e){}}
-   toast(msg,4000);go('p');if(rf)lock()},_('Restaurer'))
+   toast(msg,4000);go('p');if(rf)lock()},_('Restaurer une sauvegarde remplace toutes les données : retapez votre code.')),_('Restaurer'))
  }catch(e){
   if(e.message=='pw'||e.message=='badpw')ask(_('Mot de passe'),e.message=='badpw'?_('Mot de passe incorrect, essayez encore'):_('Ce fichier est protégé. Entrez le mot de passe.'),v=>bakTry(text,v),{pwl:1,yes:_('Ouvrir')});
   else toast(_('Fichier non reconnu'))}}
@@ -2123,16 +2321,22 @@ function usForm(id){
  const u=id?S.users.find(x=>x.id==id):{n:'',r:'s'};
  M(`<h2>${id?_('Modifier'):_('Nouveau vendeur')}</h2><label>${_('Nom')}</label><input class="in" id="un" value="${esc(u.n)}"><label>${id?_('Nouveau code à 4 chiffres (laisser vide pour garder l\'ancien)'):_('Code à 4 chiffres')}</label><input class="in" id="up" type="password" maxlength="4" inputmode="numeric" autocomplete="off">${acts(_('Enregistrer'),'usSave('+(id||0)+')')}`)}
 function usSave(id){
+ if(!ownOnly())return;
  const n=$('#un').value.trim(),p=$('#up').value.trim();
- if(!n)return toast(_('Le nom est nécessaire'));
- if(!id&&!/^\d{4}$/.test(p))return toast(_('Le code a 4 chiffres'));
- if(p&&!/^\d{4}$/.test(p))return toast(_('Le code a 4 chiffres'));
- if(p&&S.users.some(x=>x.id!=id&&x.pin&&x.pin==hs(p)))return toast(_('Ce code est déjà utilisé par quelqu\'un d\'autre'));
+ if(!n)return bad('un',_('Le nom est nécessaire'));
+ if(!id&&!/^\d{4}$/.test(p))return bad('up',_('Le code a 4 chiffres'));
+ if(p&&!/^\d{4}$/.test(p))return bad('up',_('Le code a 4 chiffres'));
+ if(p&&weakPin(p))return bad('up',_('Code trop facile à deviner. Choisissez-en un autre.'),3500);
+ if(p&&S.users.some(x=>x.id!=id&&x.pin&&x.pin==hs(p)))return bad('up',_('Ce code est déjà utilisé par quelqu\'un d\'autre'));
  let u=id?S.users.find(x=>x.id==id):null;
- if(!u){u={id:Math.max(0,...S.users.map(x=>x.id))+1,n,r:'s',pin:null,on:1};S.users.push(u)}
- u.n=n;if(p)u.pin=hs(p);
- save(true);M();toast(_('Enregistré ✓'));R()}
-function usOn(id){const u=S.users.find(x=>x.id==id);if(!u||u.r=='o')return;u.on=u.on?0:1;save(true);R()}
+ const put=()=>{
+  if(!u){u={id:Math.max(0,...S.users.map(x=>x.id))+1,n,r:'s',pin:null,on:1};S.users.push(u)}
+  u.n=n;if(p)u.pin=hs(p);
+  save(true);M();toast(_('Enregistré ✓'));R()};
+ // changer le code du patron : il retape d'abord l'ancien
+ if(u&&u.r=='o'&&p&&u.pin&&u.pin!=hs(p))return ownerPin(put,_('Pour changer votre code, retapez d\'abord l\'ancien.'));
+ put()}
+function usOn(id){if(!ownOnly())return;const u=S.users.find(x=>x.id==id);if(!u||u.r=='o')return;u.on=u.on?0:1;save(true);R()}
 // ---- aide et à propos
 SUB.help=()=>`${backBtn()}<h3>❓ ${_('Aide et à propos')}</h3>
 <div class="card pl"><b>${_('Comment ça marche')}</b>
@@ -2143,13 +2347,25 @@ SUB.help=()=>`${backBtn()}<h3>❓ ${_('Aide et à propos')}</h3>
 <div class="card pl"><b>${_('Où sont vos données ?')}</b><p class="sm2">${FR?_('Dans la version d\'essai en ligne, vos données ne sont pas garanties : elles peuvent disparaître. Installez l\'application sur le téléphone pour les garder.'):_('Tout est enregistré sur ce téléphone, sans internet. Personne d\'autre ne peut les voir. Si le téléphone est perdu ou cassé, vos données sont perdues : faites une sauvegarde chaque soir, à la clôture de la caisse.')}</p>
 <p class="sm2">${_('Le code PIN empêche les curieux d\'ouvrir l\'application, mais il ne chiffre pas les données. Ne laissez pas votre téléphone déverrouillé.')}</p>
 <p class="sm2">${_('Mettez un code de verrouillage sur le téléphone lui-même : c\'est lui qui protège vraiment vos données s\'il est volé.')}</p>
-<p class="sm2">${_('Après 5 codes faux, l\'application fait patienter (jusqu\'à 5 minutes) et prévient le patron à sa prochaine ouverture.')}</p></div>
+<p class="sm2">${_('Après 5 codes faux, l\'application fait patienter (jusqu\'à 5 minutes) et prévient le patron à sa prochaine ouverture.')}</p>
+<p class="sm2">${_('L\'application se verrouille seule quand personne ne touche l\'écran pendant quelques minutes (durée à choisir dans les Réglages). Restaurer une sauvegarde, changer le mot de passe des sauvegardes ou le code du patron demandent de retaper le code du patron.')}</p></div>
 <div class="card pl"><b>${_('Limites à connaître')}</b>
 <p class="sm2">• ${_('Plusieurs boutiques : les chiffres se regroupent par fichiers échangés, pas en direct.')}</p>
 <p class="sm2">• ${_('Les paiements Mobile Money sont notés à la main : vérifiez-les avec le SMS de l\'opérateur.')}</p>
 <p class="sm2">• ${_('Les rapports et la comptabilité sont indicatifs : faites-les valider par un comptable.')}</p>
 <p class="sm2">• ${_('L\'impression passe par le système du téléphone (imprimante ou PDF).')}</p></div>
+<div class="card pl"><b>${_('Donner votre avis')}</b><p class="sm2">${_('Un problème, une idée, quelque chose de pas clair ? Dites-le : votre message part par WhatsApp ou SMS, avec la version de l\'appli et le modèle du téléphone. Aucun chiffre de votre boutique n\'est envoyé.')}</p><button class="b ol sm" onclick="fbUI()">${_('Écrire un avis')}</button></div>
 <div class="card pl"><div class="abl">${LOGO_H}</div><p class="sm2">${_('version {v}',{v:BUILD.slice(0,8)})}</p></div>`;
+// ---- avis des commerçants : un message préparé, envoyé par l'application de leur choix. Rien ne part tout seul.
+function fbInfo(){let d='';try{d=(navigator.userAgent.match(/\(([^)]+)\)/)||[])[1]||''}catch(e){}
+ let mode=_('navigateur');try{if(matchMedia('(display-mode: standalone)').matches||navigator.standalone)mode=_('installée')}catch(e){}
+ return _('Version {v}',{v:BUILD.slice(0,8)})+' · '+mode+' · '+d.slice(0,80)+' · '+innerWidth+'×'+innerHeight}
+function fbUI(){
+ M(`<h2>${_('Donner votre avis')}</h2><label>${_('Qu\'est-ce qui s\'est passé, ou que voudriez-vous ?')}</label><textarea class="in" id="fbt" rows="5" placeholder="${_('Exemple : quand je vends à crédit, je ne trouve pas…')}"></textarea>
+<p class="sm2">${_('Ajouté au message :')} ${esc(fbInfo())}</p>${acts(_('Envoyer'),'fbSend()')}`);
+ setTimeout(()=>{const e=$('#fbt');if(e)e.focus()},60)}
+function fbSend(){const t=($('#fbt')||{}).value||'';if(!t.trim())return bad('fbt',_('Écrivez votre message'));
+ const tx='*'+_('Avis sur Boutique Facile')+'*\n'+t.trim()+'\n\n— '+fbInfo();M();share(tx,'')}
 
 // ---- plusieurs boutiques : chaque boutique reste indépendante, les chiffres se regroupent par fichiers
 function brPack(days){
@@ -2177,13 +2393,14 @@ async function brExport(){
 // fichier reçu d'un autre téléphone : identifiant simple (il sert dans un onclick) et listes attendues par les calculs
 const brValid=p=>!!(p&&p.kind=='bf-branch'&&p.shop&&typeof p.shop.id=='string'&&/^[a-z0-9]{1,40}$/i.test(p.shop.id)&&p.D&&['s','rt','ex','adj','ag','pu','cl'].every(k=>Array.isArray(p.D[k])));
 function brImport(inp){
+ if(!ownOnly()){inp.value='';return}
  const fls=[...inp.files];if(!fls.length)return;let ok=0,bad=0,own=0,done=0;
  fls.forEach(fl=>{const rd=new FileReader();
   rd.onload=()=>{
    try{const p=JSON.parse(String(rd.result));
     if(!brValid(p))throw new Error('bad');
     if(p.shop.id==S.shop.id){own++}
-    else{const o=S.br[p.shop.id];if(!o||o.t<=p.t){S.br[p.shop.id]={name:String(p.shop.name||''),t:+p.t||0,from:+p.from||0,sv:+p.sv||0,cr:+p.cr||0,sd:+p.sd||0,D:p.D}}ok++}
+    else{const o=S.br[p.shop.id];if(!o||o.t<=p.t){S.br[p.shop.id]={name:String(p.shop.name||''),t:+p.t||0,from:+p.from||0,sv:+p.sv||0,cr:+p.cr||0,sd:+p.sd||0,D:cleanIn(p.D)}}ok++}
    }catch(e){bad++}
    if(++done==fls.length){save(true);R();toast((ok?_('{n} rapport(s) importé(s) ✓',{n:ok}):'')+(own?' '+_('Ce rapport vient de cette boutique.'):'')+(bad?' '+_('{n} fichier(s) non reconnu(s)',{n:bad}):''),3800)}};
   rd.onerror=()=>{bad++;if(++done==fls.length){R()}};
@@ -2226,6 +2443,7 @@ ${S.langs.map(l=>{const n=trDone(l.c),p=CAT.length?Math.round(n*100/CAT.length):
 <div class="bn b">${_('Astuce : exportez le fichier de traduction, faites-le compléter par un proche, puis importez-le sur chaque téléphone.')}</div>`};
 function lgSet(c){setLang(c);save(true);R()}
 function lgNew(){
+ if(!ownOnly())return;
  M(`<h2>${_('Ajouter une langue')}</h2><label>${_('Nom de la langue')}</label><input class="in" id="lgn" placeholder="Soussou"><div class="chips" style="padding:8px 0 0">${['Soussou','Pular','Malinké'].map(n=>`<button class="chip" onclick="$('#lgn').value='${n}'">${n}</button>`).join('')}</div>${acts(_('Ajouter'),'lgAdd()')}`)}
 function lgAdd(){
  const n=$('#lgn').value.trim();if(!n)return toast(_('Le nom est nécessaire'));
@@ -2284,7 +2502,7 @@ function trImport(inp){
    save(true);if(TE.c==LANG)TR=T;R();toast(n?_('{n} texte(s) importé(s) ✓',{n}):_('Aucun texte reconnu'),3000)
   }catch(e){toast(_('Fichier non reconnu'))}};
  rd.readAsText(fl)}
-function lgDel(c){sure(_('Supprimer cette langue et ses traductions ?'),()=>{S.langs=S.langs.filter(l=>l.c!=c);delete S.tr[c];if(LANG==c)setLang('fr');TE.c='';save(true);go('p','lang')},_('Supprimer'))}
+function lgDel(c){if(!ownOnly())return;sure(_('Supprimer cette langue et ses traductions ?'),()=>{S.langs=S.langs.filter(l=>l.c!=c);delete S.tr[c];if(LANG==c)setLang('fr');TE.c='';save(true);go('p','lang')},_('Supprimer'))}
 
 // ---- codes-barres : douchette (clavier), caméra du téléphone (détecteur du système ou décodeur intégré EAN/UPC)
 let beepOn=false,AC=null;
