@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F4F6F3"><link rel="icon" type="image/png" href="icon-192.png">
+<title>Mentions légales et confidentialité — Boutique Facile</title>
+<meta name="description" content="Qui publie Boutique Facile, où vont vos données, et ce que le commerçant doit faire pour les données de ses clients.">
+<style>
+/* Pages d'accompagnement (présentation, guide) : mêmes couleurs que l'application.
+   Mise en page : colonne de lecture étroite, captures d'écran dans un cadre de téléphone à côté du texte. */
+:root{
+ --paper:#F4F6F3;--card:#FFFFFF;--ink:#14261C;--mut:#56655B;--line:#DCE3DD;
+ --green:#0E6B47;--green-d:#0A5237;--on-green:#FFFFFF;--tint:#E4F1EA;
+ --amber:#F5B800;--amber-ink:#4A3800;--amber-l:#FCF5DD;--red:#B3261E;
+ --frame:#1B2A21;--shadow:0 18px 40px -18px rgba(20,38,28,.35);
+ --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+ --f-body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+ --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --paper:#0E1611;--card:#15211A;--ink:#E6EEE8;--mut:#9BAEA1;--line:#26362C;
+ --green:#45B783;--green-d:#2F9466;--on-green:#06140C;--tint:#163024;
+ --amber:#F5B800;--amber-ink:#2A2000;--amber-l:#2C2610;--red:#F2867E;
+ --frame:#05090A;--shadow:0 18px 40px -18px rgba(0,0,0,.7);color-scheme:dark}}
+:root[data-theme="dark"]{
+ --paper:#0E1611;--card:#15211A;--ink:#E6EEE8;--mut:#9BAEA1;--line:#26362C;
+ --green:#45B783;--green-d:#2F9466;--on-green:#06140C;--tint:#163024;
+ --amber:#F5B800;--amber-ink:#2A2000;--amber-l:#2C2610;--red:#F2867E;
+ --frame:#05090A;--shadow:0 18px 40px -18px rgba(0,0,0,.7);color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--green);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);font-stretch:85%;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.3rem,7vw,4rem);font-weight:850}
+h2{font-size:clamp(1.7rem,4.4vw,2.4rem);font-weight:800}
+h3{font-size:1.25rem;font-weight:750;font-stretch:90%}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-display);font-stretch:100%;font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.lead{font-size:1.2rem;color:var(--mut);max-width:34em}
+.mut{color:var(--mut)}
+.small{font-size:.92rem}
+
+/* barre du haut */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--paper);background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-family:var(--f-display);font-weight:800;font-stretch:90%;font-size:1.15rem}
+.brand svg{width:34px;height:34px;flex:none}
+.brand span{white-space:nowrap}
+.top nav{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.top nav a{font-weight:700;text-decoration:none;padding:8px 10px;border-radius:999px;font-size:.95rem}
+.top nav a:hover{background:var(--tint)}
+@media (max-width:560px){.top nav a:not(:last-child){display:none}}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:14px;font:700 1.05rem/1 var(--f-body);text-decoration:none;border:2px solid transparent;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.pri{background:var(--green);color:var(--on-green)}
+.btn.pri:hover{background:var(--green-d)}
+.btn.sec{border-color:var(--line);color:var(--ink);background:var(--card)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+
+/* cadre de téléphone autour d'une capture */
+.phone{width:270px;max-width:100%;border:9px solid var(--frame);border-radius:34px;background:var(--frame);box-shadow:var(--shadow);overflow:hidden;flex:none}
+.phone img{border-radius:24px}
+.phone.sm{width:230px}
+
+/* reçu imprimé (format réel des reçus de l'application) */
+.receipt{font-family:var(--f-mono);font-size:.8rem;line-height:1.5;background:#FFFEF8;color:#1E241F;width:250px;padding:16px 16px 22px;box-shadow:var(--shadow);border-radius:4px 4px 0 0;position:relative;font-variant-numeric:tabular-nums}
+.receipt::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:linear-gradient(-45deg,transparent 7px,#FFFEF8 0) 0 0/14px 10px,linear-gradient(45deg,transparent 7px,#FFFEF8 0) 0 0/14px 10px}
+.receipt .c{text-align:center}
+.receipt hr{border:0;border-top:1px dashed #9AA49C;margin:8px 0}
+.receipt .r{display:flex;justify-content:space-between;gap:10px}
+.receipt .r span:first-child{min-width:0}
+.receipt b{font-weight:500}
+.receipt .tt{font-size:.92rem;font-weight:500}
+.receipt .chg{background:#FFE9A3;margin:6px -6px 0;padding:2px 6px}
+
+/* pied de page */
+.foot{border-top:1px solid var(--line);margin-top:72px}
+.foot .wrap{padding-block:28px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
+.url{font-family:var(--f-mono);font-size:.9rem;word-break:break-all;background:var(--card);border:1px solid var(--line);padding:6px 10px;border-radius:8px;user-select:all}
+
+/* mentions : une colonne de lecture, sans image */
+.legal .wrap{padding-block:44px 0;display:grid;gap:36px;max-width:760px}
+.legal header{display:grid;gap:14px}
+.legal h1{font-size:clamp(2rem,6vw,3rem)}
+.legal section{display:grid;gap:12px;padding-top:28px;border-top:1px solid var(--line)}
+.legal h2{font-size:clamp(1.35rem,3.6vw,1.7rem)}
+.legal ul{margin:0;padding-left:1.2em;display:grid;gap:8px}
+.legal .who{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:4px}
+.legal .note{background:var(--amber-l);border-left:4px solid var(--amber);padding:12px 14px;border-radius:0 12px 12px 0}
+</style></head>
+<body>
+<div class="top"><div class="wrap"><a class="brand" href="decouvrir.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="lgi" aria-hidden="true" focusable="false"><rect width="256" height="256" rx="56.01" fill="#0E6B47"/><g transform="translate(78.74 43.01) scale(0.52)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23,213V23H108.1A43.7,43.7 0 0 1 108.1,110.4H23M23,110.4H114.5A51.3,51.3 0 0 1 114.5,213H23" stroke="#FFFFFF" stroke-width="46"/><path d="M9.5,268.5H179.3M9.5,304.5H179.3" stroke="#F5B800" stroke-width="19"/></g></svg><span>Boutique Facile</span></a><nav><a href="decouvrir.html">Présentation</a><a href="guide.html">Guide</a><a href="https://devotionobstine-dev.github.io/Boutique-Facile/">Ouvrir l'application</a></nav></div></div>
+
+<main class="legal"><div class="wrap">
+ <header>
+  <h1>Mentions légales et confidentialité</h1>
+  <p class="lead">Qui publie Boutique Facile, où vont vos données, et ce que vous devez faire pour les données de vos clients.</p>
+  <p class="mut small">Mise à jour : 13 novembre 2026</p>
+ </header>
+
+ <section>
+  <h2>Qui publie l'application</h2>
+  <div class="who">
+   <p><b>Abdoulaye Camara</b>, à titre personnel</p>
+   <p>Hamitköy, Lefkoşa, Kuzey Kıbrıs Türk Cumhuriyeti (KKTC)</p>
+   <p>WhatsApp : <a href="https://wa.me/905338758483">+90 533 875 84 83</a></p>
+  </div>
+  <p>Boutique Facile est une version d'essai, gratuite. Aucune société n'est encore créée pour la vendre.</p>
+  <p>Hébergement des fichiers : GitHub Pages, service de GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+ </section>
+
+ <section>
+  <h2>Vos données restent sur votre téléphone</h2>
+  <ul>
+   <li>Aucun compte à créer, aucune adresse e-mail demandée.</li>
+   <li>Aucune publicité, aucun outil de mesure d'audience, aucun pistage. Ce site et l'application ne chargent rien depuis un autre site.</li>
+   <li>Vos ventes, votre stock, vos clients, vos dettes et vos codes sont enregistrés sur votre téléphone seulement. La personne qui publie l'application ne les reçoit pas et ne peut pas les voir.</li>
+   <li>L'application garde ses réglages dans la mémoire du navigateur du téléphone. Ce n'est pas un outil de pistage.</li>
+  </ul>
+ </section>
+
+ <section>
+  <h2>Ce qui passe par internet</h2>
+  <ul>
+   <li><b>Le téléchargement de l'application et de ses mises à jour.</b> Comme pour tout site, l'hébergeur (GitHub) voit alors l'adresse internet (IP) du téléphone et peut la garder dans ses journaux techniques.</li>
+   <li><b>Ce que vous décidez d'envoyer.</b> Un reçu, une relance, une commande à un fournisseur, le résumé du jour, un avis ou une sauvegarde ne sortent du téléphone que si vous touchez Envoyer. Ils passent alors par le service que vous choisissez (WhatsApp, SMS, e-mail, Google Drive), avec les règles de ce service.</li>
+   <li><b>Votre avis sur l'application.</b> Le message part par WhatsApp vers le numéro ci-dessus, avec la version de l'application et le modèle du téléphone. Aucun chiffre de votre boutique n'y est joint.</li>
+  </ul>
+ </section>
+
+ <section>
+  <h2>Les sauvegardes</h2>
+  <p>Le fichier de sauvegarde est chiffré avec le mot de passe que vous choisissez. Vous décidez où le garder. Si vous oubliez ce mot de passe, personne ne peut ouvrir le fichier, pas même la personne qui publie l'application.</p>
+ </section>
+
+ <section>
+  <h2>Les données de vos clients : c'est vous le responsable</h2>
+  <p>Dans l'application, vous notez des noms, des numéros de téléphone, des dettes, et parfois une pièce d'identité avec sa photo. C'est vous, le commerçant, qui répondez de ces informations devant vos clients.</p>
+  <ul>
+   <li>Notez seulement ce qui est utile, et dites au client pourquoi vous le notez.</li>
+   <li>La pièce d'identité et sa photo sont facultatives. Elles ne sont enregistrées que si vous cochez l'accord du client.</li>
+   <li>Si un client le demande, montrez-lui ce que vous avez noté sur lui, corrigez-le, ou supprimez-le quand il ne vous doit plus rien.</li>
+   <li>Mettez un code de verrouillage sur le téléphone, et ne partagez pas vos sauvegardes.</li>
+  </ul>
+  <p class="note">En Guinée, la loi L/2016/037/AN encadre les données personnelles. Cette page décrit comment l'application fonctionne ; ce n'est pas un avis juridique. En cas de doute, demandez à un professionnel.</p>
+ </section>
+
+ <section>
+  <h2>Effacer vos données</h2>
+  <p>Tout est chez vous : supprimez l'application du téléphone, ou effacez les données du site dans le navigateur, et tout disparaît. Comme rien n'est gardé ailleurs, il n'y a rien à demander à la personne qui publie l'application.</p>
+ </section>
+
+ <section>
+  <h2>Limites</h2>
+  <ul>
+   <li>L'application est fournie telle quelle, sans garantie, pendant la période d'essai.</li>
+   <li>Les rapports et la comptabilité sont indicatifs : faites-les valider par un comptable.</li>
+   <li>Le module pharmacie aide au suivi, il ne remplace ni le pharmacien ni la réglementation.</li>
+   <li>Si le téléphone est perdu ou cassé sans sauvegarde, les données sont perdues. Faites une sauvegarde chaque soir.</li>
+  </ul>
+ </section>
+</div></main>
+
+<footer class="foot"><div class="wrap"><a class="brand" href="decouvrir.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="lgi" aria-hidden="true" focusable="false"><rect width="256" height="256" rx="56.01" fill="#0E6B47"/><g transform="translate(78.74 43.01) scale(0.52)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23,213V23H108.1A43.7,43.7 0 0 1 108.1,110.4H23M23,110.4H114.5A51.3,51.3 0 0 1 114.5,213H23" stroke="#FFFFFF" stroke-width="46"/><path d="M9.5,268.5H179.3M9.5,304.5H179.3" stroke="#F5B800" stroke-width="19"/></g></svg><span>Boutique Facile</span></a><span class="mut small"><a href="decouvrir.html">Présentation</a> · <a href="guide.html">Guide d'utilisation</a> · <a href="https://devotionobstine-dev.github.io/Boutique-Facile/">Ouvrir l'application</a></span></div></footer>
+</body></html>
