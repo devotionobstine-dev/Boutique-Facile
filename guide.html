@@ -134,7 +134,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <div class="wrap layout">
 <nav class="toc" aria-label="Sommaire"><p>Sommaire</p><ol>
- <li><a href="#installer">Installer</a></li><li><a href="#demarrer">Premier démarrage</a></li><li><a href="#vendre">Vendre</a></li><li><a href="#credit">Crédit et dettes</a></li><li><a href="#stock">Stock</a></li><li><a href="#caisse">Caisse</a></li><li><a href="#vendeurs">Vendeurs et codes</a></li><li><a href="#sauvegarde">Sauvegarde</a></li><li><a href="#chiffres">Rapports</a></li><li><a href="#aide">En cas de souci</a></li>
+ <li><a href="#installer">Installer</a></li><li><a href="#demarrer">Premier démarrage</a></li><li><a href="#vendre">Vendre</a></li><li><a href="#credit">Crédit et dettes</a></li><li><a href="#stock">Stock</a></li><li><a href="#caisse">Caisse</a></li><li><a href="#reservations">Salons et spas</a></li><li><a href="#vendeurs">Vendeurs et codes</a></li><li><a href="#sauvegarde">Sauvegarde</a></li><li><a href="#chiffres">Rapports</a></li><li><a href="#aide">En cas de souci</a></li>
 </ol></nav>
 
 <main>
@@ -157,7 +157,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <ol class="steps">
    <li><div><b>Créez votre code PIN</b> à 4 chiffres. C'est le code du patron : il ouvre l'application et autorise les actions sensibles.</div></li>
    <li><div><b>Notez le code de secours</b> à 8 chiffres sur papier. Il n'est affiché qu'une fois. Il sert si vous oubliez votre code PIN.</div></li>
-   <li><div><b>Présentez votre commerce</b> : nom, type de commerce, téléphone. Choisissez de commencer avec un stock vide ou d'essayer avec des produits d'exemple.</div></li>
+   <li><div><b>Présentez votre commerce</b> : nom, activité (boutique, pharmacie, quincaillerie, salon, spa…), téléphone. L'application s'adapte à l'activité choisie. Choisissez de commencer avec un stock vide ou d'essayer avec des produits d'exemple.</div></li>
   </ol>
   <p class="tip">Les dates de péremption s'activent pour toute boutique : Plus › Réglages › <b>Dates de péremption</b>. Choisir « Pharmacie » les active aussi, avec les ordonnances et les médicaments équivalents.</p>
   <p class="tip">Mettez aussi un code de verrouillage sur le téléphone lui-même : c'est lui qui protège vraiment vos données si le téléphone est volé.</p>
@@ -258,9 +258,31 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
  </div>
 </section>
 
+<section class="gsec" id="reservations">
+ <div class="txt">
+  <h2><small>7</small>Salons et spas : prestations et réservations</h2>
+  <p>Au démarrage, choisissez « Salon de coiffure, de beauté, maquillage » ou « Spa, institut, massage ». Une autre activité peut activer la même option : Plus › Réglages › <b>Prestations et réservations</b>.</p>
+  <h3>Les prestations</h3>
+  <ol class="steps"><li>Onglet Stock, <span class="key">+ Ajouter un produit</span>.</li><li>Cochez <b>C'est une prestation</b>, puis écrivez le nom, le prix et la durée.</li><li><span class="key">Enregistrer</span>. La prestation se vend comme un produit, sans stock à suivre.</li></ol>
+  <p class="mut">Les produits que vous vendez en plus (crèmes, mèches, huiles) restent des produits normaux, avec leur stock.</p>
+  <h3>Les réservations</h3>
+  <ol class="steps">
+   <li><div>Plus › <span class="key">Réservations</span>, puis <span class="key">+ Nouvelle réservation</span>.</div></li>
+   <li><div>Notez le <b>nom du client</b>, son téléphone, le jour, l'heure et les prestations demandées.</div></li>
+   <li><div>La veille, touchez <span class="key">Ouvrir</span> : un rappel est déjà écrit, vous l'envoyez par WhatsApp ou SMS.</div></li>
+   <li><div>Quand le client est là, touchez <span class="key">Client arrivé</span> : ses prestations vont dans le panier, il reste à encaisser.</div></li>
+  </ol>
+  <h3>L'acompte (facultatif)</h3>
+  <p>Si le client verse une avance en réservant, notez-la dans <b>Acompte reçu</b> (espèces, Orange Money ou MTN MoMo). Elle entre dans la caisse ce jour-là. Quand le client vient, elle est déduite toute seule : il ne paie que le reste.</p>
+  <p class="tip">Si la réservation est annulée ou si le client ne vient pas, l'application demande ce que devient l'acompte : vous le rendez, en espèces ou par Mobile Money au choix, ou vous le gardez.</p>
+  <p class="mut">Acompte mal saisi ? Ouvrez la réservation et touchez « Acompte saisi par erreur : le corriger » (code du patron). L'application écrit la ligne inverse : rien n'est effacé et la caisse redevient juste. Notez ensuite le bon montant avec « Modifier ».</p>
+  <p class="mut">Si le client ne vient pas, ouvrez la réservation et touchez « Le client n'est pas venu ». Si deux réservations tombent à la même heure, l'application vous prévient sans bloquer.</p>
+ </div>
+</section>
+
 <section class="gsec" id="vendeurs">
  <div class="txt">
-  <h2><small>7</small>Vendeurs et codes</h2>
+  <h2><small>8</small>Vendeurs et codes</h2>
   <ol class="steps"><li>Plus › <span class="key">Vendeurs et codes</span>.</li><li><span class="key">+ Ajouter un vendeur</span> : son nom et un code à 4 chiffres, différent du vôtre.</li><li>Le vendeur ouvre l'application avec son code. Ses ventes sont notées à son nom.</li></ol>
   <p>Un vendeur peut vendre, encaisser une dette, voir ses propres ventes et ouvrir ou fermer sa caisse. Il ne voit pas les prix d'achat ni les bénéfices, sauf si vous l'autorisez.</p>
   <p class="tip">Une remise trop forte, un retour, une annulation ou un dépassement de crédit demandent le code du patron.</p>
@@ -270,7 +292,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section class="gsec" id="sauvegarde">
  <div class="txt">
-  <h2><small>8</small>La sauvegarde</h2>
+  <h2><small>9</small>La sauvegarde</h2>
   <p>Vos données sont uniquement sur ce téléphone. S'il est perdu, volé ou cassé, seule une sauvegarde permet de tout retrouver.</p>
   <ol class="steps">
    <li><div>Plus › <span class="key">Sauvegarde et mémoire</span>.</div></li>
@@ -286,7 +308,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section class="gsec" id="chiffres">
  <div class="txt">
-  <h2><small>9</small>Rapports et conseils</h2>
+  <h2><small>10</small>Rapports et conseils</h2>
   <ul class="dots">
    <li><b>Rapports</b> : ventes, marge, bénéfice estimé, produits les plus vendus, heures de vente, par jour, semaine, mois ou année.</li>
    <li><b>Conseiller</b> : produits qui vont manquer, stock qui ne bouge pas, ventes sous le prix d'achat, clients en retard, écarts de caisse.</li>
@@ -303,7 +325,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section class="gsec" id="aide">
  <div class="txt">
-  <h2><small>10</small>En cas de souci</h2>
+  <h2><small>11</small>En cas de souci</h2>
   <div class="faq">
    <details><summary>J'ai oublié mon code PIN</summary><p>Sur l'écran du code, touchez « Code oublié ? » et tapez le code de secours à 8 chiffres. Vous créez ensuite un nouveau code, sans perdre vos données.</p></details>
    <details><summary>J'ai perdu le code de secours aussi</summary><p>Il faut réinstaller l'application puis restaurer votre dernière sauvegarde. D'où l'importance de la sauvegarde de chaque soir.</p></details>
